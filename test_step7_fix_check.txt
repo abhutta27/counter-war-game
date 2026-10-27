@@ -1,0 +1,34 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=== BEGIN STEP 07 FIRING BUG FIX VERIFICATION ===
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+
+[TEST 1] Testing Right Mouse Button does NOT fire...
+  -> TEST 1 PASSED: Right Mouse Button strictly blocked from firing!
+
+[TEST 2] Testing Semi-Automatic (Tactical Pistol) single-shot behavior...
+  -> TEST 2 PASSED: Pistol fired exactly 1 shot; holding button did NOT cause continuous fire!
+  -> TEST 2.1 PASSED: Fresh click fires second shot correctly.
+
+[TEST 3] Testing Automatic (Assault Rifle) press-and-hold & release-stop...
+  -> TEST 3 PASSED: Automatic weapon fires when held, stops immediately upon release!
+
+[TEST 3.1] Testing Automatic (Assault Rifle) quick single tap behavior...
+  -> TEST 3.1 PASSED: Fast tap produces exactly 1 round and stops completely!
+
+[TEST 4] Testing Weapon Switch resets firing state...
+  -> TEST 4 PASSED: Weapon switch resets firing state!
+
+[TEST 5] Testing Player Death resets firing state...
+[StateGameOver] Game Over.
+[GameManager] State transition completed: PLAYING -> GAME_OVER
+  -> TEST 5 PASSED: Player death resets firing state!
+
+=== ALL STEP 07 FIRING BUG FIX TESTS PASSED WITH 100% SUCCESS! ===

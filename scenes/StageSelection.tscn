@@ -1,0 +1,457 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmvdsm3t18q0y"]
+
+[ext_resource type="Script" path="res://scripts/StageSelection.gd" id="1_hq"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ControlsHelpOverlay.tscn" id="2_help"]
+
+[sub_resource type="StyleBoxFlat" id="HQPanel"]
+bg_color = Color(0.025, 0.04, 0.057, 0.99)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.13, 0.34, 0.45, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="HeaderPanel"]
+bg_color = Color(0.045, 0.068, 0.09, 1)
+border_width_bottom = 1
+border_color = Color(0.13, 0.34, 0.45, 1)
+
+[sub_resource type="StyleBoxFlat" id="InnerPanel"]
+bg_color = Color(0.035, 0.052, 0.071, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.11, 0.2, 0.27, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="PreviewPanel"]
+bg_color = Color(0.024, 0.09, 0.115, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16, 0.49, 0.61, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="ActionNormal"]
+bg_color = Color(0.075, 0.39, 0.55, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.26, 0.76, 0.98, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="ActionHover"]
+bg_color = Color(0.1, 0.5, 0.68, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.9, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="ActionDisabled"]
+bg_color = Color(0.09, 0.11, 0.13, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25, 0.28, 0.31, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="SecondaryButton"]
+bg_color = Color(0.065, 0.095, 0.12, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.19, 0.36, 0.46, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="OperationsHQ" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hq")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.009, 0.019, 0.029, 1)
+
+[node name="TopAccent" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+color = Color(0.12, 0.55, 0.75, 1)
+
+[node name="SafeMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HQPanel" type="PanelContainer" parent="SafeMargin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("HQPanel")
+
+[node name="Content" type="VBoxContainer" parent="SafeMargin/HQPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="PanelContainer" parent="SafeMargin/HQPanel/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("HeaderPanel")
+
+[node name="HeaderRow" type="HBoxContainer" parent="SafeMargin/HQPanel/Content/Header"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Brand" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/Header/HeaderRow"]
+custom_minimum_size = Vector2(190, 58)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/Brand"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 0.98, 1)
+theme_override_font_sizes/font_size = 22
+text = "COUNTER-WAR"
+
+[node name="Subtitle" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/Brand"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.72, 0.9, 1)
+theme_override_font_sizes/font_size = 10
+text = "TACTICAL OPERATIONS HQ"
+
+[node name="ProfileSummary" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/Header/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Codename" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/ProfileSummary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.9, 0.94, 1)
+theme_override_font_sizes/font_size = 13
+text = "CODENAME  OPERATIVE"
+
+[node name="Campaign" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/ProfileSummary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.8, 0.98, 1)
+theme_override_font_sizes/font_size = 11
+text = "STAGE 01 AVAILABLE"
+
+[node name="HighestScore" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/Header/HeaderRow"]
+custom_minimum_size = Vector2(86, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/HighestScore"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.59, 0.65, 1)
+theme_override_font_sizes/font_size = 9
+text = "HIGHEST SCORE"
+
+[node name="Value" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/HighestScore"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.73, 0.3, 1)
+theme_override_font_sizes/font_size = 15
+text = "0"
+
+[node name="CareerScore" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/Header/HeaderRow"]
+custom_minimum_size = Vector2(86, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/CareerScore"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.59, 0.65, 1)
+theme_override_font_sizes/font_size = 9
+text = "CAREER SCORE"
+
+[node name="Value" type="Label" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/CareerScore"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.73, 0.3, 1)
+theme_override_font_sizes/font_size = 15
+text = "0"
+
+[node name="HeaderActions" type="HBoxContainer" parent="SafeMargin/HQPanel/Content/Header/HeaderRow"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RefreshButton" type="Button" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/HeaderActions"]
+custom_minimum_size = Vector2(92, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "REFRESH"
+
+[node name="SwitchButton" type="Button" parent="SafeMargin/HQPanel/Content/Header/HeaderRow/HeaderActions"]
+custom_minimum_size = Vector2(132, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "SWITCH OPERATIVE"
+
+[node name="MainSplit" type="HBoxContainer" parent="SafeMargin/HQPanel/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MissionPanel" type="PanelContainer" parent="SafeMargin/HQPanel/Content/MainSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.42
+theme_override_styles/panel = SubResource("InnerPanel")
+
+[node name="MissionMargin" type="MarginContainer" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="MissionColumn" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel/MissionMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ListHeader" type="HBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel/MissionMargin/MissionColumn"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel/MissionMargin/MissionColumn/ListHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.84, 0.89, 0.93, 1)
+theme_override_font_sizes/font_size = 13
+text = "MISSION INDEX"
+
+[node name="Columns" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel/MissionMargin/MissionColumn/ListHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.52, 0.58, 1)
+theme_override_font_sizes/font_size = 9
+text = "BEST   STATUS"
+
+[node name="MissionScroll" type="ScrollContainer" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel/MissionMargin/MissionColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="MissionRows" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/MissionPanel/MissionMargin/MissionColumn/MissionScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="DetailsPanel" type="PanelContainer" parent="SafeMargin/HQPanel/Content/MainSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.58
+theme_override_styles/panel = SubResource("InnerPanel")
+
+[node name="DetailsMargin" type="MarginContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 12
+
+[node name="DetailsColumn" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="DetailsScroll" type="ScrollContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="Details" type="VBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 7
+
+[node name="StageLine" type="HBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details"]
+layout_mode = 2
+
+[node name="StageCode" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/StageLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.38, 0.8, 0.98, 1)
+theme_override_font_sizes/font_size = 13
+text = "STAGE 01"
+
+[node name="Status" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/StageLine"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "AVAILABLE"
+
+[node name="MissionTitle" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.97, 0.99, 1)
+theme_override_font_sizes/font_size = 20
+text = "OPERATION DESERT OUTPOST"
+autowrap_mode = 2
+
+[node name="Preview" type="PanelContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("PreviewPanel")
+
+[node name="Graphic" type="Control" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/Preview"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HorizontalLine" type="ColorRect" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/Preview/Graphic"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 44.0
+offset_bottom = 45.0
+grow_horizontal = 2
+color = Color(0.18, 0.52, 0.63, 0.46)
+
+[node name="VerticalLine" type="ColorRect" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/Preview/Graphic"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.52, 0.63, 0.46)
+
+[node name="CenterMark" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/Preview/Graphic"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -16.0
+offset_right = 105.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.48, 0.78, 0.86, 0.86)
+theme_override_font_sizes/font_size = 11
+text = "TACTICAL MISSION FILE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Briefing" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.68, 0.73, 0.78, 1)
+theme_override_font_sizes/font_size = 12
+text = "Mission briefing"
+autowrap_mode = 2
+
+[node name="ScoreRow" type="HBoxContainer" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details"]
+layout_mode = 2
+
+[node name="BestLabel" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/ScoreRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.54, 0.61, 0.67, 1)
+theme_override_font_sizes/font_size = 12
+text = "MISSION BEST"
+
+[node name="BestValue" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details/ScoreRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.74, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "0 PTS"
+
+[node name="UnlockRequirement" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn/DetailsScroll/Details"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "CLEARED FOR DEPLOYMENT"
+autowrap_mode = 2
+
+[node name="ActionButton" type="Button" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("ActionNormal")
+theme_override_styles/hover = SubResource("ActionHover")
+theme_override_styles/pressed = SubResource("ActionHover")
+theme_override_styles/disabled = SubResource("ActionDisabled")
+text = "DEPLOY"
+
+[node name="Feedback" type="Label" parent="SafeMargin/HQPanel/Content/MainSplit/DetailsPanel/DetailsMargin/DetailsColumn"]
+custom_minimum_size = Vector2(0, 17)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.68, 0.79, 1)
+theme_override_font_sizes/font_size = 10
+text = "MISSION DOSSIER READY"
+horizontal_alignment = 1
+
+[node name="Footer" type="HBoxContainer" parent="SafeMargin/HQPanel/Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ControlsButton" type="Button" parent="SafeMargin/HQPanel/Content/Footer"]
+custom_minimum_size = Vector2(164, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "CONTROLS / HELP"
+
+[node name="FooterSpacer" type="Control" parent="SafeMargin/HQPanel/Content/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExitButton" type="Button" parent="SafeMargin/HQPanel/Content/Footer"]
+custom_minimum_size = Vector2(116, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(1, 0.72, 0.68, 1)
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "EXIT GAME"
+
+[node name="ControlsOverlay" parent="." instance=ExtResource("2_help")]

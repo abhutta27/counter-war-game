@@ -1,0 +1,27 @@
+{
+	"active_profile_id": "operative_1443475_2103792980",
+	"profiles": {
+		"operative_1443475_2103792980": {
+			"best_scores": {
+				"1": 1850,
+				"5": 2208,
+				"6": 1989
+			},
+			"career_score": 6047,
+			"completed_stages": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			],
+			"highest_score": 2208,
+			"highest_unlocked_stage": 6,
+			"last_played_stage": 6,
+			"player_name": "ALI",
+			"profile_id": "operative_1443475_2103792980"
+		}
+	},
+	"save_version": 2
+}

@@ -1,0 +1,42 @@
+--- INSPECTING SOLDIER.GLB ---
+Instance name: Soldier
+- Soldier (Node3D)
+  - Character (Node3D)
+    - Skeleton3D (Skeleton3D)
+      - mixamorig_Head (BoneAttachment3D)
+        - mixamorig_HeadTop_End (Node3D)
+      - mixamorig_LeftHandThumb2 (BoneAttachment3D)
+        - mixamorig_LeftHandThumb3 (Node3D)
+          - mixamorig_LeftHandThumb4 (Node3D)
+      - mixamorig_LeftHandIndex3 (BoneAttachment3D)
+        - mixamorig_LeftHandIndex4 (Node3D)
+      - mixamorig_LeftHandMiddle3 (BoneAttachment3D)
+        - mixamorig_LeftHandMiddle4 (Node3D)
+      - mixamorig_LeftHandRing3 (BoneAttachment3D)
+        - mixamorig_LeftHandRing4 (Node3D)
+      - mixamorig_LeftHandPinky2 (BoneAttachment3D)
+        - mixamorig_LeftHandPinky3 (Node3D)
+          - mixamorig_LeftHandPinky4 (Node3D)
+      - mixamorig_RightHandThumb3 (BoneAttachment3D)
+        - mixamorig_RightHandThumb4 (Node3D)
+      - mixamorig_RightHandIndex3 (BoneAttachment3D)
+        - mixamorig_RightHandIndex4 (Node3D)
+      - mixamorig_RightHandMiddle3 (BoneAttachment3D)
+        - mixamorig_RightHandMiddle4 (Node3D)
+      - mixamorig_RightHandRing3 (BoneAttachment3D)
+        - mixamorig_RightHandRing4 (Node3D)
+      - mixamorig_RightHandPinky2 (BoneAttachment3D)
+        - mixamorig_RightHandPinky3 (Node3D)
+          - mixamorig_RightHandPinky4 (Node3D)
+      - mixamorig_LeftToeBase (BoneAttachment3D)
+        - mixamorig_LeftToe_End (Node3D)
+      - mixamorig_RightToeBase (BoneAttachment3D)
+        - mixamorig_RightToe_End (Node3D)
+      - vanguard_Mesh (MeshInstance3D)
+      - vanguard_visor (MeshInstance3D)
+  - AnimationPlayer (AnimationPlayer)
+    ANIMATIONS: ["Idle", "Run", "TPose", "Walk"]
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json

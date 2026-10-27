@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8k1y3s08stg3"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage03Encounter.gd" id="1_level3d"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player3d"]
+[ext_resource type="PackedScene" uid="uid://bvxlap41m82ja" path="res://scenes/entities/Enemy3D.tscn" id="3_enemy3d"]
+[ext_resource type="PackedScene" uid="uid://d1eqx2u089wma" path="res://scenes/ui/StageSummaryDialog.tscn" id="4_summary"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/TacticalHUD.tscn" id="5_tactical_hud"]
+[ext_resource type="PackedScene" path="res://scenes/environments/Stage03Blacksite.tscn" id="6_blacksite"]
+
+[node name="Stage03" type="Node3D"]
+script = ExtResource("1_level3d")
+stage_id = 3
+stage_name = "OPERATION FOREST CAMP"
+total_stages = 6
+out_of_bounds_y = -8.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-41.0, -47.0)
+recovery_bounds_max = Vector2(41.0, 47.0)
+physical_boundaries_enabled = true
+
+[node name="Stage03Blacksite" parent="." instance=ExtResource("6_blacksite")]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy3D_1" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-18, 0, 18)
+
+[node name="Enemy3D_2" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(9, 0, 11)
+
+[node name="Enemy3D_3" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-24, 0, 2)
+
+[node name="Enemy3D_4" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(26, 0, -10)
+
+[node name="Enemy3D_5" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-25, 0, -15)
+
+[node name="Enemy3D_6" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(1, 0, -27)
+
+[node name="Enemy3D_7" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-3, 0, -39)
+
+[node name="Player3D" parent="." instance=ExtResource("2_player3d")]
+position = Vector3(0, 0, 36)
+
+[node name="HUD" parent="." instance=ExtResource("5_tactical_hud")]
+

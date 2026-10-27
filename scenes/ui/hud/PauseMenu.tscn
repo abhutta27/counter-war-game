@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6v2j8k0v4m7p"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/PauseMenu.gd" id="1_pause"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Panel"]
+bg_color = Color(0.06, 0.08, 0.12, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.6, 0.8, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_BtnNormal"]
+bg_color = Color(0.12, 0.16, 0.22, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25, 0.5, 0.7, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_BtnHover"]
+bg_color = Color(0.18, 0.28, 0.4, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.8, 1, 0.9)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pause")
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.04, 0.06, 0.75)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(480, 420)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -210.0
+offset_right = 240.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Panel")
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = -32.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "// TACTICAL SUSPEND //"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Panel/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.75, 0.95, 1)
+theme_override_font_sizes/font_size = 12
+text = "MISSION COMBAT LOOP PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="Actions" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ResumeBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_BtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_BtnHover")
+text = "RESUME OPERATION"
+
+[node name="RestartBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_BtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_BtnHover")
+text = "RESTART STAGE"
+
+[node name="SfxBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_BtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_BtnHover")
+text = "SFX AUDIO: ACTIVE"
+
+[node name="MenuBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_BtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_BtnHover")
+text = "RETURN TO HQ"

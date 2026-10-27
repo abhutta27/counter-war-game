@@ -1,0 +1,38 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+=======================================================
+   COUNTER WAR: STEP 08 VISUAL GAMEPLAY VERIFICATION   
+=======================================================
+
+[PHASE 1] Loading Stage 01 via StageManager...
+[GameStateMachine] REJECTED: Transition from BOOT to PLAYING is not permitted by rules
+[GameManager] Invalid transition blocked: BOOT -> PLAYING. Reason: Transition from BOOT to PLAYING is not permitted by rules
+[StageManager] Loading Stage 1 -> res://scenes/stages/Stage01.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+  -> Stage 01 successfully loaded! ID: 1, Name: OPERATION DESERT OUTPOST
+  -> Stage 01 enemy count: 5 (Expected: 5)
+
+[PHASE 2] Simulating victory in Stage 01...
+[StateMissionComplete] Victory achieved for Stage 1
+[GameManager] State transition completed: PLAYING -> MISSION_COMPLETE
+[LevelBase3D] Submitting stage score to Supabase...
+  -> All Stage 01 hostiles neutralized. Total eliminated: 5
+
+[PHASE 3] Requesting Next Stage (Transition to Stage 02)...
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MISSION_COMPLETE -> PLAYING
+[StageManager] Loading Stage 2 -> res://scenes/stages/Stage02.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Stage 02 successfully loaded! ID: 2, Name: OPERATION ABANDONED CITY
+  -> Stage 02 hostile count: 6 (Expected: 8)
+[StateGameOver] Game Over.
+[GameManager] State transition completed: PLAYING -> GAME_OVER

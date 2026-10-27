@@ -1,0 +1,18 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+--- BEGIN STEP 07 HUMAN ENEMY & COMBAT SYSTEM TEST SUITE ---
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+[TEST 01] Verifying game state transition to PLAYING...
+  -> TEST 01 PASSED (State is PLAYING)
+[TEST 02] Verifying Player3D setup...
+  -> TEST 02 PASSED (Player3D ready at 100 HP)
+[TEST 03] Verifying real humanoid 3D soldier enemy (no primitives)...
+  -> TEST 03 PASSED (Proper rigged humanoid 3D soldier verified)
+[TEST 04] Verifying enemy animation lifecycle (Idle, Walk, Run, HitReaction, Death)...

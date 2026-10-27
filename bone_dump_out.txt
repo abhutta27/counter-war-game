@@ -1,0 +1,70 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+=============================================================
+  SOLDIER.GLB BONE DUMP
+=============================================================
+  Total bones: 49
+
+  [00] parent=ROOT                            name=mixamorig_Hips                            rest_euler_XYZ_deg=( -90.0,    0.0, -180.0)
+  [01] parent=mixamorig_Hips                  name=mixamorig_Spine                           rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [02] parent=mixamorig_Spine                 name=mixamorig_Spine1                          rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [03] parent=mixamorig_Spine1                name=mixamorig_Spine2                          rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [04] parent=mixamorig_Spine2                name=mixamorig_Neck                            rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [05] parent=mixamorig_Neck                  name=mixamorig_Head                            rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [06] parent=mixamorig_Spine2                name=mixamorig_LeftShoulder                    rest_euler_XYZ_deg=(-180.0,   -0.0,  -90.0)
+  [07] parent=mixamorig_LeftShoulder          name=mixamorig_LeftArm                         rest_euler_XYZ_deg=(   0.0,   -0.0,   -0.0)
+  [08] parent=mixamorig_LeftArm               name=mixamorig_LeftForeArm                     rest_euler_XYZ_deg=(   0.0,   -0.0,   -0.0)
+  [09] parent=mixamorig_LeftForeArm           name=mixamorig_LeftHand                        rest_euler_XYZ_deg=(  -0.0,    0.0,    0.0)
+  [10] parent=mixamorig_LeftHand              name=mixamorig_LeftHandThumb1                  rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [11] parent=mixamorig_LeftHandThumb1        name=mixamorig_LeftHandThumb2                  rest_euler_XYZ_deg=(  -0.0,    0.0,    0.0)
+  [12] parent=mixamorig_LeftHand              name=mixamorig_LeftHandIndex1                  rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [13] parent=mixamorig_LeftHandIndex1        name=mixamorig_LeftHandIndex2                  rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [14] parent=mixamorig_LeftHandIndex2        name=mixamorig_LeftHandIndex3                  rest_euler_XYZ_deg=(  -0.0,   -0.0,   -0.0)
+  [15] parent=mixamorig_LeftHand              name=mixamorig_LeftHandMiddle1                 rest_euler_XYZ_deg=(  -0.0,    0.0,    0.0)
+  [16] parent=mixamorig_LeftHandMiddle1       name=mixamorig_LeftHandMiddle2                 rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [17] parent=mixamorig_LeftHandMiddle2       name=mixamorig_LeftHandMiddle3                 rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [18] parent=mixamorig_LeftHand              name=mixamorig_LeftHandRing1                   rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [19] parent=mixamorig_LeftHandRing1         name=mixamorig_LeftHandRing2                   rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [20] parent=mixamorig_LeftHandRing2         name=mixamorig_LeftHandRing3                   rest_euler_XYZ_deg=(   0.0,   -0.0,   -0.0)
+  [21] parent=mixamorig_LeftHand              name=mixamorig_LeftHandPinky1                  rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [22] parent=mixamorig_LeftHandPinky1        name=mixamorig_LeftHandPinky2                  rest_euler_XYZ_deg=(   0.0,   -0.0,   -0.0)
+  [23] parent=mixamorig_Spine2                name=mixamorig_RightShoulder                   rest_euler_XYZ_deg=(  -0.0,    0.0,   90.0)
+  [24] parent=mixamorig_RightShoulder         name=mixamorig_RightArm                        rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [25] parent=mixamorig_RightArm              name=mixamorig_RightForeArm                    rest_euler_XYZ_deg=(   0.0,   -0.0,   -0.0)
+  [26] parent=mixamorig_RightForeArm          name=mixamorig_RightHand                       rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [27] parent=mixamorig_RightHand             name=mixamorig_RightHandThumb1                 rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [28] parent=mixamorig_RightHandThumb1       name=mixamorig_RightHandThumb2                 rest_euler_XYZ_deg=(  -0.0,    0.0,    0.0)
+  [29] parent=mixamorig_RightHandThumb2       name=mixamorig_RightHandThumb3                 rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [30] parent=mixamorig_RightHand             name=mixamorig_RightHandIndex1                 rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [31] parent=mixamorig_RightHandIndex1       name=mixamorig_RightHandIndex2                 rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [32] parent=mixamorig_RightHandIndex2       name=mixamorig_RightHandIndex3                 rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [33] parent=mixamorig_RightHand             name=mixamorig_RightHandMiddle1                rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [34] parent=mixamorig_RightHandMiddle1      name=mixamorig_RightHandMiddle2                rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [35] parent=mixamorig_RightHandMiddle2      name=mixamorig_RightHandMiddle3                rest_euler_XYZ_deg=(   0.0,   -0.0,    0.0)
+  [36] parent=mixamorig_RightHand             name=mixamorig_RightHandRing1                  rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [37] parent=mixamorig_RightHandRing1        name=mixamorig_RightHandRing2                  rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [38] parent=mixamorig_RightHandRing2        name=mixamorig_RightHandRing3                  rest_euler_XYZ_deg=(  -0.0,    0.0,   -0.0)
+  [39] parent=mixamorig_RightHand             name=mixamorig_RightHandPinky1                 rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [40] parent=mixamorig_RightHandPinky1       name=mixamorig_RightHandPinky2                 rest_euler_XYZ_deg=(   0.0,    0.0,   -0.0)
+  [41] parent=mixamorig_Hips                  name=mixamorig_LeftUpLeg                       rest_euler_XYZ_deg=(-180.0,    0.0,   -0.0)
+  [42] parent=mixamorig_LeftUpLeg             name=mixamorig_LeftLeg                         rest_euler_XYZ_deg=(   0.0,   -0.0,    0.0)
+  [43] parent=mixamorig_LeftLeg               name=mixamorig_LeftFoot                        rest_euler_XYZ_deg=( -90.0,   -0.0,   -0.0)
+  [44] parent=mixamorig_LeftFoot              name=mixamorig_LeftToeBase                     rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+  [45] parent=mixamorig_Hips                  name=mixamorig_RightUpLeg                      rest_euler_XYZ_deg=(-180.0,    0.0,   -0.0)
+  [46] parent=mixamorig_RightUpLeg            name=mixamorig_RightLeg                        rest_euler_XYZ_deg=(   0.0,   -0.0,    0.0)
+  [47] parent=mixamorig_RightLeg              name=mixamorig_RightFoot                       rest_euler_XYZ_deg=( -90.0,   -0.0,   -0.0)
+  [48] parent=mixamorig_RightFoot             name=mixamorig_RightToeBase                    rest_euler_XYZ_deg=(   0.0,    0.0,    0.0)
+
+=============================================================
+  ANIMATION CLIPS
+=============================================================
+  AnimationPlayer found: /root/Soldier/AnimationPlayer
+  clip '/Idle'  length=1.97s  tracks=88
+  clip '/Run'  length=0.70s  tracks=88
+  clip '/TPose'  length=0.03s  tracks=88
+  clip '/Walk'  length=1.03s  tracks=88
+
+=============================================================

@@ -1,0 +1,7 @@
+Has SkeletonIK3D: true
+Has SkeletonModifier3D: true
+Has SkeletonModificationStack3D: false
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json

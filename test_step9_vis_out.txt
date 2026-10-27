@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: Intel - Intel(R) UHD Graphics 620
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+=================================================================
+  BEGIN STEP 09 MANUAL GAMEPLAY VISUAL VERIFICATION (A - G)      
+=================================================================
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+[TEST A] Capturing Enemy Spawn weapon presence from spawn post...
+  -> Saved res://verification_screenshots/step_09_test_a_enemy_spawn_weapon.png
+[TEST B] Capturing Enemy Idle armed pose...
+  -> Saved res://verification_screenshots/step_09_test_b_enemy_idle_armed.png
+[TEST C] Capturing Enemy Detection, Voice Alert & Turn to Player...
+  -> Saved res://verification_screenshots/step_09_test_c_enemy_detection_combat_ready.png
+[TEST D] Testing Single Bullet Hit (Enemy remains standing, NO crawl)...
+  -> Saved res://verification_screenshots/step_09_test_d_bullet_hit_stays_standing_no_crawl.png
+[TEST E] Testing Enemy Death (Falls naturally to ground, no sit, no crawl)...
+  -> Saved res://verification_screenshots/step_09_test_e_enemy_death_fall_to_ground.png
+[TEST F] Testing Dead Gun Inactivity...
+[StateGameOver] Game Over.
+[GameManager] State transition completed: PLAYING -> GAME_OVER

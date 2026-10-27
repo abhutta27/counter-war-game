@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Counter-War CW shield small-size optical master</title>
+  <desc>Simplified custom vector mark for 16, 32, and 48 pixel rendering.</desc>
+  <path d="M512 54 876 190v310c0 219-139 373-364 466C287 873 148 719 148 500V190Z"
+        fill="#15191d" stroke="#e7e2d7" stroke-width="62" stroke-linejoin="bevel"/>
+  <path d="M465 326H344l-91 91v184l91 91h121"
+        fill="none" stroke="#e7e2d7" stroke-width="94" stroke-linecap="square" stroke-linejoin="bevel"/>
+  <path d="m535 326 56 366 96-205 95 205 56-366"
+        fill="none" stroke="#e7e2d7" stroke-width="86" stroke-linecap="square" stroke-linejoin="bevel"/>
+  <path d="M474 236h78l-21 114h-78Z" fill="#c98a3d"/>
+</svg>

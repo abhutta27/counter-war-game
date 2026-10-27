@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6g7hy1k23r5p"]
+
+[ext_resource type="Script" path="res://scripts/entities/PlayerController.gd" id="1_player"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_player")
+
+[node name="Crosshair" type="Node2D" parent="."]
+
+[node name="LineH1" type="ColorRect" parent="Crosshair"]
+offset_left = -20.0
+offset_top = -1.0
+offset_right = -6.0
+offset_bottom = 1.0
+color = Color(0, 1, 0.4, 0.9)
+
+[node name="LineH2" type="ColorRect" parent="Crosshair"]
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 1.0
+color = Color(0, 1, 0.4, 0.9)
+
+[node name="LineV1" type="ColorRect" parent="Crosshair"]
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 1.0
+offset_bottom = -6.0
+color = Color(0, 1, 0.4, 0.9)
+
+[node name="LineV2" type="ColorRect" parent="Crosshair"]
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 1.0
+offset_bottom = 20.0
+color = Color(0, 1, 0.4, 0.9)
+
+[node name="CenterDot" type="ColorRect" parent="Crosshair"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="MuzzleFlash" type="ColorRect" parent="Crosshair"]
+visible = false
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+color = Color(1, 0.9, 0.3, 0.7)

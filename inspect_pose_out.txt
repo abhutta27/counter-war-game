@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+RightArm rest: [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-3.183563, 14.05753, -0.05926)]
+RightArm pose_rot: (-0.186176, 0.096418, 0.49147, 0.845281)
+RightArm pose_pos: (-3.183564, 14.05753, -0.059261)
+RightArm pose_scale: (1.0, 1.0, 1.0)
+RightArm bone_pose: [X: (0.498322, 0.794959, -0.346), Y: (-0.866762, 0.447591, -0.219969), Z: (-0.019999, 0.409515, 0.912084), O: (-3.183564, 14.05753, -0.059261)]
+After set_bone_pose_rotation:
+  pose_rot: (0.250695, 0.084306, 0.023515, 0.964102)
+  bone_pose: [X: (0.984679, 0.087612, -0.150768), Y: (-0.003072, 0.873198, 0.487355), Z: (0.174349, -0.479426, 0.860089), O: (-3.183564, 14.05753, -0.059261)]

@@ -1,0 +1,6 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+Coarse best for -Z barrel: rot=(165, -15, -180), err=1.28°
+Fine best for -Z barrel: rot=(164, -15, -190), err=0.418°

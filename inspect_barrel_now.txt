@@ -1,0 +1,18 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+Enemy global pos: (0.0, -0.175, -10.0)
+Enemy forward: (0.0, 0.0, 1.0)
+
+--- Testing Current: rot (-70, 90, 90) ---
+Barrel dir: (0.561677, 0.813358, -0.151554)
+Barrel pitch deg (Y component): 54.4253099696137
+Weapon global pos: (-0.300034, 0.622018, -10.19332)
+Flash global pos: (-0.048373, 0.986446, -10.26123)
+
+--- Testing Candidate: rot (164, -15, -190) ---
+Barrel dir: (-0.011805, -0.019403, 0.999742)
+Barrel pitch deg (Y component): -1.11180322772737
+Weapon global pos: (-0.298933, 0.38247, -10.1928)
+Flash global pos: (-0.304222, 0.373776, -9.744862)

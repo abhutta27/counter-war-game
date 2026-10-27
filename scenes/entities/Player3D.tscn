@@ -1,0 +1,246 @@
+[gd_scene load_steps=10 format=3 uid="uid://dm0y3k7q3a8va"]
+
+[ext_resource type="Script" path="res://scripts/entities/Player3D.gd" id="1_player3d"]
+[ext_resource type="PackedScene" uid="uid://c7usigopqobqr" path="res://assets/weapons/Assault Rifle.glb" id="2_assault_rifle"]
+[ext_resource type="Script" path="res://scripts/player/player_camera.gd" id="3_camera"]
+[ext_resource type="Script" path="res://scripts/weapons/weapon_manager.gd" id="4_weapon_manager"]
+[ext_resource type="Script" path="res://scripts/weapons/weapon_base.gd" id="5_weapon_base"]
+[ext_resource type="Script" path="res://scripts/weapons/weapon_data.gd" id="6_weapon_data"]
+[ext_resource type="PackedScene" path="res://assets/weapons/Pistol.glb" id="7_pistol"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="Mat_Flash"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.9, 0.3, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_Flash"]
+material = SubResource("Mat_Flash")
+size = Vector3(0.12, 0.12, 0.18)
+
+[sub_resource type="Resource" id="WeaponData_Rifle"]
+script = ExtResource("6_weapon_data")
+weapon_id = "assault_rifle"
+weapon_name = "Assault Rifle"
+weapon_type = 0
+magazine_size = 30
+max_reserve_ammo = 120
+starting_reserve_ammo = 90
+is_automatic = true
+base_damage = 35
+fire_rate = 0.11
+range = 100.0
+reload_time = 1.6
+default_position = Vector3(0.24, -0.22, -0.42)
+model_scale = Vector3(0.14, 0.14, 0.14)
+muzzle_offset = Vector3(0, 0.005, -0.32)
+
+[sub_resource type="Resource" id="WeaponData_Pistol"]
+script = ExtResource("6_weapon_data")
+weapon_id = "pistol"
+weapon_name = "Tactical Pistol"
+weapon_type = 1
+magazine_size = 15
+max_reserve_ammo = 72
+starting_reserve_ammo = 48
+is_automatic = false
+base_damage = 45
+fire_rate = 0.2
+range = 80.0
+reload_time = 1.3
+weapon_model = ExtResource("7_pistol")
+default_position = Vector3(0.24, -0.22, -0.42)
+model_scale = Vector3(0.14, 0.14, 0.14)
+muzzle_offset = Vector3(0, 0.005, -0.3)
+
+[node name="Player3D" type="CharacterBody3D"]
+script = ExtResource("1_player3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
+script = ExtResource("3_camera")
+current = true
+fov = 75.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="WeaponRig" type="Node3D" parent="Camera3D"]
+script = ExtResource("4_weapon_manager")
+
+[node name="GunModel" type="Node3D" parent="Camera3D/WeaponRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24, -0.22, -0.42)
+script = ExtResource("5_weapon_base")
+data = SubResource("WeaponData_Rifle")
+
+[node name="Assault Rifle" parent="Camera3D/WeaponRig/GunModel" instance=ExtResource("2_assault_rifle")]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0, 0, 0)
+
+[node name="MuzzleFlash" type="Node3D" parent="Camera3D/WeaponRig/GunModel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, -0.32)
+visible = false
+
+[node name="FlashMesh" type="MeshInstance3D" parent="Camera3D/WeaponRig/GunModel/MuzzleFlash"]
+mesh = SubResource("BoxMesh_Flash")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D/WeaponRig/GunModel/MuzzleFlash"]
+light_color = Color(1, 0.85, 0.3, 1)
+light_energy = 3.0
+omni_range = 6.0
+
+[node name="Pistol" type="Node3D" parent="Camera3D/WeaponRig"]
+script = ExtResource("5_weapon_base")
+data = SubResource("WeaponData_Pistol")
+
+[node name="PlayerHUD" type="CanvasLayer" parent="."]
+
+[node name="DamageOverlay" type="ColorRect" parent="PlayerHUD"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.9, 0.1, 0.1, 0.0)
+
+[node name="CrosshairContainer" type="Control" parent="PlayerHUD"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterDot" type="ColorRect" parent="PlayerHUD/CrosshairContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.4, 0.9)
+
+[node name="LineL" type="ColorRect" parent="PlayerHUD/CrosshairContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -1.0
+offset_right = -6.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.4, 0.75)
+
+[node name="LineR" type="ColorRect" parent="PlayerHUD/CrosshairContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 16.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.4, 0.75)
+
+[node name="LineT" type="ColorRect" parent="PlayerHUD/CrosshairContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -16.0
+offset_right = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.4, 0.75)
+
+[node name="LineB" type="ColorRect" parent="PlayerHUD/CrosshairContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.4, 0.75)
+
+[node name="Hitmarker" type="Control" parent="PlayerHUD/CrosshairContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tick1" type="ColorRect" parent="PlayerHUD/CrosshairContainer/Hitmarker"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = -4.0
+offset_bottom = -8.0
+rotation = 0.785398
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="Tick2" type="ColorRect" parent="PlayerHUD/CrosshairContainer/Hitmarker"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = -8.0
+rotation = -0.785398
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="Tick3" type="ColorRect" parent="PlayerHUD/CrosshairContainer/Hitmarker"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 8.0
+offset_right = -4.0
+offset_bottom = 10.0
+rotation = -0.785398
+color = Color(1, 0.2, 0.2, 1)
+
+[node name="Tick4" type="ColorRect" parent="PlayerHUD/CrosshairContainer/Hitmarker"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 14.0
+offset_bottom = 10.0
+rotation = 0.785398
+color = Color(1, 0.2, 0.2, 1)

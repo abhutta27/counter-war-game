@@ -1,0 +1,5 @@
+SCRIPT ERROR: Assertion failed: Soldier must have HitReaction animation
+   at: _run_combat_tests (res://tests/test_step_07_combat_system.gd:73)
+   GDScript backtrace (most recent call first):
+       [0] _run_combat_tests (res://tests/test_step_07_combat_system.gd:73)
+       [1] _process (res://tests/test_step_07_combat_system.gd:14)

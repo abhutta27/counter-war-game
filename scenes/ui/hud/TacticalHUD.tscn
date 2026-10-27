@@ -1,0 +1,476 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6q3j8x0v7w4a"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/TacticalHUD.gd" id="1_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/CombatFeedback.tscn" id="2_feedback"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/PauseMenu.tscn" id="3_pause"]
+[ext_resource type="PackedScene" uid="uid://d1eqx2u089wma" path="res://scenes/ui/StageSummaryDialog.tscn" id="4_summary"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Hostiles"]
+bg_color = Color(0.08, 0.1, 0.14, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.25, 0.2, 0.75)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 12.0
+expand_margin_top = 3.0
+expand_margin_right = 12.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Banner"]
+bg_color = Color(0.06, 0.08, 0.12, 0.9)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(0.2, 0.7, 1, 0.85)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 20.0
+expand_margin_top = 8.0
+expand_margin_right = 20.0
+expand_margin_bottom = 8.0
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Alert"]
+bg_color = Color(0.12, 0.06, 0.06, 0.9)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(1, 0.25, 0.15, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 16.0
+expand_margin_top = 6.0
+expand_margin_right = 16.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_TacticalPanel"]
+bg_color = Color(0.06, 0.08, 0.12, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.5, 0.75, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 12.0
+expand_margin_top = 8.0
+expand_margin_right = 12.0
+expand_margin_bottom = 8.0
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HealthBG"]
+bg_color = Color(0.1, 0.14, 0.18, 0.9)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HealthFill"]
+bg_color = Color(0.15, 0.85, 0.45, 0.95)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Toast"]
+bg_color = Color(0.08, 0.12, 0.18, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.7, 1, 0.75)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 8.0
+expand_margin_top = 4.0
+expand_margin_right = 8.0
+expand_margin_bottom = 4.0
+
+[node name="TacticalHUD" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+
+[node name="LeftPanel" type="PanelContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_TacticalPanel")
+
+[node name="LeftBox" type="VBoxContainer" parent="TopBar/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="MissionLabel" type="Label" parent="TopBar/LeftPanel/LeftBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "MISSION 01"
+
+[node name="OperationLabel" type="Label" parent="TopBar/LeftPanel/LeftBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "OPERATION DESERT OUTPOST"
+
+[node name="StanceLabel" type="Label" parent="TopBar/LeftPanel/LeftBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.72, 0.85, 1)
+theme_override_font_sizes/font_size = 10
+text = "STANCE: [IDLE]"
+
+[node name="CenterBox" type="VBoxContainer" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="HostilesPanel" type="PanelContainer" parent="TopBar/CenterBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_Hostiles")
+
+[node name="HostilesLabel" type="Label" parent="TopBar/CenterBox/HostilesPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "HOSTILES: 00 / 05"
+horizontal_alignment = 1
+
+[node name="CompactObjectiveLabel" type="Label" parent="TopBar/CenterBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.85, 0.95, 0.85)
+theme_override_font_sizes/font_size = 11
+text = "DIRECTIVE: ELIMINATE ALL HOSTILE FORCES"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="PanelContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_TacticalPanel")
+
+[node name="RightBox" type="VBoxContainer" parent="TopBar/RightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="TimerContainer" type="HBoxContainer" parent="TopBar/RightPanel/RightBox"]
+layout_mode = 2
+alignment = 2
+
+[node name="TimerTitle" type="Label" parent="TopBar/RightPanel/RightBox/TimerContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.7, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "TIME "
+
+[node name="TimerVal" type="Label" parent="TopBar/RightPanel/RightBox/TimerContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.35, 1)
+theme_override_font_sizes/font_size = 15
+text = "00:00.0"
+horizontal_alignment = 2
+
+[node name="AccuracyContainer" type="HBoxContainer" parent="TopBar/RightPanel/RightBox"]
+layout_mode = 2
+alignment = 2
+
+[node name="AccuracyTitle" type="Label" parent="TopBar/RightPanel/RightBox/AccuracyContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.7, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "ACCURACY "
+
+[node name="AccuracyVal" type="Label" parent="TopBar/RightPanel/RightBox/AccuracyContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 1, 0.65, 1)
+theme_override_font_sizes/font_size = 14
+text = "0.0%"
+horizontal_alignment = 2
+
+[node name="TimerLabel" type="Label" parent="TopBar"]
+visible = false
+layout_mode = 2
+text = "TIME: 00:00.0"
+
+[node name="TargetsLabel" type="Label" parent="TopBar"]
+visible = false
+layout_mode = 2
+text = "HOSTILES: 0 / 5"
+
+[node name="AccuracyLabel" type="Label" parent="TopBar"]
+visible = false
+layout_mode = 2
+text = "ACCURACY: 0.0%"
+
+[node name="ObjectiveBanner" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 100.0
+offset_right = 220.0
+offset_bottom = 155.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="BannerPanel" type="PanelContainer" parent="ObjectiveBanner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Banner")
+
+[node name="VBox" type="VBoxContainer" parent="ObjectiveBanner/BannerPanel"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="ObjectiveHeader" type="Label" parent="ObjectiveBanner/BannerPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "// MISSION DIRECTIVE //"
+horizontal_alignment = 1
+
+[node name="ObjectiveDesc" type="Label" parent="ObjectiveBanner/BannerPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "ELIMINATE ALL HOSTILE FORCES IN THE SECTOR"
+horizontal_alignment = 1
+
+[node name="ContactAlertBanner" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 105.0
+offset_right = 170.0
+offset_bottom = 145.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="AlertPanel" type="PanelContainer" parent="ContactAlertBanner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Alert")
+
+[node name="AlertLabel" type="Label" parent="ContactAlertBanner/AlertPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.25, 1)
+theme_override_font_sizes/font_size = 14
+text = "[ CONTACT // HOSTILE DETECTED ]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomLeft" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -88.0
+offset_right = 264.0
+offset_bottom = -20.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="HealthPanel" type="PanelContainer" parent="BottomLeft"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_TacticalPanel")
+
+[node name="VBox" type="VBoxContainer" parent="BottomLeft/HealthPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Header" type="HBoxContainer" parent="BottomLeft/HealthPanel/VBox"]
+layout_mode = 2
+
+[node name="HealthTitle" type="Label" parent="BottomLeft/HealthPanel/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.65, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 11
+text = "OPERATIVE VITALS"
+
+[node name="HealthValLabel" type="Label" parent="BottomLeft/HealthPanel/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 13
+text = "100 / 100 HP"
+horizontal_alignment = 2
+
+[node name="HealthProgressBar" type="ProgressBar" parent="BottomLeft/HealthPanel/VBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_HealthBG")
+theme_override_styles/fill = SubResource("StyleBoxFlat_HealthFill")
+value = 100.0
+show_percentage = false
+
+[node name="HealthStatusLabel" type="Label" parent="BottomLeft/HealthPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 10
+text = "SYSTEM OPTIMAL"
+
+[node name="BottomRight" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -120.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="WeaponSwitchToast" type="PanelContainer" parent="BottomRight"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -32.0
+offset_bottom = -4.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Toast")
+
+[node name="ToastLabel" type="Label" parent="BottomRight/WeaponSwitchToast"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "WEAPON 2 — TACTICAL PISTOL READY"
+horizontal_alignment = 1
+
+[node name="WeaponPanel" type="PanelContainer" parent="BottomRight"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_TacticalPanel")
+
+[node name="VBox" type="VBoxContainer" parent="BottomRight/WeaponPanel"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Header" type="HBoxContainer" parent="BottomRight/WeaponPanel/VBox"]
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="BottomRight/WeaponPanel/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "PRIMARY [1]"
+
+[node name="WeaponNameLabel" type="Label" parent="BottomRight/WeaponPanel/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "ASSAULT RIFLE"
+horizontal_alignment = 2
+
+[node name="AmmoRow" type="HBoxContainer" parent="BottomRight/WeaponPanel/VBox"]
+layout_mode = 2
+alignment = 2
+
+[node name="MagLabel" type="Label" parent="BottomRight/WeaponPanel/VBox/AmmoRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "30"
+
+[node name="ReserveLabel" type="Label" parent="BottomRight/WeaponPanel/VBox/AmmoRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 13
+text = "/ 90"
+
+[node name="ReloadPromptLabel" type="Label" parent="BottomRight/WeaponPanel/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.7, 0.2, 1)
+theme_override_font_sizes/font_size = 10
+text = "[ R — RELOAD ]"
+horizontal_alignment = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HealthBar" type="ProgressBar" parent="BottomBar"]
+layout_mode = 2
+
+[node name="AmmoLabel" type="Label" parent="BottomBar"]
+layout_mode = 2
+
+[node name="CombatFeedback" parent="." instance=ExtResource("2_feedback")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
+visible = false
+
+[node name="StageSummaryDialog" parent="." instance=ExtResource("4_summary")]
+visible = false

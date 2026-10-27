@@ -1,0 +1,25 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+=== ENEMY WEAPON RUNTIME INSPECTION ===
+Enemy global_position: (0.0, 0.0, -15.32)
+Enemy visible: false
+Weapon null? false
+Weapon name: EnemyRifle
+Weapon parent: RightHandWeaponAttachment (BoneAttachment3D)
+Weapon visible: true
+Weapon scale: (14.0, 14.0, 14.0)
+Weapon local pos: (0.04, 0.08, -0.04)
+Weapon local rot: (164.0, -15.0, -190.0)
+Weapon global pos: (-0.088758, 1.196236, -14.83024)
+Weapon global rot: (38.27364, -41.20008, -70.07502)
+  Child: AssaultRIfle_03_001_Cube_001 (MeshInstance3D), visible=true
+    Mesh: Assault Rifle_AssaultRIfle_03_001_Cube_001-Mesh (res://assets/weapons/Assault Rifle.glb::ArrayMesh_5cuoi):<ArrayMesh#-9223371996337797572>, aabb: [P: (-0.162471, -0.8743, -2.084799), S: (0.333334, 1.372481, 4.022849)]
+  Child: EnemyMuzzleFlash (Node3D), visible=false

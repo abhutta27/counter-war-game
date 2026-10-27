@@ -1,0 +1,77 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=========================================================
+   COUNTER WAR - STEP 09 GAMEPLAY WALKTHROUGH (1 TO 6)   
+=========================================================
+
+---------------------------------------------------------
+[PHASE 1] Launching Stage 1: OPERATION DESERT OUTPOST
+---------------------------------------------------------
+[GameStateMachine] REJECTED: Transition from BOOT to PLAYING is not permitted by rules
+[GameManager] Invalid transition blocked: BOOT -> PLAYING. Reason: Transition from BOOT to PLAYING is not permitted by rules
+[StageManager] Loading Stage 1 -> res://scenes/stages/Stage01.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+  -> Verified Stage 1 Scene loaded cleanly: OPERATION DESERT OUTPOST with 5 distinct enemies
+
+---------------------------------------------------------
+[PHASE 2] Launching Stage 2: OPERATION ABANDONED CITY
+---------------------------------------------------------
+[StageManager] Loading Stage 2 -> res://scenes/stages/Stage02.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Verified Stage 2 Scene loaded cleanly: OPERATION ABANDONED CITY with 6 distinct enemies
+
+---------------------------------------------------------
+[PHASE 3] Launching Stage 3: OPERATION FOREST CAMP
+---------------------------------------------------------
+[StageManager] Loading Stage 3 -> res://scenes/stages/Stage03.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Verified Stage 3 Scene loaded cleanly: OPERATION FOREST CAMP with 7 distinct enemies
+  -> Simulating tactical combat engagement in Stage 03 Forest Camp...
+  -> Combat test in Stage 03 passed: Hostile eliminated, kill registered cleanly.
+
+---------------------------------------------------------
+[PHASE 4] Launching Stage 4: OPERATION INDUSTRIAL ZONE
+---------------------------------------------------------
+[StageManager] Loading Stage 4 -> res://scenes/stages/Stage04.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Verified Stage 4 Scene loaded cleanly: OPERATION INDUSTRIAL ZONE with 8 distinct enemies
+
+---------------------------------------------------------
+[PHASE 5] Launching Stage 5: OPERATION MOUNTAIN BASE
+---------------------------------------------------------
+[StageManager] Loading Stage 5 -> res://scenes/stages/Stage05.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Verified Stage 5 Scene loaded cleanly: OPERATION MOUNTAIN BASE with 9 distinct enemies
+  -> Simulating Player Defeat in Stage 05 Mountain Base...
+[StateGameOver] Game Over.
+[GameManager] State transition completed: PLAYING -> GAME_OVER
+  -> Game Over confirmed on Stage 05. Testing Restart Isolation...
+[StageManager] Restarting Current Stage: 5
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: GAME_OVER -> PLAYING
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Restart test passed: Stage 05 cleanly reloaded with all 9 fresh enemies.
+
+---------------------------------------------------------
+[PHASE 6] Launching Stage 6: OPERATION NIGHT MILITARY BASE
+---------------------------------------------------------
+[StageManager] Loading Stage 6 -> res://scenes/stages/Stage06.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+  -> Verified Stage 6 Scene loaded cleanly: OPERATION NIGHT MILITARY BASE with 10 distinct enemies
+
+=========================================================
+ ALL 6 STAGES GAMEPLAY & COMBAT WALKTHROUGH PASSED (6/6) 
+=========================================================

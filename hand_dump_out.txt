@@ -1,0 +1,31 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+=============================================================
+  RIGHT HAND BONE — WORLD SPACE ANALYSIS (during Idle)
+=============================================================
+  Bone global pose origin (in skeleton space): (29.99583, -19.3271, 97.62724)
+  Bone world origin: (0.299958, 0.976272, 0.193271)
+  Bone world euler XYZ deg: (-160.85, 0.11, -15.10)
+  Bone world euler YXZ deg: (-0.18, 168.60, 168.62)
+
+  Hand bone world X axis: (0.009, 0.002, 0.003)  [right of hand]
+  Hand bone world Y axis: (0.003, -0.009, -0.003)  [up of hand]
+  Hand bone world Z axis: (0.002, 0.003, -0.009)  [forward of hand]
+
+  After weapon rot(0,90,90) applied:
+  Weapon world X axis: (0.003, -0.009, -0.003)
+  Weapon world Y axis: (0.002, 0.003, -0.009)
+  Weapon world Z axis: (0.009, 0.002, 0.003)  <-- BARREL direction (-Z = forward)
+
+  BARREL world direction vector: (-0.009, -0.002, -0.003)
+  BARREL pitch from horizontal: -0.11 degrees (0=horizontal, +90=straight up, -90=straight down)
+
+  -> To level the barrel, we need a pivot rotation that pitches the barrel UP by 0.11 degrees
+
+  Pivot local X axis (bone space): (0.000, 1.000, 0.000)
+
+  KEY: Rotate the weapon pivot by the above pitch amount around pivot local X
+=============================================================

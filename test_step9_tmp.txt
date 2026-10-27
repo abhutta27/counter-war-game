@@ -1,0 +1,77 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=================================================================
+  COUNTER WAR - STEP 09 COMPREHENSIVE AUTOMATED TEST SUITE       
+=================================================================
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+
+--- GROUP 1: WEAPON INITIALIZATION & PRE-COMBAT STATE (1 - 9) ---
+[PASS] 01: Enemy spawned into level
+[PASS] 02: Weapon exists immediately after spawn
+[PASS] 03: Weapon is visible
+[PASS] 04: Enemy holds weapon in right hand at idle/post
+[PASS] 05: Weapon exists and is visible before player detection
+[PASS] 06: Weapon remains equipped and visible after detection
+[PASS] 07: Weapon did not pop-in on hit; was already equipped
+[PASS] 08: Weapon does not disappear after bullet hit
+[PASS] 09: Restarted/fresh enemy has weapon equipped from the start
+
+--- GROUP 2: DETECTION & VOICE ALERT (10 - 14) ---
+[PASS] 10: Enemy detects player successfully
+[PASS] 11: Detection voice alert triggers via SoundManager
+[PASS] 12: Voice spam is blocked by global and per-enemy guards
+[PASS] 13: Dead enemy never emits voice alert
+[PASS] 14: Voice alert blocked after Game Over
+
+--- GROUP 3: COMBAT & ANTI-CRAWL BEHAVIOR (15 - 19) ---
+[PASS] 15: Enemy targets player
+[PASS] 16: Enemy fires weapon and inflicts damage
+[PASS] 17: Enemy stays alive after non-lethal bullet hit
+[PASS] 18: Enemy NEVER crawls or sits; stays standing upright (-90 deg X)
+[PASS] 19: Enemy maintains standing combat posture
+
+--- GROUP 4: DEATH LIFECYCLE (20 - 25) ---
+[PASS] 20: Firing disabled immediately upon health zero
+[PASS] 21: Movement completely halted on death
+[PASS] 22: Attack timer and actions halted
+[PASS] 23: Proper Death animation triggered
+[PASS] 24: Enemy collapsed naturally onto ground
+[PASS] 25: Enemy cleanly in DEAD state
+
+--- GROUP 5: GUN LIFECYCLE (26 - 28) ---
+[PASS] 26: Dead enemy gun strictly cannot fire
+[PASS] 27: Ground/corpse gun is completely inert
+[PASS] 28: No orphan fire timers or callbacks remaining
+
+--- GROUP 6: SYSTEM REGRESSIONS (29 - 36) ---
+[PASS] 29: Player movement system intact
+[PASS] 30: Camera system intact
+[PASS] 31: Player shooting intact
+[PASS] 32: Weapon switching intact
+[StateGameOver] Game Over.
+[GameManager] State transition completed: PLAYING -> GAME_OVER
+[PASS] 33: Game Over system intact
+[StageManager] Restarting Current Stage: 1
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: GAME_OVER -> PLAYING
+[StageManager] Loading Stage 1 -> res://scenes/stages/Stage01.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[PASS] 34: Restart system intact
+[PASS] 35: Stage 01 intact
+[StageManager] Loading Stage 2 -> res://scenes/stages/Stage02.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[PASS] 36: Stage 02 intact
+
+=================================================================
+  ALL 36 STEP 09 AUTOMATED TEST CRITERIA PASSED! (36/36)         
+=================================================================
+

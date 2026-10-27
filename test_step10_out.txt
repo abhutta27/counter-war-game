@@ -1,0 +1,74 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=================================================================
+  COUNTER WAR - STEP 10 COMPREHENSIVE AUTOMATED TEST SUITE       
+  INTERNATIONAL-STANDARD FPS HUD & UI POLISH                     
+=================================================================
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+
+--- GROUP 1: TOP HUD & OBJECTIVE SYSTEM (1 - 7) ---
+[PASS] 01: Top Left Mission & Operation title correctly displayed: OPERATION DESERT OUTPOST
+[PASS] 02: Top Center Hostiles counter initialized: HOSTILES: 00 / 05
+[PASS] 03: Hostiles count dynamically updates upon elimination: HOSTILES: 02 / 05
+[PASS] 04: Mission timer correctly updates and formats: 01:03.5
+[PASS] 05: Combat accuracy correctly updates: 75.5%
+[PASS] 06: Objective display functional (Directive: DIRECTIVE: ELIMINATE ALL HOSTILE FORCES)
+[PASS] 07: Player stance badge updates dynamically: STANCE: [SPRINTING]
+
+--- GROUP 2: HEALTH HUD & DAMAGE FEEDBACK (8 - 13) ---
+[PASS] 08: Health HUD displays 100 HP optimal status
+[PASS] 09: Health HUD enters CAUTION state on low HP: CAUTION // VITALS LOW
+[PASS] 10: Health HUD enters CRITICAL pulse state: CRITICAL // HEAVY TRAUMA
+[PASS] 11: Health HUD enters KIA state on operative death: KIA // CRITICAL FAILURE
+[PASS] 12: Directional damage indicator and edge vignette trigger on incoming damage
+[PASS] 13: Hitmarker feedback pulses on hit with headshot distinction
+
+--- GROUP 3: WEAPON & AMMO HUD (14 - 18) ---
+[PASS] 14: Primary weapon & ammo correctly displayed (30 / 90)
+[PASS] 15: Tactical reload prompt triggers when magazine is low
+[PASS] 16: Reload prompt indicates urgent reload needed when empty
+[PASS] 17: Secondary weapon & pistol ammo correctly displayed (15 / 45)
+[PASS] 18: Weapon switch toast feedback triggers: WEAPON 2 — TACTICAL PISTOL READY
+
+--- GROUP 4: COMBAT RETICLE, RECOIL & ALERTS (19 - 22) ---
+[PASS] 19: Tactical reticle exists and remains centered
+[PASS] 20: Crosshair reticle dynamically expands upon firing recoil
+[PASS] 21: Kill confirmation toast triggers on neutralization: [ + ] HOSTILE SOLDIER ELIMINATED (+500 PTS)
+[PASS] 22: Tactical CONTACT alert banner triggers on enemy detection
+
+--- GROUP 5: PAUSE MENU SYSTEM (23 - 26) ---
+[PASS] 23: Pause menu activates, halts combat loop, and releases mouse
+[PASS] 24: Pause menu buttons properly configured with mouse stop filter
+[PASS] 25: Resume action unpauses game world and restores combat state
+[PASS] 26: Pause menu audio settings toggle functional
+
+--- GROUP 6: MISSION DEBRIEFING & RESULTS (27 - 30) ---
+[PASS] 27: Mission Complete screen displays ACCOMPLISHED banner with Next Mission button
+[PASS] 28: Tactical stats correctly formatted and rendered on debrief modal
+[PASS] 29: Mission Failed / Game Over screen displays KIA state and hides Next Mission
+[PASS] 30: Next Mission button dynamically hidden when final campaign stage is cleared
+
+--- GROUP 7: GAMEPLAY & REGRESSION INTEGRITY (31 - 36) ---
+[PASS] 31: Player WASD movement physics intact
+[PASS] 32: Camera recoil recovery and aim pitch/yaw intact
+[PASS] 33: Player shooting loop intact (ammo 30 -> 29)
+[PASS] 34: Weapon switching between Primary & Secondary intact
+[PASS] 35: Enemy combat AI and standing posture intact
+[StageManager] Loading Stage 2 -> res://scenes/stages/Stage02.tscn
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[PASS] 36: Campaign stages load cleanly with TacticalHUD
+
+=================================================================
+  ALL 36 STEP 10 AUTOMATED TEST CRITERIA PASSED! (36/36)         
+=================================================================
+

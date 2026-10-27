@@ -1,0 +1,9 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+Mesh: AssaultRIfle_03_001_Cube_001
+  AABB position: (-0.162471, -0.8743, -2.084799)
+  AABB size: (0.333334, 1.372481, 4.022849)
+  AABB min: (-0.162471, -0.8743, -2.084799)
+  AABB max: (0.170863, 0.498181, 1.93805)

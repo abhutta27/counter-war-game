@@ -1,0 +1,135 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmsf72k012e8w"]
+
+[ext_resource type="Script" path="res://scripts/ui/LeaderboardUI.gd" id="1_leaderboard"]
+
+[node name="LeaderboardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_leaderboard")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.08, 0.11, 1)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(750, 550)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -275.0
+offset_right = 375.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "GLOBAL OPERATIVE LEADERBOARDS"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Loading operative records..."
+horizontal_alignment = 1
+
+[node name="TableHeader" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HeaderRank" type="Label" parent="Panel/VBox/TableHeader"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "RANK"
+horizontal_alignment = 1
+
+[node name="HeaderName" type="Label" parent="Panel/VBox/TableHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "CODENAME"
+
+[node name="HeaderStage" type="Label" parent="Panel/VBox/TableHeader"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "PROGRESS"
+horizontal_alignment = 1
+
+[node name="HeaderBest" type="Label" parent="Panel/VBox/TableHeader"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "BEST STAGE"
+horizontal_alignment = 2
+
+[node name="HeaderTotal" type="Label" parent="Panel/VBox/TableHeader"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "TOTAL CAREER"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ListContainer" type="VBoxContainer" parent="Panel/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="RefreshBtn" type="Button" parent="Panel/VBox/Footer"]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+text = "REFRESH DATA"
+
+[node name="BackBtn" type="Button" parent="Panel/VBox/Footer"]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+text = "RETURN TO HQ"

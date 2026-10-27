@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
+  <title>Counter-War full logo</title>
+  <desc>Custom vector mark and custom geometric lettering. No font dependency.</desc>
+  <g transform="translate(55 55) scale(.48)">
+    <path d="M512 54 876 190v310c0 219-139 373-364 466C287 873 148 719 148 500V190Z"
+          fill="#15191d" stroke="#e7e2d7" stroke-width="46" stroke-linejoin="bevel"/>
+    <path d="M512 120 814 233v260c0 175-105 301-302 390-197-89-302-215-302-390V233Z"
+          fill="none" stroke="#59616a" stroke-width="16" stroke-linejoin="bevel"/>
+    <path d="M461 326H344l-91 91v184l91 91h117"
+          fill="none" stroke="#e7e2d7" stroke-width="78" stroke-linecap="square" stroke-linejoin="bevel"/>
+    <path d="m536 326 55 366 96-205 95 205 55-366"
+          fill="none" stroke="#e7e2d7" stroke-width="72" stroke-linecap="square" stroke-linejoin="bevel"/>
+    <path d="M481 246h62l-18 96h-62Z" fill="#c98a3d"/>
+  </g>
+  <g transform="translate(560 229) scale(.97)" fill="none" stroke="#e7e2d7" stroke-width="20"
+     stroke-linecap="square" stroke-linejoin="bevel">
+    <path d="M66 8H27L8 27v64l19 19h39"/>
+    <path d="M110 8h35l18 19v64l-18 19h-35L92 91V27Z"/>
+    <path d="M189 8v83l18 19h35l18-19V8"/>
+    <path d="M289 110V8l66 102V8"/>
+    <path d="M381 8h68m-34 0v102"/>
+    <path d="M545 8h-69v102h69M476 58h55"/>
+    <path d="M574 110V8h48l19 19v20l-19 18h-48m43 0 29 45"/>
+    <path d="M673 59h60" stroke="#c98a3d" stroke-width="15"/>
+    <path d="m758 8 14 102 30-54 30 54L846 8"/>
+    <path d="m872 110 20-102h35l20 102m-66-42h57"/>
+    <path d="M976 110V8h48l19 19v20l-19 18h-48m43 0 29 45"/>
+  </g>
+  <path d="M560 390h793" stroke="#c98a3d" stroke-width="7"/>
+</svg>

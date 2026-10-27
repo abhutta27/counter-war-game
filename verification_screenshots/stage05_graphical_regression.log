@@ -1,0 +1,66 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward Mobile - Using Device #0: Intel - Intel(R) UHD Graphics 620
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+[Stage05Relay] Enemy3D_1 alert: local visual contact
+[Stage05Relay] Enemy3D_1 (valley checkpoint guard) combat: confirmed local contact
+[Stage05Relay] Enemy3D_2 alert: same-section combat
+[Stage05Relay] Enemy3D_3 alert: same-terrace gunshot
+[Stage05Relay] Enemy3D_3 (first terrace defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_4 alert: same-section combat
+[Stage05Relay] Enemy3D_4 (first terrace defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_5 alert: same-section combat
+[Stage05Relay] Enemy3D_6 alert: same-terrace gunshot
+[Stage05Relay] Enemy3D_7 alert: same-terrace gunshot
+[Stage05Relay] Enemy3D_7 (upper ridge observer) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_8 alert: same-section combat
+[Stage05Relay] Enemy3D_9 alert: same-section combat
+[Stage05Relay] Enemy3D_8 (upper road defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_10 alert: same-section combat
+[Stage05Relay] Enemy3D_11 alert: same-section combat
+[Stage05Relay] Enemy3D_9 (upper road defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_1 alert: local visual contact
+[Stage05Relay] Enemy3D_1 (valley checkpoint guard) combat: confirmed local contact
+[Stage05Relay] Enemy3D_2 alert: same-section combat
+[Stage05Relay] Enemy3D_3 alert: local visual contact
+[Stage05Relay] Enemy3D_4 alert: local visual contact
+[Stage05Relay] Enemy3D_3 (first terrace defender) combat: confirmed local contact
+[Stage05Relay] Enemy3D_6 alert: observer sighting
+[Stage05Relay] Enemy3D_6 (lower ridge observer) combat: confirmed observation
+[Stage05Relay] Enemy3D_5 alert: same-section combat
+[Stage05Relay] Enemy3D_4 (first terrace defender) combat: relay from Enemy3D_6
+[Stage05Relay] Enemy3D_5 (first terrace defender) combat: relay from Enemy3D_6
+[Stage05Relay] Enemy3D_6 relayed only to ["Enemy3D_3", "Enemy3D_4", "Enemy3D_5"]
+[Stage05Relay] Enemy3D_1 alert: local visual contact
+[Stage05Relay] Enemy3D_1 (valley checkpoint guard) combat: confirmed local contact
+[Stage05Relay] Enemy3D_2 alert: same-section combat
+[Stage05Relay] Enemy3D_3 alert: same-terrace gunshot
+[Stage05Relay] Enemy3D_3 (first terrace defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_4 alert: same-section combat
+[Stage05Relay] Enemy3D_4 (first terrace defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_5 alert: same-section combat
+[Stage05Relay] Enemy3D_5 (first terrace defender) combat: close same-terrace gunshot
+[Stage05Relay] Enemy3D_6 alert: same-section combat
+[Stage05Relay] Enemy3D_2 (valley checkpoint guard) combat: terrain validation
+[Stage05Relay] Enemy3D_6 (lower ridge observer) combat: terrain validation
+[Stage05Relay] Enemy3D_8 (upper road defender) combat: terrain validation
+[Stage05Relay] Enemy3D_9 (upper road defender) combat: terrain validation
+[Stage05Relay] Enemy3D_10 (service tunnel defender) combat: terrain validation
+[Stage05Relay] Enemy3D_11 (service approach defender) combat: terrain validation
+[Stage05Relay] Enemy3D_12 (summit relay defender) combat: terrain validation
+[Stage05Relay] Enemy3D_13 (command bunker defender) combat: terrain validation
+[Stage05Relay] Enemy3D_14 (command bunker defender) combat: terrain validation
+[StateMissionComplete] Victory achieved for Stage 1
+[GameManager] State transition completed: PLAYING -> MISSION_COMPLETE
+[LevelBase3D] Submitting stage score to Supabase...
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MISSION_COMPLETE -> PLAYING
+[StageManager] Loading Stage 6 -> res://scenes/stages/Stage06.tscn
+[Stage05RelayRegression] PASS: opening, ascent, relay, counterplay, local gunfire, tunnel, 14/14, Stage06

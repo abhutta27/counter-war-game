@@ -1,0 +1,47 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+=======================================================
+  BEGIN ENEMY GUN & DEATH LIFECYCLE VERIFICATION SUITE
+=======================================================
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+
+[TEST 1] Verifying Enemy Weapon is attached to Soldier Hand...
+  -> TEST 1 PASSED: Enemy rifle is attached to mixamorig_RightHand bone attachment!
+
+[TEST 2] Testing Lethal Shot to Enemy...
+  -> TEST 2 PASSED: Lethal shot completely halted enemy AI, physics, attack timer, and disabled weapon!
+
+[TEST 3] Testing Dead Enemy Weapon CANNOT Fire...
+  -> TEST 3 PASSED: Calling counter attack on dead enemy is strictly rejected! Zero player damage.
+
+[TEST 4] Testing Dead Enemy Does Not Crawl or Move...
+  -> TEST 4 PASSED: Dead enemy remains 100% frozen on the spot; zero crawling or movement.
+
+[TEST 5] Testing Kill Counter Reliability across all 5 enemies...
+  Initial hostiles eliminated: 1 / 5
+  -> Defeated Hostile #2 -> Level targets_eliminated = 2
+  -> Defeated Hostile #3 -> Level targets_eliminated = 3
+  -> Defeated Hostile #4 -> Level targets_eliminated = 4
+[StateMissionComplete] Victory achieved for Stage 1
+[GameManager] State transition completed: PLAYING -> MISSION_COMPLETE
+[LevelBase3D] Submitting stage score to Supabase...
+  -> Defeated Hostile #5 -> Level targets_eliminated = 5
+  -> TEST 5 PASSED: Exactly 5 kills registered (1-by-1) with level completion triggered.
+
+[TEST 6] Testing Game Over Combat Shutdown...
+  -> TEST 6 PASSED: Complete state shutdown verified.
+
+=======================================================
+  ALL ENEMY GUN & DEATH LIFECYCLE TESTS PASSED (6/6)!
+=======================================================
+

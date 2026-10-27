@@ -1,0 +1,63 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: Intel - Intel(R) UHD Graphics 620
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+=== SKELETON REFERENCE POINTS (World Space) ===
+Right Hand: (-0.297804, 0.980842, -3.006948)
+Left Hand:  (0.303925, 0.983751, -2.612537)
+Chest/Spine1: (0.021782, 1.186086, -2.828855)
+===============================================
+CONFIG [baseline]:
+  Position: (0.04, 0.08, -0.04)
+  Rotation: (164.0, -15.0, -190.0)
+  Weapon World Pos: (-0.296672, 0.983699, -3.004256) (Height: 0.98369872570038m)
+  Muzzle World Pos: (-0.2994, 0.97885, -2.556236) (Height: 0.97885024547577m)
+  Barrel Pitch: -0.62001990813094 deg
+  Dist to Right Hand: 0.00408587092534m, Dist to Left Hand: 0.71704924106598m
+  Screenshot saved: res://verification_screenshots/test_gun_pos_baseline.png
+--------------------------------------------------
+CONFIG [opt1_raised_inward]:
+  Position: (0.02, 0.2, -0.06)
+  Rotation: (164.0, -15.0, -190.0)
+  Weapon World Pos: (-0.293898, 0.986397, -2.999759) (Height: 0.98639667034149m)
+  Muzzle World Pos: (-0.293548, 0.987809, -2.551707) (Height: 0.98780912160873m)
+  Barrel Pitch: 0.18062004938578 deg
+  Dist to Right Hand: 0.00988927390426m, Dist to Left Hand: 0.71227824687958m
+  Screenshot saved: res://verification_screenshots/test_gun_pos_opt1_raised_inward.png
+--------------------------------------------------
+CONFIG [opt2_chest_level]:
+  Position: (0.0, 0.26, -0.08)
+  Rotation: (162.0, -14.0, -190.0)
+  Weapon World Pos: (-0.28918, 0.981923, -2.997348) (Height: 0.98192310333252m)
+  Muzzle World Pos: (-0.296532, 0.97157, -2.549474) (Height: 0.97156983613968m)
+  Barrel Pitch: -1.32406058398414 deg
+  Dist to Right Hand: 0.01295017451048m, Dist to Left Hand: 0.70700544118881m
+  Screenshot saved: res://verification_screenshots/test_gun_pos_opt2_chest_level.png
+--------------------------------------------------
+CONFIG [opt3_tactical_aim]:
+  Position: (-0.01, 0.28, -0.1)
+  Rotation: (160.0, -12.0, -188.0)
+  Weapon World Pos: (-0.289501, 0.9775, -3.001717) (Height: 0.97749960422516m)
+  Muzzle World Pos: (-0.313304, 0.95202, -2.555021) (Height: 0.95202028751373m)
+  Barrel Pitch: -3.25997017140978 deg
+  Dist to Right Hand: 0.01036746799946m, Dist to Left Hand: 0.70968616008759m
+  Screenshot saved: res://verification_screenshots/test_gun_pos_opt3_tactical_aim.png
+--------------------------------------------------
+CONFIG [opt4_high_chest]:
+  Position: (-0.02, 0.32, -0.12)
+  Rotation: (158.0, -10.0, -185.0)
+  Weapon World Pos: (-0.295058, 0.974104, -3.005288) (Height: 0.97410446405411m)
+  Muzzle World Pos: (-0.337609, 0.935226, -2.560956) (Height: 0.93522608280182m)
+  Barrel Pitch: -4.97790268075778 deg
+  Dist to Right Hand: 0.00746282469481m, Dist to Left Hand: 0.71632885932922m
+  Screenshot saved: res://verification_screenshots/test_gun_pos_opt4_high_chest.png
+--------------------------------------------------

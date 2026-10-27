@@ -1,0 +1,29 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=================================================================
+  ATTACHMENT WORLD BASIS (normalized unit vectors)
+=================================================================
+  X (right):   (0.9531, 0.1649, 0.2538)
+  Y (up):      (0.2345, -0.9324, -0.2749)
+  Z (forward): (0.1914, 0.3216, -0.9273)
+
+  SWEEP RESULT (5° steps, Y&Z fixed near 90):
+  Best rotation_degrees = (-30, 85, 85)
+  Barrel axis = +Y,  Error = 13.93°
+
+  REFINED RESULT (1° steps):
+  Best rotation_degrees = (-20, 80, 80)
+  Barrel axis = +Y,  Error = 6.813°
+
+  VERIFIED after applying rotation:
+  Barrel world dir: (0.0037, 0.1215, -0.9926)
+  Barrel pitch: 6.98°
+  Barrel yaw from -Z: 0.21°
+  Angle to target: 6.980°
+
+  Muzzle world Y: -1.016 (enemy base Y=-2.053, height above base=1.037m)
+=================================================================
+  ACTION: Set enemy_weapon.rotation_degrees = Vector3(-20, 80, 80)
+=================================================================

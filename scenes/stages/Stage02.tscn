@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8n4y2s08stg2"]
+
+[ext_resource type="Script" path="res://scripts/LevelBase3D.gd" id="1_level3d"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player3d"]
+[ext_resource type="PackedScene" uid="uid://bvxlap41m82ja" path="res://scenes/entities/Enemy3D.tscn" id="3_enemy3d"]
+[ext_resource type="PackedScene" uid="uid://d1eqx2u089wma" path="res://scenes/ui/StageSummaryDialog.tscn" id="4_summary"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/TacticalHUD.tscn" id="5_tactical_hud"]
+[ext_resource type="PackedScene" path="res://scenes/environments/Stage02UrbanZone.tscn" id="6_urban"]
+
+[node name="Stage02" type="Node3D"]
+script = ExtResource("1_level3d")
+stage_id = 2
+stage_name = "OPERATION ABANDONED CITY"
+total_stages = 6
+out_of_bounds_y = -8.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-42.0, -42.0)
+recovery_bounds_max = Vector2(42.0, 42.0)
+physical_boundaries_enabled = true
+
+[node name="Stage02UrbanZone" parent="." instance=ExtResource("6_urban")]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy3D_1" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-14, 0, 17)
+
+[node name="Enemy3D_2" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(14, 0, 8)
+
+[node name="Enemy3D_3" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-14, 0, -8)
+
+[node name="Enemy3D_4" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(14, 0, -18)
+
+[node name="Enemy3D_5" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-14, 0, -30)
+
+[node name="Enemy3D_6" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(14, 0, -35)
+
+[node name="Player3D" parent="." instance=ExtResource("2_player3d")]
+position = Vector3(0, 0, 33)
+
+[node name="HUD" parent="." instance=ExtResource("5_tactical_hud")]
+

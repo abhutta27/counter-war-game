@@ -1,0 +1,41 @@
+COUNTER-WAR 1.0.0 - THIRD-PARTY NOTICES
+========================================
+
+Counter-War branding
+--------------------
+The CW shield, COUNTER-WAR wordmark, splash artwork, and icon derivatives are
+original custom vector artwork created for this project. The lettering uses
+custom SVG path geometry. No font file is bundled for the branding.
+
+Godot Engine
+------------
+This application uses Godot Engine, available under the following MIT license:
+
+Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Project asset provenance note
+-----------------------------
+The source project does not contain license or attribution files for all
+pre-existing character, weapon, environment, image, and audio assets. This
+package therefore cannot serve as proof of redistribution rights for those
+assets. The project owner must retain purchase/download records and verify the
+applicable asset licenses before public or commercial distribution.

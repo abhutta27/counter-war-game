@@ -1,0 +1,96 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=========================================================
+ COUNTER WAR - STEP 08: STAGE ARCHITECTURE TEST SUITE
+=========================================================
+
+--- TEST 01: Stage Manager Singleton & Registry ---
+[PASS] TEST 01.1: StageManager Autoload exists in root tree
+[PASS] TEST 01.2: Stage 1 is registered in STAGE_REGISTRY
+[PASS] TEST 01.3: Stage 2 is registered in STAGE_REGISTRY
+[PASS] TEST 01.4: Stage 1 path is res://scenes/stages/Stage01.tscn
+[PASS] TEST 01.5: Stage 2 path is res://scenes/stages/Stage02.tscn
+[PASS] TEST 01.6: Stage01.tscn resource file exists on disk
+[PASS] TEST 01.7: Stage02.tscn resource file exists on disk
+
+--- TEST 02: Stage 01 Scene & Shared Systems ---
+[PASS] TEST 02.1: Stage01.tscn loads as valid PackedScene
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+[PASS] TEST 02.2: Stage01 stage_id is 1
+       Details: Found: 1
+[PASS] TEST 02.3: Stage01 reuses shared Player3D
+[PASS] TEST 02.4: Stage01 has Enemies container
+[PASS] TEST 02.5: Stage01 has shared HUD
+[PASS] TEST 02.6: Stage01 has exactly 5 enemies
+       Details: Found: 5
+[PASS] TEST 02.7: Shared Player3D has FirstPerson Camera3D
+[PASS] TEST 02.8: Shared Player3D has functional WeaponManager
+
+--- TEST 03: Stage 02 Distinct Environment & 8 Enemies ---
+[PASS] TEST 03.1: Stage02.tscn loads as valid PackedScene
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[PASS] TEST 03.2: Stage02 stage_id is 2
+       Details: Found: 2
+[FAIL] TEST 03.3: Stage02 stage_name is OPERATION SHADOW BARRACKS
+       Details: Found: OPERATION ABANDONED CITY
+[PASS] TEST 03.4: Stage02 has Enemies container
+[FAIL] TEST 03.5: Stage02 has exactly 8 enemies (distinct combat encounter)
+       Details: Found: 6
+[PASS] TEST 03.6: Stage02 has Environment container
+[PASS] TEST 03.7: Stage02 contains distinct Buildings compound
+[FAIL] TEST 03.8: Stage02 has BarracksAlpha structure
+[FAIL] TEST 03.9: Stage02 has BarracksBravo structure
+[FAIL] TEST 03.10: Stage02 has CommandBunker structure
+[FAIL] TEST 03.11: Stage02 has tactical cargo containers
+[FAIL] TEST 03.12: Stage02 has defense barriers
+[PASS] TEST 03.13: Stage02 has distinct WorldEnvironment
+[PASS] TEST 03.14: Stage02 has procedural dusk sky material
+[FAIL] TEST 03.15: Stage02 sky has warm sunset/dusk horizon (Red > 0.7)
+       Details: Red = 0.65
+
+--- TEST 04: Progression Stage Transition ---
+[PASS] TEST 04.1: StageManager initialized to Stage 1
+[PASS] TEST 04.2: Next stage from Stage 1 evaluates to Stage 2
+[FAIL] TEST 04.3: Next stage info correctly resolves to OPERATION SHADOW BARRACKS
+[FAIL] TEST 04.4: Next stage target count correctly resolves to 8
+
+--- TEST 05: Restart Isolation (Stage 02 Failure -> Reloads Stage 02) ---
+[PASS] TEST 05.1: Active stage is Stage 2
+[StateGameOver] Game Over.
+[GameManager] State transition completed: PLAYING -> GAME_OVER
+[PASS] TEST 05.2: Simulated player death -> Game Over state
+[StageManager] Restarting Current Stage: 2
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: GAME_OVER -> PLAYING
+[StageManager] Loading Stage 2 -> res://scenes/stages/Stage02.tscn
+[PASS] TEST 05.3: stage_restarted signal emitted specifically for Stage 2
+       Details: Emitted: [2]
+[PASS] TEST 05.4: CRITICAL: Restarting on Stage 2 preserves Stage 2 (NEVER falls back to Stage 1)
+[PASS] TEST 05.5: Game state returned to PLAYING upon stage restart
+
+--- TEST 06: Invalid Stage ID Safety ---
+[PASS] TEST 06.1: Querying invalid Stage 999 returns valid fallback dictionary
+[StageManager] Attempted to load invalid Stage ID: 999. Clamping safely to Stage 1.
+[StageManager] Loading Stage 1 -> res://scenes/stages/Stage01.tscn
+[PASS] TEST 06.2: Loading invalid Stage 999 safely clamped current_stage_id to Stage 1
+       Details: Current Stage ID: 1
+[StageManager] Attempted to load invalid Stage ID: -5. Clamping safely to Stage 1.
+[StageManager] Loading Stage 1 -> res://scenes/stages/Stage01.tscn
+[PASS] TEST 06.3: Loading negative Stage ID safely clamped current_stage_id to Stage 1
+       Details: Current Stage ID: 1
+=========================================================
+ STEP 08 TEST RESULTS: 32 Passed / 10 Failed / 42 Total
+=========================================================
+>> STEP 08 TESTS ENCOUNTERED FAILURES! <<
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.

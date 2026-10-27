@@ -1,0 +1,138 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmoxr5g38102a"]
+
+[ext_resource type="Script" path="res://scripts/ui/LoginRegisterScreen.gd" id="1_login"]
+
+[node name="LoginRegisterScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_login")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0823529, 0.101961, 0.133333, 1)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(450, 480)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -240.0
+offset_right = 225.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="GameTitle" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "COUNTER WAR"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 12
+text = "TACTICAL SHOOTER & OPERATIVE DATABASE"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="ModeTabs" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TabLoginBtn" type="Button" parent="Panel/VBox/ModeTabs"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sign In"
+
+[node name="TabRegisterBtn" type="Button" parent="Panel/VBox/ModeTabs"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Register"
+
+[node name="TitleLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 14
+text = "OPERATIVE AUTHENTICATION"
+horizontal_alignment = 1
+
+[node name="UsernameContainer" type="VBoxContainer" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+
+[node name="UsernameLabel" type="Label" parent="Panel/VBox/UsernameContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Codename / Username:"
+
+[node name="UsernameInput" type="LineEdit" parent="Panel/VBox/UsernameContainer"]
+layout_mode = 2
+placeholder_text = "e.g. Ghost_01"
+max_length = 24
+
+[node name="EmailContainer" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="EmailLabel" type="Label" parent="Panel/VBox/EmailContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Operative Email:"
+
+[node name="EmailInput" type="LineEdit" parent="Panel/VBox/EmailContainer"]
+layout_mode = 2
+placeholder_text = "agent@counterwar.net"
+
+[node name="PasswordContainer" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="PasswordLabel" type="Label" parent="Panel/VBox/PasswordContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Security Key / Password:"
+
+[node name="PasswordInput" type="LineEdit" parent="Panel/VBox/PasswordContainer"]
+layout_mode = 2
+placeholder_text = "••••••••"
+secret = true
+
+[node name="SubmitBtn" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "AUTHENTICATE & ENTER"
+
+[node name="FeedbackLabel" type="Label" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Status: Ready"
+horizontal_alignment = 1
+autowrap_mode = 2

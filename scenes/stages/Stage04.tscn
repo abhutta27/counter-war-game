@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6m2y4s08stg4"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage04Steelworks.gd" id="1_stage04"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player3d"]
+[ext_resource type="PackedScene" uid="uid://bvxlap41m82ja" path="res://scenes/entities/Enemy3D.tscn" id="3_enemy3d"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/TacticalHUD.tscn" id="4_hud"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial_Steelworks"]
+sky_top_color = Color(0.16, 0.21, 0.27, 1)
+sky_horizon_color = Color(0.49, 0.44, 0.39, 1)
+ground_bottom_color = Color(0.06, 0.07, 0.08, 1)
+ground_horizon_color = Color(0.25, 0.25, 0.24, 1)
+sun_angle_max = 12.0
+
+[sub_resource type="Sky" id="Sky_Steelworks"]
+sky_material = SubResource("SkyMaterial_Steelworks")
+
+[sub_resource type="Environment" id="Environment_Steelworks"]
+background_mode = 2
+sky = SubResource("Sky_Steelworks")
+ambient_light_source = 3
+ambient_light_color = Color(0.56, 0.61, 0.67, 1)
+ambient_light_energy = 1.05
+reflected_light_source = 2
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.43, 0.46, 0.48, 1)
+fog_light_energy = 0.45
+fog_density = 0.0028
+fog_height_density = 0.08
+
+[node name="Stage04" type="Node3D"]
+script = ExtResource("1_stage04")
+stage_id = 4
+stage_name = "OPERATION INDUSTRIAL ZONE"
+total_stages = 6
+out_of_bounds_y = -8.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-28.0, -63.0)
+recovery_bounds_max = Vector2(28.0, 51.0)
+physical_boundaries_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_Steelworks")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -28, 0)
+light_color = Color(0.93, 0.76, 0.61, 1)
+light_energy = 1.05
+shadow_enabled = true
+directional_shadow_max_distance = 72.0
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy3D_1" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-14, 0, 21)
+[node name="Enemy3D_2" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(13, 0, 9)
+[node name="Enemy3D_3" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-18, 0, -10)
+[node name="Enemy3D_4" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(9, 0, -22)
+[node name="Enemy3D_5" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-5, 0, 12)
+[node name="Enemy3D_6" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(16, 0, -5)
+[node name="Enemy3D_7" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-15, 0, -28)
+[node name="Enemy3D_8" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(6, 0, -34)
+[node name="Enemy3D_9" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-12, 0, -43)
+[node name="Enemy3D_10" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(12, 0, -45)
+[node name="Enemy3D_11" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(-5, 0, -56)
+[node name="Enemy3D_12" parent="Enemies" instance=ExtResource("3_enemy3d")]
+position = Vector3(7, 0, -57)
+
+[node name="Player3D" parent="." instance=ExtResource("2_player3d")]
+position = Vector3(0, 0, 43)
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]

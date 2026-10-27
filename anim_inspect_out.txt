@@ -1,0 +1,8 @@
+Anim: Idle length: 1.96666669845581 loop: 0 track_count: 88
+Anim: Run length: 0.69999998807907 loop: 0 track_count: 88
+Anim: TPose length: 0.0333333350718 loop: 0 track_count: 88
+Anim: Walk length: 1.03333330154419 loop: 0 track_count: 88
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json

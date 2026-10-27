@@ -1,0 +1,8 @@
+SCRIPT ERROR: Parse Error: Cannot infer the type of "aim_chest" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:427)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "shot_dir" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:474)
+SCRIPT ERROR: Parse Error: The variable type is being inferred from a Variant value, so it will be typed as Variant. (Warning treated as error.)
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:473)
+ERROR: Failed to load script "res://scripts/entities/Enemy3D.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

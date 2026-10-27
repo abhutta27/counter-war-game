@@ -1,0 +1,5 @@
+Mesh AABB: position=(-92.38803, -22.48187, -0.037002) size=(184.7946, 44.38628, 183.2203)
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json

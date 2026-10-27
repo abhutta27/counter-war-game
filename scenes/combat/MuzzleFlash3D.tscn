@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp71y3j8v0q2w"]
+
+[ext_resource type="Script" path="res://scripts/combat/MuzzleFlash3D.gd" id="1_flash"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_Flash"]
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.45, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_Flash1"]
+material = SubResource("StandardMaterial3D_Flash")
+size = Vector3(0.04, 0.22, 0.22)
+
+[sub_resource type="BoxMesh" id="BoxMesh_Flash2"]
+material = SubResource("StandardMaterial3D_Flash")
+size = Vector3(0.22, 0.04, 0.22)
+
+[node name="MuzzleFlash3D" type="Node3D"]
+script = ExtResource("1_flash")
+
+[node name="FlashMesh1" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_Flash1")
+
+[node name="FlashMesh2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_Flash2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.9, 0.35, 1)
+light_energy = 2.5
+omni_range = 4.0

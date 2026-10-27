@@ -1,0 +1,314 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/IdentityScreen.gd" id="1_identity"]
+[ext_resource type="Texture2D" path="res://assets/branding/cw_mark_64.png" id="2_logo"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ControlsHelpOverlay.tscn" id="3_help"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(0.025, 0.04, 0.057, 0.99)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16, 0.49, 0.61, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="InputStyle"]
+bg_color = Color(0.018, 0.03, 0.043, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.48, 0.61, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 14.0
+content_margin_right = 14.0
+
+[sub_resource type="StyleBoxFlat" id="InputFocus"]
+bg_color = Color(0.02, 0.045, 0.06, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26, 0.76, 0.98, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 13.0
+content_margin_right = 13.0
+
+[sub_resource type="StyleBoxFlat" id="ActionNormal"]
+bg_color = Color(0.075, 0.39, 0.55, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.26, 0.76, 0.98, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="ActionHover"]
+bg_color = Color(0.1, 0.5, 0.68, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.9, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="SecondaryButton"]
+bg_color = Color(0.065, 0.095, 0.12, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.19, 0.36, 0.46, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="IdentityScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_identity")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.009, 0.019, 0.029, 1)
+
+[node name="TopAccent" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+color = Color(0.12, 0.55, 0.75, 1)
+
+[node name="SafeMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Page" type="VBoxContainer" parent="SafeMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Brand" type="HBoxContainer" parent="SafeMargin/Page"]
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="Logo" type="TextureRect" parent="SafeMargin/Page/Brand"]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+texture = ExtResource("2_logo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="SafeMargin/Page/Brand"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.97, 0.99, 1)
+theme_override_font_sizes/font_size = 28
+text = "COUNTER-WAR"
+vertical_alignment = 1
+
+[node name="TopSpacer" type="Control" parent="SafeMargin/Page"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Center" type="CenterContainer" parent="SafeMargin/Page"]
+layout_mode = 2
+
+[node name="CenterPanel" type="PanelContainer" parent="SafeMargin/Page/Center"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("PanelStyle")
+
+[node name="Margin" type="MarginContainer" parent="SafeMargin/Page/Center/CenterPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 38
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="SafeMargin/Page/Center/CenterPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ModeTitle" type="Label" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.82, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "CREATE OPERATIVE"
+horizontal_alignment = 1
+
+[node name="Instruction" type="Label" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.81, 0.85, 1)
+theme_override_font_sizes/font_size = 13
+text = "Choose your codename to begin."
+horizontal_alignment = 1
+
+[node name="SectionGap" type="Control" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="SelectionSection" type="VBoxContainer" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SelectLabel" type="Label" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/SelectionSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.81, 0.85, 1)
+theme_override_font_sizes/font_size = 11
+text = "ACTIVE OPERATIVE"
+
+[node name="ProfileSelector" type="OptionButton" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/SelectionSection"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("InputStyle")
+theme_override_styles/focus = SubResource("InputFocus")
+fit_to_longest_item = false
+
+[node name="ContinueButton" type="Button" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/SelectionSection"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("ActionNormal")
+theme_override_styles/hover = SubResource("ActionHover")
+theme_override_styles/pressed = SubResource("ActionHover")
+text = "CONTINUE TO HQ"
+
+[node name="NewOperativeButton" type="Button" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+visible = false
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "NEW OPERATIVE"
+
+[node name="CreationSection" type="VBoxContainer" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="NameLabel" type="Label" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/CreationSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.92, 0.95, 1)
+theme_override_font_sizes/font_size = 11
+text = "CODENAME"
+
+[node name="NameInput" type="LineEdit" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/CreationSection"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("InputStyle")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "Enter your name"
+max_length = 24
+clear_button_enabled = true
+
+[node name="CreateButton" type="Button" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/CreationSection"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("ActionNormal")
+theme_override_styles/hover = SubResource("ActionHover")
+theme_override_styles/pressed = SubResource("ActionHover")
+text = "CREATE & CONTINUE"
+
+[node name="SaveNote" type="Label" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/CreationSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.64, 0.7, 1)
+theme_override_font_sizes/font_size = 10
+text = "Progress is saved on this device."
+horizontal_alignment = 1
+
+[node name="CreationBackButton" type="Button" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox/CreationSection"]
+visible = false
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "BACK"
+
+[node name="FeedbackLabel" type="Label" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.53, 0.36, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="SafeMargin/Page/Center/CenterPanel/Margin/VBox"]
+visible = false
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "BACK TO HQ"
+
+[node name="BottomSpacer" type="Control" parent="SafeMargin/Page"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Footer" type="HBoxContainer" parent="SafeMargin/Page"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ControlsButton" type="Button" parent="SafeMargin/Page/Footer"]
+custom_minimum_size = Vector2(164, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "CONTROLS / HELP"
+
+[node name="Spacer" type="Control" parent="SafeMargin/Page/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExitButton" type="Button" parent="SafeMargin/Page/Footer"]
+custom_minimum_size = Vector2(116, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0.72, 0.68, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("SecondaryButton")
+text = "EXIT GAME"
+
+[node name="ControlsOverlay" parent="." instance=ExtResource("3_help")]

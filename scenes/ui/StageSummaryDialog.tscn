@@ -1,0 +1,286 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1eqx2u089wma"]
+
+[ext_resource type="Script" path="res://scripts/ui/StageSummaryDialog.gd" id="1_summary"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Panel"]
+bg_color = Color(0.06, 0.08, 0.12, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.6, 0.85, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_NextBtnNormal"]
+bg_color = Color(0.12, 0.5, 0.35, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.9, 0.6, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_NextBtnHover"]
+bg_color = Color(0.16, 0.65, 0.45, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 1, 0.8, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_BtnNormal"]
+bg_color = Color(0.14, 0.18, 0.25, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25, 0.5, 0.7, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_BtnHover"]
+bg_color = Color(0.2, 0.28, 0.4, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.75, 1, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="StageSummaryDialog" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_summary")
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.03, 0.05, 0.82)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(620, 620)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -310.0
+offset_right = 310.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Panel")
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = -32.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MissionStatusLabel" type="Label" parent="Panel/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "MISSION ACCOMPLISHED"
+horizontal_alignment = 1
+
+[node name="StageNameLabel" type="Label" parent="Panel/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.82, 0.98, 1)
+theme_override_font_sizes/font_size = 13
+text = "OPERATION DEBRIEF: STAGE 1"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Panel/VBox"]
+layout_mode = 2
+columns = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 12
+
+[node name="TargetsDetail" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "5 Hostiles Neutralized"
+
+[node name="TargetsPoints" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "+2,500 PTS"
+horizontal_alignment = 2
+
+[node name="AccuracyDetail" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "100.0% Accuracy"
+
+[node name="AccuracyPoints" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "+10,000 PTS"
+horizontal_alignment = 2
+
+[node name="TimeDetail" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "42.0s Taken (Bonus: 258.0s)"
+
+[node name="TimePoints" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "+2,580 PTS"
+horizontal_alignment = 2
+
+[node name="HealthDetail" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "100 HP Remaining"
+
+[node name="HealthPoints" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "+2,000 PTS"
+horizontal_alignment = 2
+
+[node name="MissionDetail" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "MISSION COMPLETE"
+
+[node name="MissionPoints" type="Label" parent="Panel/VBox/Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "+500 PTS"
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="TotalContainer" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="FinalScoreTitle" type="Label" parent="Panel/VBox/TotalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.85, 0.25, 1)
+theme_override_font_sizes/font_size = 16
+text = "MISSION SCORE:"
+
+[node name="FinalScoreLabel" type="Label" parent="Panel/VBox/TotalContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.25, 1)
+theme_override_font_sizes/font_size = 22
+text = "17,080 PTS"
+horizontal_alignment = 2
+
+[node name="BestContainer" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="BestScoreTitle" type="Label" parent="Panel/VBox/BestContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.82, 0.92, 1)
+theme_override_font_sizes/font_size = 14
+text = "BEST SCORE:"
+
+[node name="BestScoreLabel" type="Label" parent="Panel/VBox/BestContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.82, 0.92, 1)
+theme_override_font_sizes/font_size = 17
+text = "17,080 PTS"
+horizontal_alignment = 2
+
+[node name="NewBestLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.55, 1)
+theme_override_font_sizes/font_size = 15
+text = "NEW BEST SCORE"
+horizontal_alignment = 1
+
+[node name="CloudStatusLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "Tactical Report Synchronized with Cloud Database."
+horizontal_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="NextBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_NextBtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_NextBtnHover")
+text = "NEXT MISSION"
+
+[node name="RetryBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_BtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_BtnHover")
+text = "REPLAY STAGE"
+
+[node name="MenuBtn" type="Button" parent="Panel/VBox/Actions"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_BtnNormal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_BtnHover")
+text = "RETURN TO HQ"

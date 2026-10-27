@@ -1,0 +1,25 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+=================================================================
+  FULL UNCONSTRAINED SWEEP (10° coarse)
+=================================================================
+  Coarse best: rot=(40, 60, 160)  axis=+X  err=1.66°
+  Fine best: rot=(51, 54, 154)  axis=+X  err=0.089°
+
+=================================================================
+  FINAL VERIFIED RESULT
+=================================================================
+  Barrel world dir: (-0.0028, 0.0126, -0.9999)
+  Barrel pitch: 0.72° (0=horizontal, target: -15 to +15)
+  Barrel yaw from enemy forward: -0.16°
+  Angle to target (0,0,-1): 0.742°
+
+  Muzzle height above enemy base: 0.577m
+
+=================================================================
+  *** USE THIS IN Enemy3D.gd _setup_enemy_weapon(): ***
+  enemy_weapon.rotation_degrees = Vector3(51, 54, 154)
+  (barrel axis in GLB local space = +X)
+=================================================================

@@ -1,0 +1,6 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.

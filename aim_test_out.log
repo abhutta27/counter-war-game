@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+================================================================
+  TESTING ENEMY MODEL ORIENTATION & AIMING POSE (GODOT 4)
+================================================================
+
+[TEST 1] Verifying enemy facing orientation in ATTACK state...
+  Enemy forward: (0.0, 0.0, -1.0)
+  Dir to player: (0.0, 0.0, -1.0)
+  Facing dot product (1.0 = facing player, -1.0 = back to player): 1.0
+  -> TEST 1 PASSED: Enemy correctly faces towards player without inverted 180 deg rotation!
+
+[TEST 2] Verifying procedural arm bone transforms during ATTACK...
+  RightArm pose rotation: (-0.186391, 0.0966, 0.491241, 0.845346)
+  LeftArm pose rotation: (-0.047602, -0.116448, 0.522926, 0.843044)
+  -> TEST 2 PASSED: Both arms procedurally posed for combat!
+
+[TEST 3] Verifying weapon forward points at player chest level...
+  Weapon forward: (0.00466, -0.005057, -0.999976)
+  Dir to chest:   (-0.035797, 0.03785, -0.998642)
+  Aim dot product: 0.9982602596283
+  -> TEST 3 PASSED: Weapon points directly at player chest level!
+
+[TEST 4] Verifying clean reset when transitioning ATTACK -> CHASE...
+  RightArm after CHASE transition: (0, 0, 0, 1)
+  LeftArm after CHASE transition: (0.0, -0.0, -0.0, 1)
+  -> TEST 4 PASSED: Bones reset cleanly on transition to CHASE!
+
+[TEST 5] Verifying clean reset when transitioning ATTACK -> IDLE...
+  -> TEST 5 PASSED: Bones reset cleanly on transition to IDLE!
+
+[TEST 6] Verifying clean reset on death...
+  -> TEST 6 PASSED: Bones reset cleanly on death!
+
+================================================================
+  ALL 6 ORIENTATION & AIMING POSE TESTS PASSED PERFECTLY!
+================================================================

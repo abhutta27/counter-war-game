@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7n6y6s08stg6"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage06SecurityController.gd" id="1_controller"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Stage06Enemy3D.tscn" id="3_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/TacticalHUD.tscn" id="4_hud"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial_NightBase"]
+sky_top_color = Color(0.012, 0.022, 0.055, 1)
+sky_horizon_color = Color(0.075, 0.105, 0.17, 1)
+ground_bottom_color = Color(0.008, 0.012, 0.025, 1)
+ground_horizon_color = Color(0.035, 0.055, 0.09, 1)
+sun_angle_max = 4.0
+
+[sub_resource type="Sky" id="Sky_NightBase"]
+sky_material = SubResource("SkyMaterial_NightBase")
+
+[sub_resource type="Environment" id="Environment_NightBase"]
+background_mode = 2
+sky = SubResource("Sky_NightBase")
+ambient_light_source = 3
+ambient_light_color = Color(0.22, 0.30, 0.46, 1)
+ambient_light_energy = 0.72
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.32
+fog_enabled = true
+fog_light_color = Color(0.10, 0.14, 0.22, 1)
+fog_light_energy = 0.34
+fog_density = 0.004
+fog_sky_affect = 0.22
+
+[sub_resource type="SphereMesh" id="MoonMesh"]
+radius = 2.1
+height = 4.2
+radial_segments = 20
+rings = 10
+
+[sub_resource type="StandardMaterial3D" id="MoonMaterial"]
+shading_mode = 0
+albedo_color = Color(0.72, 0.82, 1, 1)
+emission_enabled = true
+emission = Color(0.34, 0.46, 0.75, 1)
+emission_energy_multiplier = 1.4
+
+[node name="Stage06" type="Node3D"]
+script = ExtResource("1_controller")
+stage_id = 6
+stage_name = "OPERATION NIGHT MILITARY BASE"
+out_of_bounds_y = -8.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-41.5, -41.5)
+recovery_bounds_max = Vector2(41.5, 41.5)
+physical_boundaries_enabled = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_NightBase")
+
+[node name="MoonLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -28, 0)
+light_color = Color(0.38, 0.50, 0.76, 1)
+light_energy = 0.60
+shadow_enabled = false
+
+[node name="Moon" type="MeshInstance3D" parent="."]
+position = Vector3(-28, 25, -34)
+mesh = SubResource("MoonMesh")
+material_override = SubResource("MoonMaterial")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy3D_1" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(-5, 0, 29)
+security_group = "checkpoint"
+guard_role = "outer gate left guard"
+
+[node name="Enemy3D_2" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(12, 0, 15)
+security_group = "tower"
+guard_role = "east gate reserve security guard"
+
+[node name="Enemy3D_3" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(-20, 0, 13)
+security_group = "tower"
+guard_role = "west tower security guard"
+
+[node name="Enemy3D_4" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(20, 0, 13)
+security_group = "tower"
+guard_role = "east tower security guard"
+
+[node name="Enemy3D_5" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(-5, 0, 8)
+security_group = "road"
+guard_role = "illuminated road forward guard"
+
+[node name="Enemy3D_6" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(-10, 0, -2)
+security_group = "road"
+guard_role = "security road barrier guard"
+
+[node name="Enemy3D_7" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(10, 0, 7)
+security_group = "maintenance"
+guard_role = "generator utility guard"
+
+[node name="Enemy3D_8" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(17, 0, -6)
+security_group = "maintenance"
+guard_role = "container route guard"
+
+[node name="Enemy3D_9" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(-7, 0, -18)
+security_group = "final"
+guard_role = "helipad west defender"
+
+[node name="Enemy3D_10" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(7, 0, -18)
+security_group = "final"
+guard_role = "helipad east defender"
+
+[node name="Enemy3D_11" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(-6, 0, -29)
+security_group = "final"
+guard_role = "command hangar left defender"
+
+[node name="Enemy3D_12" parent="Enemies" instance=ExtResource("3_enemy")]
+position = Vector3(6, 0, -29)
+security_group = "final"
+guard_role = "command hangar right defender"
+
+[node name="Player3D" parent="." instance=ExtResource("2_player")]
+position = Vector3(0, 0, 36)
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]

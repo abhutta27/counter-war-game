@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7p3j0w6y1a2b"]
+
+[ext_resource type="Script" path="res://scripts/combat/Projectile3D.gd" id="1_proj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_Bullet"]
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.4, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_Bullet"]
+material = SubResource("StandardMaterial3D_Bullet")
+radius = 0.045
+height = 0.28
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_Trail"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.85, 0.25, 0.85)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_Trail"]
+material = SubResource("StandardMaterial3D_Trail")
+top_radius = 0.035
+bottom_radius = 0.005
+height = 0.95
+
+[node name="Projectile3D" type="Node3D"]
+script = ExtResource("1_proj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_Bullet")
+
+[node name="TrailMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.55)
+mesh = SubResource("CylinderMesh_Trail")
+
+[node name="BulletLight" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.9, 0.3, 1)
+light_energy = 1.2
+omni_range = 3.5

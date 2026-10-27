@@ -1,0 +1,34 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+================================================================
+  ENEMY WEAPON FACING ANALYSIS
+================================================================
+  Enemy global_position: (0.0, -2.59, 0.0)
+  Enemy forward dir (world -Z of enemy): (-0.000, -0.000, -1.000)
+  SoldierModel rotation_degrees: (0.00, 0.00, 0.00)
+  BoneAttachment3D world pos: (0.295195, -1.60421, 0.18789)
+  BoneAttachment3D world euler XYZ: (-160.51, 0.11, -12.95)
+  EnemyRifle local rotation_degrees: (164.00, -15.00, -190.00)
+  EnemyRifle world pos: (0.295675, -1.605028, 0.188134)
+  EnemyRifle world euler XYZ: (0.56, -0.03, -176.84)
+
+  Rifle -Z world (barrel forward?): (0.000, 0.001, -0.140)  pitch=0.1°  yaw=-0.2°
+  Rifle +X world (barrel alt?):     (-0.140, -0.008, -0.001)  pitch=-0.4°  yaw=89.8°
+  Rifle -X world:                   (0.140, 0.008, 0.001)  pitch=0.4°
+
+  Enemy forward: (-0.000, -0.000, -1.000)
+
+  TARGET barrel direction (horizontal forward): (-0.000, 0.000, -1.000)
+
+  Rifle -Z → angle to target barrel: 0.6°
+  Rifle +X → angle to target barrel: 89.8°
+  Rifle +Z → angle to target barrel: 179.4°
+  Rifle -X → angle to target barrel: 90.2°
+
+  MuzzleFlash world pos: (0.297602, -1.607656, -0.259909)
+  MuzzleFlash - enemy chest offset: (0.297602, -0.217656, -0.259909)
+
+================================================================

@@ -1,0 +1,21 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+
+=============================================================
+  ENEMY3D COMBAT STANCE VERIFICATION
+=============================================================
+[1] BoneAttachment3D 'RightHandWeaponAttachment' found: true
+[1] Bone name on attachment: mixamorig_RightHand
+[1] EnemyRifle parented to attachment: true
+[2] EnemyRifle local rotation_degrees: (0.0, 90.0, 90.0)
+[2] Weapon X rotation <= 15° (no sky-pointing): true  [expect: true, got X=0.0°]
+[3] SoldierModel rotation_degrees.x in ATTACK state: -18.00°
+[3] Forward lean applied (-5° to -30°): true  [expect: true]
+[4] Weapon world Y: 0.325,  Head world Y estimate: 4.014
+[4] Weapon below head level (not arm-to-sky): true
+
+=============================================================
+  END VERIFICATION
+=============================================================

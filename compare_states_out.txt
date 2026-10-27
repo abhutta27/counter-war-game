@@ -1,0 +1,38 @@
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 6 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[GameManager] Registered active player reference.
+[GameManager] Registered active player reference.
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+=================================================================
+  COMPARING ENEMY RUNNING (CHASE) vs COMBAT (ATTACK)
+=================================================================
+
+--- [STATE 1: CHASE / RUNNING] ---
+State: 1 (Expect 1 = CHASE)
+Playing Animation: 'Run'
+Enemy Velocity: (0.0, 0.0, 3.4)
+  Right Hand World Pos: (-0.122751, 1.19505, -18.35898) | Euler Deg: (-0.382918, 153.9846, 62.82745)
+  Left Hand World Pos:  (0.297586, 1.087591, -18.88644) | Euler Deg: (0.281131, 161.021, 152.2136)
+  Distance Between Hands: 0.6829674243927m
+  Weapon Global Pos: (-0.122618, 1.195319, -18.35804)
+  Weapon Global Rot: (33.33434, -51.45091, -86.44447)
+  Muzzle Global Pos: (0.174276, 1.441868, -18.58569)
+  Barrel Direction: (0.662627, 0.550266, -0.508067) (Pitch: 33.3852532071539 deg)
+
+--- [STATE 2: ATTACK / CLOSE TO PLAYER] ---
+State: 2 (Expect 2 = ATTACK)
+Playing Animation: 'Idle'
+Enemy Velocity: (0.0, 0.0, 0.842667)
+  Right Hand World Pos: (-0.300354, 0.975877, -4.855988) | Euler Deg: (-0.184607, -11.34053, 168.6132)
+  Left Hand World Pos:  (0.298625, 0.975542, -4.464633) | Euler Deg: (0.21467, 124.6932, 130.2498)
+  Distance Between Hands: 0.71549552679062m
+  Weapon Global Pos: (-0.300863, 0.975081, -4.856245)
+  Weapon Global Rot: (-0.179711, 179.5817, -174.6967)
+  Muzzle Global Pos: (-0.30478, 0.966705, -4.408285)
+  Barrel Direction: (-0.008743, -0.018692, 0.999787) (Pitch: -1.07105887894766 deg)
+=================================================================

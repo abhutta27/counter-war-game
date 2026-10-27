@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Counter-War CW shield mark</title>
+  <desc>Custom vector mark. No font dependency.</desc>
+  <path d="M512 54 876 190v310c0 219-139 373-364 466C287 873 148 719 148 500V190Z"
+        fill="#15191d" stroke="#e7e2d7" stroke-width="46" stroke-linejoin="bevel"/>
+  <path d="M512 120 814 233v260c0 175-105 301-302 390-197-89-302-215-302-390V233Z"
+        fill="none" stroke="#59616a" stroke-width="16" stroke-linejoin="bevel"/>
+  <path d="M461 326H344l-91 91v184l91 91h117"
+        fill="none" stroke="#e7e2d7" stroke-width="78" stroke-linecap="square" stroke-linejoin="bevel"/>
+  <path d="m536 326 55 366 96-205 95 205 55-366"
+        fill="none" stroke="#e7e2d7" stroke-width="72" stroke-linecap="square" stroke-linejoin="bevel"/>
+  <path d="M481 246h62l-18 96h-62Z" fill="#c98a3d"/>
+</svg>

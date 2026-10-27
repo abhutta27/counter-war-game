@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/entities/Enemy3D.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scripts/stages/Stage05Enemy3D.gd" id="2_stage05"]
+
+[node name="Stage05Enemy3D" instance=ExtResource("1_base")]
+script = ExtResource("2_stage05")
