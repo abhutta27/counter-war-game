@@ -9,7 +9,8 @@ signal stage_restarted(stage_id: int)
 
 const OPERATION_REGISTRY: Dictionary = {
 	1: {"operation_id": 1, "title": "OPERATION I"},
-	2: {"operation_id": 2, "title": "OPERATION II"}
+	2: {"operation_id": 2, "title": "OPERATION II"},
+	3: {"operation_id": 3, "title": "OPERATION III"}
 }
 
 # This is the single authoritative catalog for every real mission.
@@ -49,10 +50,16 @@ const STAGE_REGISTRY: Dictionary = {
 		"mission_title": "OPERATION NIGHT MILITARY BASE", "name": "OPERATION NIGHT MILITARY BASE",
 		"desc": "Black-Ops Night Facility Infiltration", "operation_id": 2,
 		"scene_path": "res://scenes/stages/Stage06.tscn", "fallback_path": "res://scenes/stages/Stage06.tscn"
+	},
+	7: {
+		"stage_id": 7, "id": 7,
+		"mission_title": "OPERATION IRON HARBOR", "name": "OPERATION IRON HARBOR",
+		"desc": "Coastal Cargo Port Infiltration", "operation_id": 3,
+		"scene_path": "res://scenes/stages/Stage07.tscn", "fallback_path": "res://scenes/stages/Stage07.tscn"
 	}
 }
 
-const TOTAL_STAGES: int = 6
+const TOTAL_STAGES: int = 7
 
 var current_stage_id: int = 1
 

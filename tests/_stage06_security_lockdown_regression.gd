@@ -161,7 +161,7 @@ func _run() -> void:
 	stage._recover_player_from_out_of_bounds()
 	assert(stage.player.global_position.distance_to(Vector3(0, 0.2, 36)) < 0.25, "N: OOB recovery must return Player to last safe position")
 
-	# O/P/Q: 12/12 completion, campaign screen, and no Stage01 wrap.
+	# O/P/Q: 12/12 completion, Stage07 unlock, and guarded next-mission flow.
 	for enemy in stage.enemies_container.get_children():
 		enemy.take_damage(enemy.current_health)
 		await process_frame
@@ -171,15 +171,25 @@ func _run() -> void:
 	assert(stage.current_mission_score == 2000, "O: 12 kills, full health, no accuracy, and completion must score 2000")
 	assert(profile.get_best_score(6) == 2000, "O: Stage06 best score must save before Campaign Complete")
 	assert(profile.get_career_score() == 2000, "O: Stage06 best must feed Career Score")
-	assert("CAMPAIGN COMPLETE" in stage.summary_dialog.mission_status_label.text, "Q: final screen must say CAMPAIGN COMPLETE")
-	assert(not stage.summary_dialog.next_btn.visible, "P: final screen must not expose NEXT MISSION")
+	await process_frame
+	assert(profile.get_highest_unlocked_stage() == 7, "P: legitimate Stage06 completion must unlock Stage07")
+	assert(stage.summary_dialog.mission_status_label.text == "MISSION COMPLETE", "Q: Stage06 must not claim the campaign is complete")
+	assert(stage.summary_dialog.next_btn.visible, "P: unlocked Stage07 must expose NEXT MISSION")
+	assert(stage.summary_dialog.retry_btn.text == "REPLAY STAGE06", "S: debrief must retain REPLAY STAGE06")
+	assert(stage.summary_dialog.menu_btn.text == "RETURN TO HQ", "R: debrief must retain RETURN TO HQ")
 	var manager = root.get_node("StageManager")
 	manager.set_current_stage_id(6)
 	stage._on_next_stage_requested()
-	await process_frame
-	assert(manager.get_current_stage_id() == 6 and current_scene == stage, "P: legacy next request must not load Stage01")
+	for _frame in 25:
+		await process_frame
+	assert(manager.get_current_stage_id() == 7 and current_scene.name == "Stage07", "P: unlocked Stage07 loads when NEXT MISSION is requested")
 
 	# S: replay uses the shared lifecycle but returns to Stage06.
+	manager.set_current_stage_id(6)
+	assert(manager.load_stage(6), "Reload Stage06 for replay testing")
+	for _frame in 25:
+		await process_frame
+	stage = current_scene
 	stage._on_retry_stage_requested()
 	for _frame in 25:
 		await process_frame
@@ -193,14 +203,15 @@ func _run() -> void:
 		await process_frame
 	assert(current_scene != null and current_scene.name == "Stage06", "Regression: Stage05 must still advance to Stage06")
 
-	# R: final-stage RETURN TO HQ route remains functional.
+	# R: RETURN TO HQ selects the now-unlocked next mission.
 	current_scene._on_main_menu_requested()
 	for _frame in 25:
 		await process_frame
 	assert(current_scene != null and current_scene.name == "OperationsHQ", "R: RETURN TO HQ must load Operations HQ")
+	assert(current_scene.get_selected_stage_id() == 7, "R: Stage06 return must select unlocked Stage07")
 
 	_cleanup_score_profile()
-	print("[Stage06SecurityRegression] PASS A-S: routes, searchlights, LoS, local activation, 12/12, score save, OOB, campaign complete, replay, menu, Stage05 progression")
+	print("[Stage06SecurityRegression] PASS A-S: routes, searchlights, LoS, local activation, 12/12, score save, OOB, Stage07 unlock/debrief, replay, HQ selection, Stage05 progression")
 	quit(0)
 
 func _cleanup_score_profile() -> void:

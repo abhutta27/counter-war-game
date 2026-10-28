@@ -86,6 +86,7 @@ func _build_mission_rows() -> void:
 			continue
 		var operation := StageManager.get_operation_info(operation_id)
 		var operation_label := Label.new()
+		operation_label.name = "OperationHeader_%d" % operation_id
 		operation_label.text = str(operation.get("title", "OPERATION %d" % operation_id))
 		operation_label.add_theme_color_override("font_color", Color(0.36, 0.77, 0.96))
 		operation_label.add_theme_font_size_override("font_size", 12)
@@ -95,6 +96,7 @@ func _build_mission_rows() -> void:
 		for stage_info in stages:
 			var stage_id := int(stage_info.get("stage_id", -1))
 			var row := MissionRowScene.instantiate()
+			row.name = "MissionRow_%02d" % stage_id
 			missions_container.add_child(row)
 			row.configure(stage_info, _get_stage_status(stage_id, highest_unlocked, completed), ProfileManager.get_best_score(stage_id))
 			row.mission_selected.connect(_select_stage)
@@ -145,8 +147,9 @@ func _determine_initial_stage() -> int:
 		return returned_stage
 	var completed: Array = _profile_snapshot.get("completed_stages", [])
 	if _is_campaign_complete(completed):
-		var last_played := int(_profile_snapshot.get("last_played_stage", 6))
-		return last_played if not StageManager.get_stage_info(last_played).is_empty() else 6
+		var final_stage_id: int = StageManager.get_registered_stage_ids().back()
+		var last_played := int(_profile_snapshot.get("last_played_stage", final_stage_id))
+		return last_played if not StageManager.get_stage_info(last_played).is_empty() else final_stage_id
 	for stage_id in StageManager.get_registered_stage_ids():
 		if stage_id <= ProfileManager.get_highest_unlocked_stage() and not completed.has(stage_id):
 			return stage_id

@@ -18,7 +18,7 @@ func _capture() -> void:
 	for _frame in 8:
 		await process_frame
 	var rows: Array[Node] = hq.get_mission_rows()
-	assert(rows.size() == 6, "HQ must render all six stage rows")
+	assert(rows.size() == 7, "HQ must render all seven stage rows")
 	for row in rows:
 		assert(row.tooltip_text.is_empty(), "Stage row tooltip must be empty")
 		for descendant in row.find_children("*", "Control", true, false):

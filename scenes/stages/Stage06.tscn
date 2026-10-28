@@ -20,7 +20,8 @@ background_mode = 2
 sky = SubResource("Sky_NightBase")
 ambient_light_source = 3
 ambient_light_color = Color(0.22, 0.30, 0.46, 1)
-ambient_light_energy = 0.72
+ambient_light_energy = 1.45
+ambient_light_sky_contribution = 0.25
 reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
@@ -60,7 +61,7 @@ environment = SubResource("Environment_NightBase")
 [node name="MoonLight" type="DirectionalLight3D" parent="."]
 rotation_degrees = Vector3(-48, -28, 0)
 light_color = Color(0.38, 0.50, 0.76, 1)
-light_energy = 0.60
+light_energy = 0.85
 shadow_enabled = false
 
 [node name="Moon" type="MeshInstance3D" parent="."]

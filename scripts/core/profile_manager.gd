@@ -10,7 +10,7 @@ const SAVE_VERSION: int = 2
 const LEGACY_SAVE_VERSION: int = 1
 const SAVE_PATH: String = "user://counter_war_profile.json"
 const MAX_NAME_LENGTH: int = 24
-const TOTAL_STAGES: int = 6
+const TOTAL_STAGES: int = 7
 
 var current_profile: Dictionary = {}
 var save_path: String = SAVE_PATH
@@ -312,6 +312,8 @@ func _normalize_profile(source: Dictionary, fallback_id: String = "") -> Diction
 		career_score += int(score)
 		highest_score = maxi(highest_score, int(score))
 	var highest_unlocked := clampi(int(source.get("highest_unlocked_stage", 1)), 1, TOTAL_STAGES)
+	for completed_stage in completed:
+		highest_unlocked = maxi(highest_unlocked, mini(int(completed_stage) + 1, TOTAL_STAGES))
 	var profile_id := str(source.get("profile_id", fallback_id))
 	return {
 		"profile_id": profile_id,

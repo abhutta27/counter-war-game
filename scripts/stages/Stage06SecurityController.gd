@@ -31,7 +31,7 @@ var _searchlight_pivots: Array[Node3D] = []
 var _searchlight_lamps: Array[SpotLight3D] = []
 var _alarm_lights: Array[OmniLight3D] = []
 var _route_committed := ""
-var _campaign_complete_configured := false
+var _stage06_debrief_configured := false
 
 func _ready() -> void:
 	_create_materials()
@@ -242,23 +242,32 @@ func _update_searchlight_sweeps(delta: float) -> void:
 func _complete_stage(is_victory: bool) -> void:
 	super._complete_stage(is_victory)
 	if is_victory:
-		call_deferred("_configure_campaign_complete")
+		call_deferred("_configure_stage06_debrief")
 
-func _configure_campaign_complete() -> void:
-	if _campaign_complete_configured or not summary_dialog:
+func _configure_stage06_debrief() -> void:
+	if _stage06_debrief_configured or not summary_dialog:
 		return
-	_campaign_complete_configured = true
-	summary_dialog.mission_status_label.text = "CAMPAIGN COMPLETE — COUNTER-WAR"
+	_stage06_debrief_configured = true
+	summary_dialog.mission_status_label.text = "MISSION COMPLETE"
 	summary_dialog.mission_status_label.modulate = Color(0.25, 1.0, 0.62)
-	summary_dialog.stage_name_label.text = "FINAL OPERATION SECURED // HELIPAD EXTRACTION COMPLETE"
-	summary_dialog.next_btn.visible = false
+	summary_dialog.stage_name_label.text = "SEARCHLIGHT SECURITY LOCKDOWN // HELIPAD EXTRACTION COMPLETE"
+	var manager := get_node_or_null("/root/StageManager")
+	var next_stage_id: int = manager.get_next_registered_stage_id(stage_id) if manager else -1
+	summary_dialog.next_btn.visible = next_stage_id > 0 and manager.is_stage_unlocked(next_stage_id)
 	summary_dialog.retry_btn.text = "REPLAY STAGE06"
 	summary_dialog.menu_btn.text = "RETURN TO HQ"
 
-func _on_next_stage_requested() -> void:
-	# Defensive final-stage guard: even an externally emitted legacy NEXT signal
-	# can never wrap the campaign to Stage01.
-	_configure_campaign_complete()
+func _on_main_menu_requested() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().paused = false
+	var return_stage_id := stage_id
+	var manager := get_node_or_null("/root/StageManager")
+	if manager:
+		var next_stage_id: int = manager.get_next_registered_stage_id(stage_id)
+		if next_stage_id > 0 and manager.is_stage_unlocked(next_stage_id):
+			return_stage_id = next_stage_id
+	get_tree().set_meta("hq_return_stage_id", return_stage_id)
+	get_tree().change_scene_to_file("res://scenes/StageSelection.tscn")
 
 func _build_night_base() -> void:
 	var environment_root := $Environment
