@@ -1,0 +1,231 @@
+[gd_scene load_steps=3 format=3 uid="uid://stage08settings001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08IronPeakSettings.gd" id="1_settings"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.015, 0.035, 0.08, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.18, 0.58, 0.98, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0.2, 0.5, 0.4)
+shadow_size = 12
+
+[node name="Stage08IronPeakSettings" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settings")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.02, 0.04, 0.75)
+
+[node name="Card" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(620, 380)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -190.0
+offset_right = 310.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Card/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BackButton" type="Button" parent="Card/Margin/VBox/HeaderHBox"]
+custom_minimum_size = Vector2(36, 32)
+layout_mode = 2
+text = "<"
+
+[node name="Title" type="Label" parent="Card/Margin/VBox/HeaderHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 20
+text = "SETTINGS"
+
+[node name="Sep" type="HSeparator" parent="Card/Margin/VBox"]
+layout_mode = 2
+
+[node name="ContentHBox" type="HBoxContainer" parent="Card/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="TabsVBox" type="VBoxContainer" parent="Card/Margin/VBox/ContentHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GraphicsTab" type="Button" parent="Card/Margin/VBox/ContentHBox/TabsVBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "🖥 Graphics"
+alignment = 0
+
+[node name="AudioTab" type="Button" parent="Card/Margin/VBox/ContentHBox/TabsVBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "🔊 Audio"
+alignment = 0
+
+[node name="ControlsTab" type="Button" parent="Card/Margin/VBox/ContentHBox/TabsVBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "🎮 Controls"
+alignment = 0
+
+[node name="GameplayTab" type="Button" parent="Card/Margin/VBox/ContentHBox/TabsVBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "⚙ Gameplay"
+alignment = 0
+
+[node name="OptionsVBox" type="PanelContainer" parent="Card/Margin/VBox/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GraphicsOptions" type="VBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="QualityRow" type="HBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/QualityRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Graphics Quality"
+
+[node name="ValueButton" type="Button" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/QualityRow"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+text = "<  High  >"
+
+[node name="ResolutionRow" type="HBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/ResolutionRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="ValueButton" type="Button" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/ResolutionRow"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+text = "<  Auto  >"
+
+[node name="FpsRow" type="HBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/FpsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Frame Rate"
+
+[node name="ValueButton" type="Button" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/FpsRow"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+text = "<  60 FPS  >"
+
+[node name="VSyncRow" type="HBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/VSyncRow"]
+layout_mode = 2
+button_pressed = true
+text = " VSync"
+
+[node name="MotionBlurRow" type="HBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GraphicsOptions/MotionBlurRow"]
+layout_mode = 2
+button_pressed = true
+text = " Motion Blur"
+
+[node name="AudioOptions" type="VBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MasterVol" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/AudioOptions"]
+layout_mode = 2
+text = "Master Volume: 100%"
+
+[node name="SfxVol" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/AudioOptions"]
+layout_mode = 2
+text = "SFX Volume: 100%"
+
+[node name="ControlsOptions" type="VBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Desc" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/ControlsOptions"]
+layout_mode = 2
+theme_override_font_size = 12
+text = "WASD: Move / Stride
+SHIFT: Sprint
+SPACE: Jump
+LEFT CLICK: Primary Fire
+RIGHT CLICK: Aim Down Sight
+R: Tactical Reload
+Q: Switch Weapon
+ESC: Pause Menu"
+
+[node name="GameplayOptions" type="VBoxContainer" parent="Card/Margin/VBox/ContentHBox/OptionsVBox"]
+visible = false
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="Card/Margin/VBox/ContentHBox/OptionsVBox/GameplayOptions"]
+layout_mode = 2
+text = "Tactical Difficulty: OPERATOR"
+
+[node name="FooterHBox" type="HBoxContainer" parent="Card/Margin/VBox"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 14
+
+[node name="DefaultButton" type="Button" parent="Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+text = "DEFAULT"
+
+[node name="ApplyButton" type="Button" parent="Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(110, 34)
+layout_mode = 2
+text = "APPLY"

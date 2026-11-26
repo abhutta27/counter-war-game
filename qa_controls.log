@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 - Build 27.20.100.9749 - Compatibility - Using Device: Intel - Intel(R) UHD Graphics 620
+
+======================================================================
+>>> STAGE 08 CONTROLS & PAUSE MENU VERIFICATION <<<
+======================================================================
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 8 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[TEST] Loading Stage08 scene...
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+
+--- 1. MOUSE LOOK RESPONSIVENESS & ROTATION ---
+Mouse look test: Player Yaw delta = 0.0800, Camera Pitch delta = 0.0400
+[PASS 1] Mouse look rotates player and camera smoothly.
+
+--- 2. ESC KEY TOGGLE & MOUSE CURSOR RESTORATION ---
+[StatePaused] Game simulation paused.
+[GameManager] State transition completed: PLAYING -> PAUSED
+After ESC: pause_menu.visible = true, mouse_mode = 0 (expected 0), gm_state = 4
+[PASS 2] ESC correctly opened Pause Menu, set GameManager state to PAUSED, and restored mouse cursor.
+
+--- 3. PAUSE MENU BUTTON INTERACTION ---
+SCRIPT ERROR: Assertion failed: ResumeButton must exist in Stage08PauseMenu.
+   at: _run_verification (res://tests/test_stage08_controls_pause_verification.gd:102)
+   GDScript backtrace (most recent call first):
+       [0] _run_verification (res://tests/test_stage08_controls_pause_verification.gd:102)

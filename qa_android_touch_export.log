@@ -1,0 +1,442 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Could not find version of build tools that matches Target SDK, using 34.0.0
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+WARNING: Detected another project.godot at res://backups/android_touch_controls_20261113_071122. The folder will be ignored.
+   at: _should_skip_directory (editor/file_system/editor_file_system.cpp:3497)
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+WARNING: UID duplicate detected between res://scenes/stages/Stage01.tscn and res://scenes/levels/Level1.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://scenes/Level1.tscn and res://scenes/stages/Stage01.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_arm_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/boulder_01/textures/boulder_01_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_diff_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/boulder_01/textures/boulder_01_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_nor_gl_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/boulder_01/textures/boulder_01_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/boulder_01_2k.gltf and res://assets/prototypes/stage08_iron_peak/models/boulder_01/boulder_01_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_arm_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/textures/fir_sapling_branches_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_diff_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/textures/fir_sapling_branches_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_nor_gl_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/textures/fir_sapling_branches_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_arm_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/textures/fir_sapling_twigs_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_diff_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/textures/fir_sapling_twigs_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_nor_gl_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/textures/fir_sapling_twigs_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/fir_sapling_2k.gltf and res://assets/prototypes/stage08_iron_peak/models/fir_sapling/fir_sapling_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/textures/mountainside_arm_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/mountainside/textures/mountainside_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/textures/mountainside_diff_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/mountainside/textures/mountainside_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/textures/mountainside_nor_gl_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/mountainside/textures/mountainside_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/mountainside_2k.gltf and res://assets/prototypes/stage08_iron_peak/models/mountainside/mountainside_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_arm_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/textures/pine_sapling_small_bark_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_diff_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/textures/pine_sapling_small_bark_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_nor_gl_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/textures/pine_sapling_small_bark_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_arm_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/textures/pine_sapling_small_twig_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_diff_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/textures/pine_sapling_small_twig_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_nor_gl_2k.jpg and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/textures/pine_sapling_small_twig_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/pine_sapling_small_2k.gltf and res://assets/prototypes/stage08_iron_peak/models/pine_sapling_small/pine_sapling_small_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_ao.jpg and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_ao.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_arm.jpg and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_arm.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_diffuse.jpg and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_diffuse.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_displacement.jpg and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_displacement.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.jpg and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_nor_gl.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.png and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_nor_gl.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_rough.jpg and res://assets/prototypes/stage08_iron_peak/textures/dark_rock/dark_rock_rough.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_ao.jpg and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_ao.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_arm.jpg and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_arm.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_diffuse.jpg and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_diffuse.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_displacement.jpg and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_displacement.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.jpg and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_nor_gl.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.png and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_nor_gl.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_rough.jpg and res://assets/prototypes/stage08_iron_peak/textures/snow_02/snow_02_rough.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/art_reference/stage08/01_briefing.png and res://Stage08Whiteout_Backup/art_reference/stage08/01_briefing.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/art_reference/stage08/02_loadout.png and res://Stage08Whiteout_Backup/art_reference/stage08/02_loadout.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/art_reference/stage08/03_gameplay_hud.png and res://Stage08Whiteout_Backup/art_reference/stage08/03_gameplay_hud.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/art_reference/stage08/04_pause_menu.png and res://Stage08Whiteout_Backup/art_reference/stage08/04_pause_menu.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/art_reference/stage08/05_mission_success.png and res://Stage08Whiteout_Backup/art_reference/stage08/05_mission_success.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/art_reference/stage08/06_mission_failed.png and res://Stage08Whiteout_Backup/art_reference/stage08/06_mission_failed.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_arm_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_diff_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_nor_gl_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/textures/boulder_01_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/boulder_01/boulder_01_2k.gltf and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/boulder_01/boulder_01_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_arm_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_diff_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_nor_gl_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_arm_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_diff_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_nor_gl_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/fir_sapling/fir_sapling_2k.gltf and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/fir_sapling/fir_sapling_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/mountainside/textures/mountainside_arm_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/textures/mountainside_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/mountainside/textures/mountainside_diff_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/textures/mountainside_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/mountainside/textures/mountainside_nor_gl_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/textures/mountainside_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/mountainside/mountainside_2k.gltf and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/mountainside/mountainside_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_arm_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_diff_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_nor_gl_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_arm_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_arm_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_diff_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_diff_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_nor_gl_2k.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_nor_gl_2k.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/models/pine_sapling_small/pine_sapling_small_2k.gltf and res://Stage08Whiteout_Backup/assets/prototypes/stage08/models/pine_sapling_small/pine_sapling_small_2k.gltf.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_ao.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_ao.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_arm.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_arm.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_diffuse.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_diffuse.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_displacement.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_displacement.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.png and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/dark_rock/dark_rock_rough.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/dark_rock/dark_rock_rough.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_ao.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_ao.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_arm.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_arm.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_diffuse.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_diffuse.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_displacement.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_displacement.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.png and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/prototypes/stage08/textures/snow_02/snow_02_rough.jpg and res://Stage08Whiteout_Backup/assets/prototypes/stage08/textures/snow_02/snow_02_rough.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/screens/briefing.jpg and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/screens/briefing.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/screens/gameplay_hud.jpg and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/screens/gameplay_hud.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/screens/loadout.jpg and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/screens/loadout.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/screens/mission_failed.jpg and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/screens/mission_failed.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/screens/mission_success.jpg and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/screens/mission_success.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/screens/pause.jpg and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/screens/pause.jpg.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/stage08_ui_overview.png/stage08_ui_overview.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/stage08_ui_overview.png/stage08_ui_overview.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/briefing_mountain.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/briefing_mountain.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/failed_emblem.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/failed_emblem.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/gear_frag.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/gear_frag.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/gear_medkit.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/gear_medkit.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/gear_smoke.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/gear_smoke.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/m4a1_preview.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/m4a1_preview.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/mountain_art.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/mountain_art.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/p07_preview.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/p07_preview.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/radar_minimap.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/radar_minimap.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/soldier_preview.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/soldier_preview.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/assets/ui/stage08_whiteout/success_emblem.png and res://Stage08Whiteout_Backup/assets/ui/stage08_whiteout/success_emblem.png.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08HUD.tscn and res://scenes/stages/ui/Stage08IronPeakHUD.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08MissionFailed.tscn and res://scenes/stages/ui/Stage08IronPeakFailed.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08MissionSuccess.tscn and res://scenes/stages/ui/Stage08IronPeakSuccess.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08PauseMenu.tscn and res://scenes/stages/ui/Stage08IronPeakPauseMenu.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/Stage08WhiteoutBriefing.tscn and res://scenes/stages/Stage08IronPeakBriefing.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/Stage08WhiteoutLoadout.tscn and res://scenes/stages/Stage08IronPeakLoadout.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/prototypes/Stage08_AlpinePrototype.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/prototypes/Stage08_AlpinePrototype.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/ui/Stage08HUD.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08HUD.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/ui/Stage08MissionFailed.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08MissionFailed.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/ui/Stage08MissionSuccess.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08MissionSuccess.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/ui/Stage08PauseMenu.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/ui/Stage08PauseMenu.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/Stage08.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/Stage08.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/Stage08WhiteoutBriefing.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/Stage08WhiteoutBriefing.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scenes/Stage08WhiteoutLoadout.tscn and res://Stage08Whiteout_Backup/ProjectFiles/scenes/stages/Stage08WhiteoutLoadout.tscn.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/prototypes/Stage08AlpineHybridTerrain.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/prototypes/Stage08AlpineHybridTerrain.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/prototypes/Stage08_AlpineHybridPrototype.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/prototypes/Stage08_AlpineHybridPrototype.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/prototypes/Stage08_SnowyAlpinePrototype.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/prototypes/Stage08_SnowyAlpinePrototype.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/ui/_extract_reference_icons.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/stages/ui/_extract_reference_icons.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/ui/Stage08HUD.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/stages/ui/Stage08HUD.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/ui/Stage08MissionFailed.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/stages/ui/Stage08MissionFailed.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/ui/Stage08MissionSuccess.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/stages/ui/Stage08MissionSuccess.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/ui/Stage08PauseMenu.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/stages/ui/Stage08PauseMenu.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/scripts/ui/Stage08WhiteoutUITheme.gd and res://Stage08Whiteout_Backup/ProjectFiles/scripts/stages/ui/Stage08WhiteoutUITheme.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_alpine_hybrid_qa.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_alpine_hybrid_qa.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_alpine_perf_diag.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_alpine_perf_diag.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_alpine_prototype_qa.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_alpine_prototype_qa.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_enemy_deployment_test.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_enemy_deployment_test.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_enemy_gameplay_qa.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_enemy_gameplay_qa.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_environment_test.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_environment_test.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_event_capture.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_event_capture.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_runtime_movement_qa.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_runtime_movement_qa.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/_stage08_visual_capture.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/_stage08_visual_capture.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_briefing_screen.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_briefing_screen.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_controls_pause_verification.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_controls_pause_verification.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_dedicated_hud.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_dedicated_hud.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_e2e_flow.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_e2e_flow.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_enemy_counter_and_environment.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_enemy_counter_and_environment.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_foundation_gui_capture.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_foundation_gui_capture.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_loadout_screen.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_loadout_screen.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_player_movement.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_player_movement.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_production_terrain_integration.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_production_terrain_integration.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_real_gameplay_scenarios.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_real_gameplay_scenarios.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_snowy_alpine_prototype.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_snowy_alpine_prototype.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_spawn_patrol_compatibility.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_spawn_patrol_compatibility.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_terrain_spawn_collision.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_terrain_spawn_collision.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_ui_integration.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_ui_integration.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+WARNING: UID duplicate detected between res://Stage08Whiteout_Backup/tests/test_stage08_whiteout_foundation_smoke.gd and res://Stage08Whiteout_Backup/ProjectFiles/tests/test_stage08_whiteout_foundation_smoke.gd.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1405)
+[   0% ] update_scripts_classes | Started Registering global classes... (11 steps)
+[   0% ] update_scripts_classes | Player3D
+[   8% ] update_scripts_classes | PlayerCamera
+[  16% ] update_scripts_classes | TacticalHUD
+[  25% ] update_scripts_classes | Stage08_SnowyAlpinePrototype
+[  33% ] update_scripts_classes | Stage08HUD
+[  41% ] update_scripts_classes | Stage08MissionFailed
+[  50% ] update_scripts_classes | Stage08MissionSuccess
+[  58% ] update_scripts_classes | Stage08PauseMenu
+[  66% ] update_scripts_classes | Stage08WhiteoutUITheme
+[  75% ] update_scripts_classes | Stage08Whiteout
+[  83% ] update_scripts_classes | Stage08WhiteoutFoundation
+[ DONE ] update_scripts_classes
+
+Could not find version of build tools that matches Target SDK, using 34.0.0
+[   0% ] export | Started Exporting for Android (105 steps)
+0 param: --xr_mode_regular
+1 param: --xr-mode
+2 param: off
+3 param: --fullscreen
+4 param: --background_color
+5 param: #000000
+[   0% ] export | Creating APK...
+ADDING: classes.dex
+ADDING: classes10.dex
+ADDING: classes11.dex
+ADDING: classes12.dex
+ADDING: classes13.dex
+ADDING: classes2.dex
+ADDING: classes3.dex
+ADDING: classes4.dex
+ADDING: classes5.dex
+ADDING: classes6.dex
+ADDING: classes7.dex
+ADDING: classes8.dex
+ADDING: classes9.dex
+ADDING: lib/arm64-v8a/libc++_shared.so
+ADDING: lib/arm64-v8a/libgodot_android.so
+ADDING: lib/armeabi-v7a/libc++_shared.so
+ADDING: lib/armeabi-v7a/libgodot_android.so
+ADDING: lib/x86_64/libc++_shared.so
+ADDING: lib/x86_64/libgodot_android.so
+Adding application metadata org.godotengine.rendering.method
+Adding application metadata org.godotengine.editor.version
+Adding feature android.hardware.vulkan.level
+Adding feature android.hardware.vulkan.version
+Adding permission android.permission.INTERNET
+ADDING: AndroidManifest.xml
+ADDING: res/anim-v21/fragment_fast_out_extra_slow_in.xml
+ADDING: res/animator/fragment_close_enter.xml
+ADDING: res/animator/fragment_close_exit.xml
+ADDING: res/animator/fragment_fade_enter.xml
+ADDING: res/animator/fragment_fade_exit.xml
+ADDING: res/animator/fragment_open_enter.xml
+ADDING: res/animator/fragment_open_exit.xml
+ADDING: res/drawable-hdpi-v4/notification_bg_low_normal.9.png
+ADDING: res/drawable-hdpi-v4/notification_bg_low_pressed.9.png
+ADDING: res/drawable-hdpi-v4/notification_bg_normal.9.png
+ADDING: res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png
+ADDING: res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png
+ADDING: res/drawable-mdpi-v4/notification_bg_low_normal.9.png
+ADDING: res/drawable-mdpi-v4/notification_bg_low_pressed.9.png
+ADDING: res/drawable-mdpi-v4/notification_bg_normal.9.png
+ADDING: res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png
+ADDING: res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png
+ADDING: res/drawable-v21/notification_action_background.xml
+ADDING: res/drawable-v23/compat_splash_screen.xml
+ADDING: res/drawable-v23/compat_splash_screen_no_icon_background.xml
+ADDING: res/drawable-xhdpi-v4/notification_bg_low_normal.9.png
+ADDING: res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png
+ADDING: res/drawable-xhdpi-v4/notification_bg_normal.9.png
+ADDING: res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png
+ADDING: res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png
+ADDING: res/drawable/icon_background.xml
+ADDING: res/drawable/notification_bg.xml
+ADDING: res/drawable/notification_bg_low.xml
+ADDING: res/drawable/notification_icon_background.xml
+ADDING: res/drawable/notification_tile_bg.xml
+ADDING: res/drawable/splash_branding_image.webp
+ADDING: res/drawable/splash_icon.webp
+ADDING: res/layout-v21/notification_action.xml
+ADDING: res/layout-v21/notification_action_tombstone.xml
+ADDING: res/layout-v21/notification_template_custom_big.xml
+ADDING: res/layout-v21/notification_template_icon_group.xml
+ADDING: res/layout/custom_dialog.xml
+ADDING: res/layout/godot_app_layout.xml
+ADDING: res/layout/notification_template_part_chronometer.xml
+ADDING: res/layout/notification_template_part_time.xml
+ADDING: res/layout/remote_godot_fragment_layout.xml
+ADDING: res/layout/snackbar.xml
+ADDING: res/layout/splash_screen_view.xml
+ADDING: res/mipmap-anydpi-v26/icon.xml
+ADDING: res/mipmap-hdpi-v4/icon.webp
+ADDING: res/mipmap-hdpi-v4/icon_background.webp
+ADDING: res/mipmap-hdpi-v4/icon_foreground.webp
+ADDING: res/mipmap-hdpi-v4/icon_monochrome.webp
+ADDING: res/mipmap-mdpi-v4/icon.webp
+ADDING: res/mipmap-mdpi-v4/icon_background.webp
+ADDING: res/mipmap-mdpi-v4/icon_foreground.webp
+ADDING: res/mipmap-mdpi-v4/icon_monochrome.webp
+ADDING: res/mipmap-xhdpi-v4/icon.webp
+ADDING: res/mipmap-xhdpi-v4/icon_background.webp
+ADDING: res/mipmap-xhdpi-v4/icon_foreground.webp
+ADDING: res/mipmap-xhdpi-v4/icon_monochrome.webp
+ADDING: res/mipmap-xxhdpi-v4/icon.webp
+ADDING: res/mipmap-xxhdpi-v4/icon_background.webp
+ADDING: res/mipmap-xxhdpi-v4/icon_foreground.webp
+ADDING: res/mipmap-xxhdpi-v4/icon_monochrome.webp
+ADDING: res/mipmap-xxxhdpi-v4/icon.webp
+ADDING: res/mipmap-xxxhdpi-v4/icon_background.webp
+ADDING: res/mipmap-xxxhdpi-v4/icon_foreground.webp
+ADDING: res/mipmap-xxxhdpi-v4/icon_monochrome.webp
+ADDING: res/mipmap/icon.webp
+ADDING: res/mipmap/icon_background.webp
+ADDING: res/mipmap/icon_foreground.webp
+ADDING: res/mipmap/icon_monochrome.webp
+ADDING: res/xml/godot_provider_paths.xml
+ADDING: resources.arsc
+ADDING: DebugProbesKt.bin
+ADDING: kotlin/annotation/annotation.kotlin_builtins
+ADDING: kotlin/collections/collections.kotlin_builtins
+ADDING: kotlin/concurrent/atomics/atomics.kotlin_builtins
+ADDING: kotlin/coroutines/coroutines.kotlin_builtins
+ADDING: kotlin/internal/internal.kotlin_builtins
+ADDING: kotlin/kotlin.kotlin_builtins
+ADDING: kotlin/ranges/ranges.kotlin_builtins
+ADDING: kotlin/reflect/reflect.kotlin_builtins
+[   0% ] export | Adding files...
+[  97% ] export | Aligning APK...
+[  98% ] export | Signing debug APK...
+Could not find version of build tools that matches Target SDK, using 34.0.0
+Signing binary using: 
+C:\Android\Sdk/build-tools/34.0.0/apksigner.bat sign --verbose --ks <REDACTED> --ks-pass pass:<REDACTED> --ks-key-alias <REDACTED> C:/Users/lenevo/Desktop/counter-war-game/release/android/Counter-War-Touch-Debug.apk
+Signed
+
+[  99% ] export | Verifying APK...
+[ DONE ] export
+

@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08briefing001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08IronPeakBriefing.gd" id="1_briefing"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/screens/02_briefing.png" id="2_bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.015, 0.035, 0.08, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.18, 0.58, 0.98, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0.2, 0.5, 0.4)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_PreviewFrame"]
+bg_color = Color(0.01, 0.02, 0.04, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.58, 0.98, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Stage08IronPeakBriefing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_briefing")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 32
+
+[node name="Card" type="PanelContainer" parent="Margin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Card/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BackButton" type="Button" parent="Margin/Card/Margin/VBox/HeaderHBox"]
+custom_minimum_size = Vector2(36, 34)
+layout_mode = 2
+text = "<"
+
+[node name="Title" type="Label" parent="Margin/Card/Margin/VBox/HeaderHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 22
+text = "MISSION BRIEFING"
+
+[node name="ContentHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 28
+
+[node name="LeftPreviewFrame" type="PanelContainer" parent="Margin/Card/Margin/VBox/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_PreviewFrame")
+
+[node name="PreviewImage" type="TextureRect" parent="Margin/Card/Margin/VBox/ContentHBox/LeftPreviewFrame"]
+layout_mode = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="RightDetails" type="VBoxContainer" parent="Margin/Card/Margin/VBox/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 18
+
+[node name="ObjectivesBox" type="VBoxContainer" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails/ObjectivesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_size = 16
+text = "🎯  OBJECTIVES"
+
+[node name="Obj1" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails/ObjectivesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_font_size = 14
+text = "  ✔  Eliminate enemy forces"
+
+[node name="Obj2" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails/ObjectivesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_font_size = 14
+text = "  ✔  Secure the mountain outpost"
+
+[node name="Obj3" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails/ObjectivesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_font_size = 14
+text = "  ✔  Reach the extraction point"
+
+[node name="ChallengeBox" type="VBoxContainer" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails/ChallengeBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_size = 16
+text = "⭐  CHALLENGE"
+
+[node name="ChallengeText" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/RightDetails/ChallengeBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 0.98, 0.9)
+theme_override_font_size = 14
+text = "  Complete the mission with minimal casualties"
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+alignment = 2
+
+[node name="ContinueButton" type="Button" parent="Margin/Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(170, 42)
+layout_mode = 2
+text = "CONTINUE  ►"

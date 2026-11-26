@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://stage08whiteout001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08Whiteout.gd" id="1_stage08"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/TacticalHUD.tscn" id="3_hud"]
+[ext_resource type="PackedScene" uid="uid://bvxlap41m82ja" path="res://scenes/entities/Enemy3D.tscn" id="4_enemy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial_Whiteout"]
+sky_top_color = Color(0.12, 0.28, 0.52, 1)
+sky_horizon_color = Color(0.68, 0.78, 0.88, 1)
+ground_bottom_color = Color(0.35, 0.44, 0.52, 1)
+ground_horizon_color = Color(0.65, 0.75, 0.85, 1)
+sun_angle_max = 28.0
+
+[sub_resource type="Sky" id="Sky_Whiteout"]
+sky_material = SubResource("SkyMaterial_Whiteout")
+
+[sub_resource type="Environment" id="Environment_Whiteout"]
+background_mode = 2
+sky = SubResource("Sky_Whiteout")
+ambient_light_source = 2
+ambient_light_color = Color(0.68, 0.76, 0.88, 1)
+ambient_light_energy = 0.85
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_white = 1.15
+fog_enabled = true
+fog_light_color = Color(0.70, 0.80, 0.90, 1)
+fog_light_energy = 0.80
+fog_density = 0.0018
+fog_aerial_perspective = 0.75
+fog_sky_affect = 0.30
+
+[node name="Stage08" type="Node3D"]
+script = ExtResource("1_stage08")
+stage_id = 8
+stage_name = "OPERATION WHITEOUT"
+out_of_bounds_y = -12.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-36, -106)
+recovery_bounds_max = Vector2(36, 106)
+physical_boundaries_enabled = true
+physical_boundary_height = 45.0
+physical_boundary_center_y = 12.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_Whiteout")
+
+[node name="SunLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-35, -38, 0)
+light_color = Color(1, 0.97, 0.92, 1)
+light_energy = 1.35
+shadow_enabled = true
+directional_shadow_max_distance = 320.0
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+ 
+[node name="Enemy3D_1" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.125, 38)
+
+[node name="Enemy3D_2" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 6.866, 35)
+
+[node name="Enemy3D_3" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.672, 28)
+
+[node name="Enemy3D_4" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 8.029, 24)
+
+[node name="Enemy3D_5" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7.659, -10)
+
+[node name="Enemy3D_6" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 7.627, -14)
+
+[node name="Enemy3D_7" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8.158, -20)
+
+[node name="Enemy3D_8" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8.884, -28)
+
+[node name="Enemy3D_9" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 16.678, -67)
+
+[node name="Enemy3D_10" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 16.775, -69)
+
+[node name="Enemy3D_11" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 17.024, -78)
+
+[node name="Enemy3D_12" parent="Enemies" instance=ExtResource("4_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16.845, -76)
+
+[node name="Player3D" parent="." instance=ExtResource("2_player")]
+position = Vector3(0, 2.24, 85)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]

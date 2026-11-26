@@ -10,7 +10,7 @@ const SAVE_VERSION: int = 2
 const LEGACY_SAVE_VERSION: int = 1
 const SAVE_PATH: String = "user://counter_war_profile.json"
 const MAX_NAME_LENGTH: int = 24
-const TOTAL_STAGES: int = 7
+const TOTAL_STAGES: int = 8
 
 var current_profile: Dictionary = {}
 var save_path: String = SAVE_PATH

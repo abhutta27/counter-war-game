@@ -1,0 +1,193 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[OperationsHQStep3C] START
+SCRIPT ERROR: Parse Error: Class "Projectile3D" hides a global script class.
+   at: GDScript::reload (res://scripts/combat/Projectile3D.gd:1)
+ERROR: Failed to load script "res://scripts/combat/Projectile3D.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Parse Error: Class "ImpactEffect3D" hides a global script class.
+   at: GDScript::reload (res://scripts/combat/ImpactEffect3D.gd:1)
+ERROR: Failed to load script "res://scripts/combat/ImpactEffect3D.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+[StateBoot] Booting Counter War core systems...
+[GameManager] Core Game Manager initialized with State Machine.
+[StageManager] Initialized with 7 registered stages.
+[SupabaseManager] Loaded config from: res://supabase_config.json
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: BOOT -> MAIN_MENU
+WARNING: [StageManager] Rejected locked Stage ID: 4
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:160)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _run (res://tests/test_operations_hq_stage_selection.gd:68)
+WARNING: [StageManager] Rejected locked Stage ID: 7
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:160)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _run (res://tests/test_operations_hq_stage_selection.gd:70)
+ERROR: [StageManager] No loadable scene for Stage 7.
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:168)
+       [1] load_stage_for_testing (res://scripts/core/stage_manager.gd:153)
+       [2] _run (res://tests/test_operations_hq_stage_selection.gd:72)
+ERROR: [StageManager] No loadable scene for Stage 7.
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:168)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _run (res://tests/test_operations_hq_stage_selection.gd:109)
+       [3] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+[StageManager] Loading Stage 5 -> res://scenes/stages/Stage05.tscn
+SCRIPT ERROR: Parse Error: Class "Enemy3D" hides a global script class.
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:1)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+SCRIPT ERROR: Parse Error: Could not parse global class "Enemy3D" from "res://backups/combat_cover_stutter_preimplementation_20261005/source/scripts/entities/Enemy3D.gd".
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:199)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "other" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:199)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "away" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:202)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "distance" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/entities/Enemy3D.gd:204)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+ERROR: Failed to load script "res://scripts/entities/Enemy3D.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+SCRIPT ERROR: Parse Error: Could not resolve class "Enemy3D".
+   at: GDScript::reload (res://scripts/stages/Stage05Enemy3D.gd:1)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+ERROR: Failed to load script "res://scripts/stages/Stage05Enemy3D.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:115)
+       [4] _open_hq (res://tests/test_operations_hq_stage_selection.gd:183)
+SCRIPT ERROR: Invalid access to property or key 'health_changed' on a base object of type 'CharacterBody3D'.
+   at: Stage05RelayController._ready (res://scripts/stages/Stage05RelayController.gd:67)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/stages/Stage05RelayController.gd:67)
+SCRIPT ERROR: Invalid access to property or key 'is_dead' on a base object of type 'CharacterBody3D'.
+   at: Stage05RelayController._poll_awareness (res://scripts/stages/Stage05RelayController.gd:95)
+   GDScript backtrace (most recent call first):
+       [0] _poll_awareness (res://scripts/stages/Stage05RelayController.gd:95)
+       [1] _physics_process (res://scripts/stages/Stage05RelayController.gd:74)
+SCRIPT ERROR: Invalid access to property or key 'is_dead' on a base object of type 'CharacterBody3D'.
+   at: Stage05RelayController._poll_awareness (res://scripts/stages/Stage05RelayController.gd:95)
+   GDScript backtrace (most recent call first):
+       [0] _poll_awareness (res://scripts/stages/Stage05RelayController.gd:95)
+       [1] _physics_process (res://scripts/stages/Stage05RelayController.gd:74)
+SCRIPT ERROR: Invalid access to property or key 'is_dead' on a base object of type 'CharacterBody3D'.
+   at: Stage05RelayController._poll_awareness (res://scripts/stages/Stage05RelayController.gd:95)
+   GDScript backtrace (most recent call first):
+       [0] _poll_awareness (res://scripts/stages/Stage05RelayController.gd:95)
+       [1] _physics_process (res://scripts/stages/Stage05RelayController.gd:74)
+[StateMainMenu] Entered Main Menu.
+[GameManager] State transition completed: PLAYING -> MAIN_MENU
+[StatePlaying] Combat loop active.
+[GameManager] State transition completed: MAIN_MENU -> PLAYING
+[StageManager] Loading Stage 6 -> res://scenes/stages/Stage06.tscn
+SCRIPT ERROR: Parse Error: Could not parse global class "Stage06Enemy3D" from "res://backups/combat_cover_stutter_preimplementation_20261005/source/scripts/stages/Stage06Enemy3D.gd".
+   at: GDScript::reload (res://scripts/stages/Stage06SecurityController.gd:83)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "enemy" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/stages/Stage06SecurityController.gd:83)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+SCRIPT ERROR: Parse Error: Could not parse global class "Stage06Enemy3D" from "res://backups/combat_cover_stutter_preimplementation_20261005/source/scripts/stages/Stage06Enemy3D.gd".
+   at: GDScript::reload (res://scripts/stages/Stage06SecurityController.gd:199)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "enemy" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/stages/Stage06SecurityController.gd:199)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+ERROR: Failed to load script "res://scripts/stages/Stage06SecurityController.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+SCRIPT ERROR: Parse Error: Class "Stage06Enemy3D" hides a global script class.
+   at: GDScript::reload (res://scripts/stages/Stage06Enemy3D.gd:1)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+SCRIPT ERROR: Parse Error: Could not resolve class "Enemy3D".
+   at: GDScript::reload (res://scripts/stages/Stage06Enemy3D.gd:1)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+ERROR: Failed to load script "res://scripts/stages/Stage06Enemy3D.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] _load_stage_internal (res://scripts/core/stage_manager.gd:183)
+       [1] load_stage (res://scripts/core/stage_manager.gd:145)
+       [2] _on_action_pressed (res://scripts/StageSelection.gd:192)
+       [3] _run (res://tests/test_operations_hq_stage_selection.gd:125)
+SCRIPT ERROR: Invalid call. Nonexistent function '_configure_campaign_complete' in base 'Node3D'.
+   at: _run (res://tests/test_operations_hq_stage_selection.gd:129)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/test_operations_hq_stage_selection.gd:129)

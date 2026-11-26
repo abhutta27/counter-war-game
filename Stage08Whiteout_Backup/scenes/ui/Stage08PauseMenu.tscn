@@ -1,0 +1,221 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08pause001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08PauseMenu.gd" id="1_pause"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/mountain_art.png" id="2_mountain"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.02, 0.04, 0.07, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.45, 0.72, 0.85)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_MountainFrame"]
+bg_color = Color(0.01, 0.02, 0.04, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25, 0.55, 0.85, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Stage08PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pause")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.02, 0.04, 0.65)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainCard" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(580, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="CenterContainer/MainCard/Margin/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 24
+text = "PAUSED"
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.75, 0.95, 1)
+theme_override_font_size = 11
+text = "STAGE 08 — OPERATION WHITEOUT"
+
+[node name="ContentHBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ButtonVBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox/ButtonVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../ControlsButton")
+text = "▶   RESUME GAME"
+alignment = 0
+
+[node name="ControlsButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox/ButtonVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+text = "🎮   CONTROLS"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox/ButtonVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+focus_neighbor_top = NodePath("../ControlsButton")
+focus_neighbor_bottom = NodePath("../RestartButton")
+text = "⚙   SETTINGS"
+alignment = 0
+
+[node name="RestartButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox/ButtonVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+text = "⟳   RESTART MISSION"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox/ButtonVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+focus_neighbor_top = NodePath("../RestartButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+text = "⇥   QUIT TO MAIN MENU"
+alignment = 0
+
+[node name="MountainFrame" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox"]
+custom_minimum_size = Vector2(220, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_MountainFrame")
+
+[node name="MountainTexture" type="TextureRect" parent="CenterContainer/MainCard/Margin/VBox/ContentHBox/MountainFrame"]
+layout_mode = 2
+texture = ExtResource("2_mountain")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FooterHBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(90, 28)
+layout_mode = 2
+text = "< BACK"
+
+[node name="Spacer" type="Control" parent="CenterContainer/MainCard/Margin/VBox/FooterHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GamePausedLabel" type="Label" parent="CenterContainer/MainCard/Margin/VBox/FooterHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.6, 0.75, 0.8)
+theme_override_font_size = 11
+text = "GAME PAUSED"
+
+[node name="ControlsModal" type="PanelContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(360, 240)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/ControlsModal"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/ControlsModal/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="CenterContainer/ControlsModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_font_size = 14
+text = "TACTICAL CONTROLS"
+
+[node name="Sep" type="HSeparator" parent="CenterContainer/ControlsModal/Margin/VBox"]
+layout_mode = 2
+
+[node name="ControlsList" type="Label" parent="CenterContainer/ControlsModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 0.98, 0.9)
+theme_override_font_size = 12
+text = "WASD — Move / Stride
+SHIFT — Tactical Sprint
+SPACE — Jump / Vault
+LEFT CLICK — Primary Fire
+RIGHT CLICK — Aim Down Sight (ADS)
+R — Tactical Reload
+Q — Switch Sidearm / Rifle
+E — Interact / Terminal Access
+ESC — Pause Menu"
+
+[node name="ModalBackButton" type="Button" parent="CenterContainer/ControlsModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 28)
+layout_mode = 2
+text = "✕ CLOSE"

@@ -1,0 +1,369 @@
+[gd_scene load_steps=6 format=3 uid="uid://stage08success001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08MissionSuccess.gd" id="1_success"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/success_emblem.png" id="2_emblem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.02, 0.04, 0.07, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.45, 0.75, 0.85)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Stats"]
+bg_color = Color(0.03, 0.06, 0.1, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.15, 0.32, 0.5, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Check"]
+bg_color = Color(0.1, 0.62, 0.32, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.92, 0.48, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Stage08MissionSuccess" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_success")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.02, 0.04, 0.75)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainCard" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(620, 480)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EmblemCenter" type="CenterContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+
+[node name="EmblemTexture" type="TextureRect" parent="CenterContainer/MainCard/Margin/VBox/EmblemCenter"]
+custom_minimum_size = Vector2(76, 56)
+layout_mode = 2
+texture = ExtResource("2_emblem")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleVBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/MainCard/Margin/VBox/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 22
+text = "MISSION ACCOMPLISHED"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.72, 0.95, 1)
+theme_override_font_size = 11
+text = "OPERATION WHITEOUT"
+horizontal_alignment = 1
+
+[node name="StatsPanel" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Stats")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="HBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ObjectivesColumn" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Row1" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Check" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row1"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Check")
+
+[node name="L" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row1/Check"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 11
+text = "✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 12
+text = "Reach the ridge"
+
+[node name="Row2" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Check" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row2"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Check")
+
+[node name="L" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row2/Check"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 11
+text = "✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 12
+text = "Eliminate snipers"
+
+[node name="Row3" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Check" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row3"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Check")
+
+[node name="L" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row3/Check"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 11
+text = "✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 12
+text = "Secure the facility"
+
+[node name="Row4" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Check" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row4"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Check")
+
+[node name="L" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row4/Check"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 11
+text = "✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/ObjectivesColumn/Row4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 12
+text = "Extract"
+
+[node name="VSep" type="VSeparator" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox"]
+layout_mode = 2
+
+[node name="StatsColumn" type="GridContainer" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="TimeTitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.72, 0.85, 0.9)
+theme_override_font_size = 11
+text = "MISSION TIME"
+
+[node name="TimeValue" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 12
+text = "18:42"
+horizontal_alignment = 2
+
+[node name="EnemiesTitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.72, 0.85, 0.9)
+theme_override_font_size = 11
+text = "ENEMIES ELIMINATED"
+
+[node name="EnemiesValue" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 12
+text = "23"
+horizontal_alignment = 2
+
+[node name="ShotsTitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.72, 0.85, 0.9)
+theme_override_font_size = 11
+text = "SHOTS FIRED"
+
+[node name="ShotsValue" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 12
+text = "142"
+horizontal_alignment = 2
+
+[node name="AccuracyTitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.72, 0.85, 0.9)
+theme_override_font_size = 11
+text = "ACCURACY"
+
+[node name="AccuracyValue" type="Label" parent="CenterContainer/MainCard/Margin/VBox/StatsPanel/Margin/HBox/StatsColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 12
+text = "68%"
+horizontal_alignment = 2
+
+[node name="ScoreSection" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="ScoreHeader" type="Label" parent="CenterContainer/MainCard/Margin/VBox/ScoreSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.7, 0.88, 1)
+theme_override_font_size = 11
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="ScoreValue" type="Label" parent="CenterContainer/MainCard/Margin/VBox/ScoreSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 28
+text = "3,850"
+horizontal_alignment = 1
+
+[node name="StarsRow" type="CenterContainer" parent="CenterContainer/MainCard/Margin/VBox/ScoreSection"]
+layout_mode = 2
+
+[node name="StarsLabel" type="Label" parent="CenterContainer/MainCard/Margin/VBox/ScoreSection/StarsRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.75, 0.2, 1)
+theme_override_font_size = 18
+text = "★   ★   ★"
+
+[node name="ButtonHBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="ViewStatsButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ButtonHBox"]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 2
+text = "VIEW STATS"
+
+[node name="Spacer" type="Control" parent="CenterContainer/MainCard/Margin/VBox/ButtonHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ButtonHBox"]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+text = "CONTINUE >"
+
+[node name="DetailedStatsModal" type="PanelContainer" parent="CenterContainer"]
+visible = false
+custom_minimum_size = Vector2(380, 260)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/DetailedStatsModal"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/DetailedStatsModal/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="CenterContainer/DetailedStatsModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_font_size = 14
+text = "MISSION COMBAT LOG"
+
+[node name="Sep" type="HSeparator" parent="CenterContainer/DetailedStatsModal/Margin/VBox"]
+layout_mode = 2
+
+[node name="StatsList" type="Label" parent="CenterContainer/DetailedStatsModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 0.98, 0.9)
+theme_override_font_size = 12
+text = "Kills: 12
+Headshots: 4
+Shots Fired: 45
+Accuracy: 68%"

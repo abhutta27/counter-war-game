@@ -20,6 +20,8 @@ func is_open() -> bool:
 	return visible
 
 func _build_controls_help() -> String:
+	if OS.has_feature("mobile"):
+		return _build_mobile_controls_help()
 	var move := "/".join([
 		_first_input_label("move_forward"), _first_input_label("move_left"),
 		_first_input_label("move_backward"), _first_input_label("move_right")
@@ -29,6 +31,9 @@ func _build_controls_help() -> String:
 		_input_labels("crouch"), _input_labels("fire"), _input_labels("reload"),
 		_input_labels("switch_weapon"), _input_labels("pause")
 	]
+
+func _build_mobile_controls_help() -> String:
+	return "MOVE                         MOVEMENT JOYSTICK\nAIM                          CIRCULAR AIM CONTROL\nFIRE                         FIRE BUTTON\nRELOAD                       RELOAD BUTTON\nSWITCH WEAPON                WEAPON SWITCH BUTTON"
 
 func _first_input_label(action: StringName) -> String:
 	var labels := _input_label_list(action)

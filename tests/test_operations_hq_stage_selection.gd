@@ -25,18 +25,23 @@ func _run() -> void:
 	profile.save_path = TEST_SAVE
 	_set_profile(3, [1], {"1": 1850}, 1)
 
-	# Catalog and grouping contain the existing six missions plus the registered Stage07 entry.
-	assert(manager.get_registered_stage_ids() == [1, 2, 3, 4, 5, 6, 7], "Catalog must contain Stage01-Stage07")
+	# Catalog and grouping contain the existing missions plus the registered Stage08 entry.
+	assert(manager.get_registered_stage_ids() == [1, 2, 3, 4, 5, 6, 7, 8], "Catalog must contain Stage01-Stage08")
 	assert(manager.get_stages_for_operation(1).size() == 5, "Operation I must contain Stage01-Stage05")
 	assert(manager.get_stages_for_operation(2).size() == 1, "Operation II must contain only Stage06")
 	assert(manager.get_stages_for_operation(3).size() == 1, "Operation III must contain Stage07")
+	assert(manager.get_stages_for_operation(4).size() == 1, "Operation IV must contain Stage08")
 	assert(manager.get_stage_info(7).get("mission_title") == "OPERATION IRON HARBOR", "Stage07 must use the Iron Harbor title")
 	assert(manager.get_stage_info(7).get("scene_path") == "res://scenes/stages/Stage07.tscn", "Stage07 must follow the stage scene path convention")
+	assert(manager.get_stage_info(8).get("mission_title") in ["OPERATION IRON PEAK", "OPERATION WHITEOUT"], "Stage08 must use the Iron Peak title")
+	assert(manager.get_stage_info(8).get("scene_path") == "res://scenes/stages/Stage08.tscn", "Stage08 must follow the stage scene path convention")
 
 	var hq := await _open_hq()
-	assert(hq.get_mission_rows().size() == 7, "HQ must render seven compact mission rows")
+	assert(hq.get_mission_rows().size() == 8, "HQ must render eight compact mission rows")
 	assert(hq.missions_container.has_node("OperationHeader_3"), "Operation III header must exist in HQ")
 	assert((hq.missions_container.get_node("OperationHeader_3") as Label).text == "OPERATION III", "Operation III label text must match")
+	assert(hq.missions_container.has_node("OperationHeader_4"), "Operation IV header must exist in HQ")
+	assert((hq.missions_container.get_node("OperationHeader_4") as Label).text == "OPERATION IV", "Operation IV label text must match")
 	assert(hq.get_selected_stage_id() == 2, "First HQ visit must select the next available incomplete stage")
 	assert(_rows_by_id(hq)[2].has_focus(), "Selected mission row must expose keyboard focus")
 	assert(Input.mouse_mode == Input.MOUSE_MODE_VISIBLE and not paused, "HQ must restore visible mouse and unpaused menu input")
@@ -52,6 +57,7 @@ func _run() -> void:
 	assert(rows[2].stage_status == "AVAILABLE", "Stage02 must show available")
 	assert(rows[4].stage_status == "LOCKED", "Stage04 must show locked")
 	assert(rows[7].stage_status == "LOCKED", "Stage07 must remain locked until legitimately unlocked")
+	assert(rows[8].stage_status == "LOCKED", "Stage08 must remain locked until legitimately unlocked")
 	rows[1].emit_signal("mission_selected", 1)
 	await process_frame
 	assert(hq.get_selected_stage_id() == 1 and hq.action_button.text == "REPLAY MISSION", "Completed row selection must update details without launching")
@@ -72,6 +78,9 @@ func _run() -> void:
 	assert(not manager.load_stage(7), "StageManager must independently reject locked Stage07")
 	assert(manager.current_stage_id == 2 and profile.get_profile() == snapshot_before_block, "Locked Stage07 load must not mutate stage or profile")
 	assert(not manager.is_stage_unlocked(7), "Stage07 must remain locked prior to completing Stage06")
+	assert(not manager.load_stage(8), "StageManager must independently reject locked Stage08")
+	assert(manager.current_stage_id == 2 and profile.get_profile() == snapshot_before_block, "Locked Stage08 load must not mutate stage or profile")
+	assert(not manager.is_stage_unlocked(8), "Stage08 must remain locked prior to completing Stage07")
 
 	# HQ refresh/selection cannot award a score, complete, or unlock anything.
 	hq._on_refresh_pressed()
@@ -102,6 +111,7 @@ func _run() -> void:
 	assert(hq.get_selected_stage_id() == 7, "Stage07 must become the next available mission after Stage06 completion")
 	assert(rows[1].get_best_score_text() == "1,850" and rows[6].get_best_score_text() == "1,989", "Existing Stage01 and Stage06 best scores must remain visible")
 	assert(rows[7].stage_status == "AVAILABLE", "Stage07 must unlock through legitimate Stage06 progression")
+	assert(rows[8].stage_status == "LOCKED", "Stage08 must remain locked when only Stage06 is completed")
 	assert(hq.campaign_label.text == "STAGE 07 AVAILABLE", "Campaign header must report Stage07 availability")
 	assert(hq.action_button.text == "DEPLOY", "Newly unlocked Stage07 must be deployable in the HQ")
 	hq._select_stage(6)
@@ -109,6 +119,7 @@ func _run() -> void:
 	manager.current_stage_id = 6
 	assert(manager.get_next_registered_stage_id(6) == 7, "Stage06 must advance to registered Stage07")
 	assert(manager.is_stage_unlocked(7), "Registered Stage07 must be unlocked after Stage06 completion")
+	assert(not manager.is_stage_unlocked(8), "Registered Stage08 must remain locked after Stage06 completion")
 
 	# The single HQ action launches the selected real mission; both result-return
 	# handlers route directly back and retain selection.
@@ -151,6 +162,20 @@ func _run() -> void:
 	assert(hq.name == "OperationsHQ" and hq.get_selected_stage_id() == 7, "Return from Stage07 must select Stage07 in HQ")
 	assert(profile.get_career_score() == int(score_snapshot["career_score"]), "Mission navigation without completion must not double-count Career Score")
 
+	# Completing Stage07 legitimately unlocks Stage08
+	profile.record_stage_completed(7)
+	hq.queue_free()
+	await process_frame
+	hq = await _open_hq()
+	rows = _rows_by_id(hq)
+	assert(hq.get_selected_stage_id() == 8, "Stage08 must become the next available mission after Stage07 completion")
+	assert(rows[7].stage_status == "COMPLETED", "Stage07 must show completed")
+	assert(rows[8].stage_status == "AVAILABLE", "Stage08 must unlock through legitimate Stage07 progression")
+	assert(hq.campaign_label.text == "STAGE 08 AVAILABLE", "Campaign header must report Stage08 availability")
+	assert(manager.get_next_registered_stage_id(7) == 8, "Stage07 must advance to registered Stage08")
+	assert(manager.is_stage_unlocked(8), "Registered Stage08 must be unlocked after Stage07 completion")
+	assert(manager.get_next_registered_stage_id(8) == -1, "No registered stage follows Stage08")
+
 	# No-profile startup remains on identity creation; Switch Operative also uses it.
 	hq.queue_free()
 	await process_frame
@@ -185,7 +210,7 @@ func _run() -> void:
 	assert(current_scene != null and current_scene.name == "OperationsHQ", "Saved-profile startup must bypass the old dossier stop and open HQ")
 
 	_restore()
-	print("[OperationsHQStep3C] PASS: startup, 6+1 rows, selection/details, locked guard, fresh return, campaign progression, identity/switch, no score mutation")
+	print("[OperationsHQStep3C] PASS: startup, 7+1 rows, selection/details, locked guard, fresh return, campaign progression, identity/switch, no score mutation")
 	quit(0)
 
 func _open_hq() -> Node:

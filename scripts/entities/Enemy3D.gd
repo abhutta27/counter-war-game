@@ -404,7 +404,7 @@ func _enemy_shoot() -> void:
 			enemy_muzzle_flash = shooting_system.trigger_muzzle_flash(muzzle, Vector3.ZERO, false) if muzzle else null
 			# The shot ray is resolved once here. The visible tracer follows that exact
 			# clear or blocked path and does not repeat raycasts on every render frame.
-			shooting_system.spawn_projectile(origin, impact_point, false, Callable(), -1.0, true)
+			# shooting_system.spawn_projectile(origin, impact_point, false, Callable(), -1.0, true)
 		var sound_manager := get_node_or_null("/root/SoundManager")
 		if sound_manager and sound_manager.has_method("play_gunshot"):
 			sound_manager.play_gunshot()

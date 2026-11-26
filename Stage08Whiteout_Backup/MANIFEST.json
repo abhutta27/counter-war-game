@@ -1,0 +1,1077 @@
+[
+    {
+        "RelativePath":  "art_reference/stage08/01_briefing.png",
+        "Size":  334683,
+        "MD5":  "5304DC11832ED34F7E1446491F5E83AB"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/01_briefing.png.import",
+        "Size":  959,
+        "MD5":  "381724702F36652D78312DF1350C323C"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/02_loadout.png",
+        "Size":  271306,
+        "MD5":  "CAAD565F7AA57291B0A8681AF6F8CFE1"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/02_loadout.png.import",
+        "Size":  956,
+        "MD5":  "EF5C3AE11C4F1CB0230555BB43EB3F85"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/03_gameplay_hud.png",
+        "Size":  411599,
+        "MD5":  "9B29D6F224C0A2DE28C2FE675F8D30D3"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/03_gameplay_hud.png.import",
+        "Size":  971,
+        "MD5":  "CCE65F0E19F9A69038401806DBAF750F"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/04_pause_menu.png",
+        "Size":  244122,
+        "MD5":  "122DD9DFEAB4CFB76EC5D52E11672F7F"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/04_pause_menu.png.import",
+        "Size":  964,
+        "MD5":  "F904979FBAFCA04B678BB074505C65F4"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/05_mission_success.png",
+        "Size":  298854,
+        "MD5":  "EB84D12C3BAA9FD5C81921FA996E6910"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/05_mission_success.png.import",
+        "Size":  980,
+        "MD5":  "DD1CDA848EF995A5E0F9B888C78B9733"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/06_mission_failed.png",
+        "Size":  304889,
+        "MD5":  "341F87A089217F620A37B2DF5BBA4E0C"
+    },
+    {
+        "RelativePath":  "art_reference/stage08/06_mission_failed.png.import",
+        "Size":  976,
+        "MD5":  "05E30BB5FD77592F4F9B8F08C7010F36"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/ASSET_MANIFEST.md",
+        "Size":  3717,
+        "MD5":  "0C4F7E4F202F1C053FC3E622CBC1B7F5"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/boulder_01.bin",
+        "Size":  2938808,
+        "MD5":  "27A19FA031D8B4C3A09261F19C444DC5"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/boulder_01_2k.gltf",
+        "Size":  2773,
+        "MD5":  "3EF4B3C88C898E12B096EEB40F1EDBB9"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/boulder_01_2k.gltf.import",
+        "Size":  1201,
+        "MD5":  "841F8DB89D708540094BCF2F4D6AE495"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/textures/boulder_01_arm_2k.jpg",
+        "Size":  2273068,
+        "MD5":  "94C796DFD73F72B11E557CB2C05FF51E"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/textures/boulder_01_arm_2k.jpg.import",
+        "Size":  1008,
+        "MD5":  "6514E9ADF25C4E2C696C463EE2050CEE"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/textures/boulder_01_diff_2k.jpg",
+        "Size":  3672483,
+        "MD5":  "63571077317C9A2D1DB95894E0268A07"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/textures/boulder_01_diff_2k.jpg.import",
+        "Size":  1010,
+        "MD5":  "7B1931CD99A8C3F5F334B49B93347B86"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/textures/boulder_01_nor_gl_2k.jpg",
+        "Size":  4649207,
+        "MD5":  "73EE1783FCA7605FD454F0AF3E5B85FA"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/boulder_01/textures/boulder_01_nor_gl_2k.jpg.import",
+        "Size":  1017,
+        "MD5":  "C11897C8134CACB5BEA9835C4E2D4410"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/fir_sapling.bin",
+        "Size":  21677180,
+        "MD5":  "B329143A90D95201891AFC52DAEB9698"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/fir_sapling_2k.gltf",
+        "Size":  10979,
+        "MD5":  "7D513103567F55260A28F203DB1CD835"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/fir_sapling_2k.gltf.import",
+        "Size":  1205,
+        "MD5":  "B4E108809D8DCCDA0AF46E0B6B4713F9"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_arm_2k.jpg",
+        "Size":  2798227,
+        "MD5":  "5EFFD466021FA7300D596E09996B3EF1"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_arm_2k.jpg.import",
+        "Size":  1039,
+        "MD5":  "767EE3F111ECD794430F68429527DDA8"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_diff_2k.jpg",
+        "Size":  2839348,
+        "MD5":  "83C6029F4E7C124C68A6B5269E6D214A"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_diff_2k.jpg.import",
+        "Size":  1041,
+        "MD5":  "5E0CDC9621FB5AAB6F3F276A6B389896"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_nor_gl_2k.jpg",
+        "Size":  3921063,
+        "MD5":  "71ED83F58A42D1D896DE0E58E0AB630D"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_branches_nor_gl_2k.jpg.import",
+        "Size":  1047,
+        "MD5":  "D1159CA498353499C7437CFA17E37E26"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_arm_2k.jpg",
+        "Size":  921388,
+        "MD5":  "5CCDD7AA2C40E20BD7647A66D3306825"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_arm_2k.jpg.import",
+        "Size":  1030,
+        "MD5":  "B3B0CF44BAC1BECD5B8C3E5D5EE35C5A"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_diff_2k.jpg",
+        "Size":  751844,
+        "MD5":  "8F4DC0996ACB0FA5082E5841407FFDE9"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_diff_2k.jpg.import",
+        "Size":  1033,
+        "MD5":  "4013150CDAC4D0E20DA058B11C3C8036"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_nor_gl_2k.jpg",
+        "Size":  1641253,
+        "MD5":  "76329D0FBEF7976C898C768B1DFF38D1"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/fir_sapling/textures/fir_sapling_twigs_nor_gl_2k.jpg.import",
+        "Size":  1038,
+        "MD5":  "80D31E38CFAB79BB67FDA2F5B907CD2C"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/mountainside.bin",
+        "Size":  4409280,
+        "MD5":  "A4AC37444E3313BD9F9FF459EB71418D"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/mountainside_2k.gltf",
+        "Size":  2776,
+        "MD5":  "F9E86E343BA6CC47CAED1BA69D1C3E8D"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/mountainside_2k.gltf.import",
+        "Size":  1209,
+        "MD5":  "A2A25A7D6624962914ACF56F2F578671"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/textures/mountainside_arm_2k.jpg",
+        "Size":  2829509,
+        "MD5":  "8E30DCEF790C72C1334D4A5B5F88E5A0"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/textures/mountainside_arm_2k.jpg.import",
+        "Size":  1016,
+        "MD5":  "2760EBEB039A7358F3CF61B8AEEAD769"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/textures/mountainside_diff_2k.jpg",
+        "Size":  3557566,
+        "MD5":  "B17B6412EE4B662BEA39625ADD48952F"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/textures/mountainside_diff_2k.jpg.import",
+        "Size":  1019,
+        "MD5":  "F40803E08D7662B7C1B1F9B9F4C7C143"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/textures/mountainside_nor_gl_2k.jpg",
+        "Size":  4568125,
+        "MD5":  "7A83E68EB3F05EEB3E09DA657019D9AD"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/mountainside/textures/mountainside_nor_gl_2k.jpg.import",
+        "Size":  1024,
+        "MD5":  "B25CAF2972FD5D5AF9AA804E0F81FC63"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/pine_sapling_small.bin",
+        "Size":  17771796,
+        "MD5":  "76DD1802D8DE128C812F2E124A258B35"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/pine_sapling_small_2k.gltf",
+        "Size":  11442,
+        "MD5":  "ADFEA6822FE6B16DB26A1036530B7555"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/pine_sapling_small_2k.gltf.import",
+        "Size":  1233,
+        "MD5":  "0C3AEBB70DBD7E71D5F53D1FD0FBB657"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_arm_2k.jpg",
+        "Size":  2941366,
+        "MD5":  "218F22567F42E7918AFC25C7E3450BE8"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_arm_2k.jpg.import",
+        "Size":  1055,
+        "MD5":  "F03782603B040DDDB0182AC02182A228"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_diff_2k.jpg",
+        "Size":  2700448,
+        "MD5":  "F420CB9CA2E845CD988F3BCF03C41A85"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_diff_2k.jpg.import",
+        "Size":  1058,
+        "MD5":  "0465AC01749F5B124C4FABA5D72F2882"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_nor_gl_2k.jpg",
+        "Size":  3373886,
+        "MD5":  "DA6EB7BC3C4EAFEA4E8ED696F7891A73"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_bark_nor_gl_2k.jpg.import",
+        "Size":  1064,
+        "MD5":  "640DFDE2D7FC8F7F226B2D192884CFF4"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_arm_2k.jpg",
+        "Size":  1251644,
+        "MD5":  "20B41BC76F1E40E11D1847B39779C015"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_arm_2k.jpg.import",
+        "Size":  1055,
+        "MD5":  "07E1AE364C41D2E1BA703492E9D9AB9B"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_diff_2k.jpg",
+        "Size":  1542464,
+        "MD5":  "ACB5A3388D67A8CFCDCFCF9C66539FD0"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_diff_2k.jpg.import",
+        "Size":  1058,
+        "MD5":  "3C6E946CBB53FBB62AEDCB7E87627F90"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_nor_gl_2k.jpg",
+        "Size":  2557993,
+        "MD5":  "07D9FBB7A95F16A0D733F06EFBCA56A7"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/models/pine_sapling_small/textures/pine_sapling_small_twig_nor_gl_2k.jpg.import",
+        "Size":  1064,
+        "MD5":  "B13873EF201085367867BBCB838C2C6A"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_ao.jpg",
+        "Size":  2284209,
+        "MD5":  "4B177914921E1330F99CA37DC1DE4510"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_ao.jpg.import",
+        "Size":  985,
+        "MD5":  "A0F84367BF9B13121EE96AF99D288B36"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_arm.jpg",
+        "Size":  2750758,
+        "MD5":  "43DE6D1BF42E0FABD6AA69FA75D4976C"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_arm.jpg.import",
+        "Size":  987,
+        "MD5":  "C5EB25209130FAAE3739212658879B9D"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_diffuse.jpg",
+        "Size":  2159653,
+        "MD5":  "980167324D1D407197227619A80CFB71"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_diffuse.jpg.import",
+        "Size":  1000,
+        "MD5":  "2431879CB7628AFE492DE2557B70EDED"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_displacement.jpg",
+        "Size":  693929,
+        "MD5":  "CC8215577DA08EA453FBFF28BF48E35C"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_displacement.jpg.import",
+        "Size":  1015,
+        "MD5":  "E875DAD5B668622BE6895971C22E1380"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.jpg",
+        "Size":  3811444,
+        "MD5":  "498CBE6F8BA1A5E08C3EA2F0ACE3843C"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.jpg.import",
+        "Size":  997,
+        "MD5":  "6B238B99ABC6D702B27005882D565CDB"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.png",
+        "Size":  25483495,
+        "MD5":  "118EA02FAEBE8CF4C4799B9A1655D48D"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_nor_gl.png.import",
+        "Size":  997,
+        "MD5":  "FC761FDFE8D98CB1F7473E98232FAF78"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_rough.jpg",
+        "Size":  2312590,
+        "MD5":  "375269BE32375407880AB60AC0154EA5"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/dark_rock/dark_rock_rough.jpg.import",
+        "Size":  994,
+        "MD5":  "AEFCE123E2BD1E17632E2BE62FBF2B6A"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_ao.jpg",
+        "Size":  1356103,
+        "MD5":  "7D41F091DD46E66D6023804D030E682C"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_ao.jpg.import",
+        "Size":  975,
+        "MD5":  "1665B4EA7D19F6BA63FA8D57CBFB7C5B"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_arm.jpg",
+        "Size":  390341,
+        "MD5":  "888201F385B78E06DDD205A352C8CE7D"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_arm.jpg.import",
+        "Size":  980,
+        "MD5":  "E1ECBFDB94D13F2ACF358D1F63BA82F2"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_diffuse.jpg",
+        "Size":  1314409,
+        "MD5":  "5541E5601951B071691238DDC70632C0"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_diffuse.jpg.import",
+        "Size":  992,
+        "MD5":  "25F0B88440C40B65394079D0BDDD976A"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_displacement.jpg",
+        "Size":  432399,
+        "MD5":  "C7C8E7848B76819012CBAC660A90A61C"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_displacement.jpg.import",
+        "Size":  1006,
+        "MD5":  "C61BA1BB7E3FB3D37755A14100525D9E"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.jpg",
+        "Size":  4761595,
+        "MD5":  "EF128FBDF1B31932C792EB6472C84574"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.jpg.import",
+        "Size":  989,
+        "MD5":  "135E1EC0F2C2E6AB464848F8E2A53CE7"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.png",
+        "Size":  8901048,
+        "MD5":  "3C07C791818404722C924B951C5EB841"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_nor_gl.png.import",
+        "Size":  989,
+        "MD5":  "5E68C0CD5199BD8FA1384BAF5627DE60"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_rough.jpg",
+        "Size":  628467,
+        "MD5":  "8B9787B4C7B1D7390A4B4A1AE67728B1"
+    },
+    {
+        "RelativePath":  "assets/prototypes/stage08/textures/snow_02/snow_02_rough.jpg.import",
+        "Size":  986,
+        "MD5":  "F067DCEE03C94F023B572D5DB9C40E43"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/briefing_mountain.png",
+        "Size":  172467,
+        "MD5":  "E8CA92361C8516E5C6060BA5B1BC7703"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/briefing_mountain.png.import",
+        "Size":  982,
+        "MD5":  "17EEB02A08DB12C47618A15F3454F554"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/failed_emblem.png",
+        "Size":  3991,
+        "MD5":  "6038CA504F80DBF7A2794819F247C25E"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/failed_emblem.png.import",
+        "Size":  970,
+        "MD5":  "DF6F105CDF3B78E30C918A70A7BA1963"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/gear_frag.png",
+        "Size":  5252,
+        "MD5":  "19B238AB242F93E43F71EF3C07B7F39D"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/gear_frag.png.import",
+        "Size":  958,
+        "MD5":  "F543E47F9F4C9DDF302BB216B435F852"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/gear_medkit.png",
+        "Size":  4293,
+        "MD5":  "28318481C78258A2B8C1E18EEC90899A"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/gear_medkit.png.import",
+        "Size":  964,
+        "MD5":  "FCBE1CCC0FE6E6310AEDEE91E3DC6C23"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/gear_smoke.png",
+        "Size":  4807,
+        "MD5":  "0CAB7030DB50BA2A701E431535194B33"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/gear_smoke.png.import",
+        "Size":  960,
+        "MD5":  "E101569473822EB15417D5D08837A723"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/m4a1_preview.png",
+        "Size":  9864,
+        "MD5":  "23253663AFD212E60A45BBD8C555355A"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/m4a1_preview.png.import",
+        "Size":  967,
+        "MD5":  "EE23EE421409D3C41B7A44DBCE4A2318"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/mountain_art.png",
+        "Size":  60301,
+        "MD5":  "E8AD5FAA399A056CE87421B3BC4AA7DB"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/mountain_art.png.import",
+        "Size":  966,
+        "MD5":  "DDBCA0375375CA429827FB8AD910EF24"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/p07_preview.png",
+        "Size":  4641,
+        "MD5":  "B91B6F2DD2B52D416EE029A0C3CBA887"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/p07_preview.png.import",
+        "Size":  964,
+        "MD5":  "FBB2E89FB731A92BB0E447A50B7374E9"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/radar_minimap.png",
+        "Size":  27925,
+        "MD5":  "9CC3B157D65995A6533FC6DC285D5C44"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/radar_minimap.png.import",
+        "Size":  970,
+        "MD5":  "EC008F6F4BBE8C9BFDAD05939BB351C8"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/briefing.jpg",
+        "Size":  278057,
+        "MD5":  "FC45C6CBFE6094B2237782158CD2DFC7"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/briefing.jpg.import",
+        "Size":  962,
+        "MD5":  "3E0084B9B392A6562117150A68B21AF9"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/gameplay_hud.jpg",
+        "Size":  138601,
+        "MD5":  "2CA059CEA8CF1A7A0D296D78EF02FCCB"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/gameplay_hud.jpg.import",
+        "Size":  975,
+        "MD5":  "44268E2E48BC9E4C2D68EE0FCD42B9E0"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/loadout.jpg",
+        "Size":  303212,
+        "MD5":  "AA97168D9B1D1D3D81BFE463236CE75F"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/loadout.jpg.import",
+        "Size":  960,
+        "MD5":  "5A8F280CFDE42117C5A8A476E1174848"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/mission_failed.jpg",
+        "Size":  112349,
+        "MD5":  "F9749381315794505BC8846344DF3D2A"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/mission_failed.jpg.import",
+        "Size":  981,
+        "MD5":  "D6B7E3E95CFE00225D920889FAFA3B25"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/mission_success.jpg",
+        "Size":  63134,
+        "MD5":  "7C7DC4D651C67D6D3C738C296A5AD2AE"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/mission_success.jpg.import",
+        "Size":  984,
+        "MD5":  "E969DD260A3A9AE2A26DADBEB6ECA14B"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/pause.jpg",
+        "Size":  87800,
+        "MD5":  "975DDDD476FF3B4F9621F6B835772AFA"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/screens/pause.jpg.import",
+        "Size":  954,
+        "MD5":  "A111BCA5DCD9CCCD2562CB06EE7970DD"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/soldier_preview.png",
+        "Size":  82737,
+        "MD5":  "69284A8F6574EC2DA5378A02CFB9593B"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/soldier_preview.png.import",
+        "Size":  976,
+        "MD5":  "B5FC359FBCDD66B7BE7C18F8313CADCC"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/stage08_ui_overview.png/stage08_ui_overview.png",
+        "Size":  2336207,
+        "MD5":  "FA8A8E588A1109EC89405BE8C15C5242"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/stage08_ui_overview.png/stage08_ui_overview.png.import",
+        "Size":  1011,
+        "MD5":  "5B0F775B64883C42C9EB78CC8BCB4CE6"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/success_emblem.png",
+        "Size":  5641,
+        "MD5":  "81ADFD0493442C3A2E5F20AE026BF47B"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/success_emblem.png.import",
+        "Size":  973,
+        "MD5":  "E23E40BF4916093B5E897E4DABB91299"
+    },
+    {
+        "RelativePath":  "assets/ui/stage08_whiteout/UI_DESIGN_RULES.md",
+        "Size":  5018,
+        "MD5":  "55F5469CCB421A04539683BB44853B43"
+    },
+    {
+        "RelativePath":  "scenes/prototypes/Stage08_AlpineHybridPrototype.tscn",
+        "Size":  384,
+        "MD5":  "ADD56245D3DC33D4AB16EBEFAE254A37"
+    },
+    {
+        "RelativePath":  "scenes/prototypes/Stage08_AlpinePrototype.tscn",
+        "Size":  2164,
+        "MD5":  "A256AFDA8CE23B9097CA15CDD1510A1F"
+    },
+    {
+        "RelativePath":  "scenes/prototypes/Stage08_SnowyAlpinePrototype.tscn",
+        "Size":  230,
+        "MD5":  "2869920AF44A7091C372DAA7F8955432"
+    },
+    {
+        "RelativePath":  "scenes/stages/Stage08.tscn",
+        "Size":  3945,
+        "MD5":  "A31BFBBABDB7462CD480E1C402D15203"
+    },
+    {
+        "RelativePath":  "scenes/stages/Stage08WhiteoutBriefing.tscn",
+        "Size":  17141,
+        "MD5":  "05C6C144645D77490C213D89E3DD6065"
+    },
+    {
+        "RelativePath":  "scenes/stages/Stage08WhiteoutFoundation.tscn",
+        "Size":  2281,
+        "MD5":  "D7789785FE6F4C9029374EDBCCCFDE69"
+    },
+    {
+        "RelativePath":  "scenes/stages/Stage08WhiteoutLoadout.tscn",
+        "Size":  22957,
+        "MD5":  "896DD36815DC85D8641C7331FB45178B"
+    },
+    {
+        "RelativePath":  "scenes/stages/ui/Stage08HUD.tscn",
+        "Size":  13910,
+        "MD5":  "4B903C88FE2864662028F09CC8C6A23F"
+    },
+    {
+        "RelativePath":  "scenes/stages/ui/Stage08MissionFailed.tscn",
+        "Size":  7670,
+        "MD5":  "B0492B036804C43FB3B14F850BDFADFC"
+    },
+    {
+        "RelativePath":  "scenes/stages/ui/Stage08MissionSuccess.tscn",
+        "Size":  13565,
+        "MD5":  "03647580CF553F6F7A7F3129A9CD5528"
+    },
+    {
+        "RelativePath":  "scenes/stages/ui/Stage08PauseMenu.tscn",
+        "Size":  7574,
+        "MD5":  "D8722320F204FAAD9385558E9C2C36A6"
+    },
+    {
+        "RelativePath":  "scripts/prototypes/Stage08_AlpineHybridPrototype.gd",
+        "Size":  6843,
+        "MD5":  "1106EDD4540EA4CCECA48A8E7AB22B66"
+    },
+    {
+        "RelativePath":  "scripts/prototypes/Stage08_AlpineHybridPrototype.gd.uid",
+        "Size":  20,
+        "MD5":  "93BB2C26E5A3EF84AC5B3B3563FAE011"
+    },
+    {
+        "RelativePath":  "scripts/prototypes/Stage08_SnowyAlpinePrototype.gd",
+        "Size":  14988,
+        "MD5":  "0F8331F5ADB3C001A2CCF4420F4AA023"
+    },
+    {
+        "RelativePath":  "scripts/prototypes/Stage08_SnowyAlpinePrototype.gd.uid",
+        "Size":  20,
+        "MD5":  "AEEB247CE06C26EC28993DFFB9531FE7"
+    },
+    {
+        "RelativePath":  "scripts/prototypes/Stage08AlpineHybridTerrain.gd",
+        "Size":  5260,
+        "MD5":  "F104FA4BFB815A54FDEC76439F5CAA47"
+    },
+    {
+        "RelativePath":  "scripts/prototypes/Stage08AlpineHybridTerrain.gd.uid",
+        "Size":  20,
+        "MD5":  "51E1B4E91032ED6350FB0CE2FB2DF873"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08Whiteout.gd",
+        "Size":  92666,
+        "MD5":  "E9256C8B011632D4A0D7BC593AB37A25"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08Whiteout.gd.uid",
+        "Size":  20,
+        "MD5":  "88D61542DA9580500CEA4D114946F9FE"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08WhiteoutBriefing.gd",
+        "Size":  4754,
+        "MD5":  "C8606EF9ADE53D4C34E843A556FBAB3E"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08WhiteoutBriefing.gd.uid",
+        "Size":  20,
+        "MD5":  "FC9F47B9CCBCD039AA56F001B9ABB87C"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08WhiteoutFoundation.gd",
+        "Size":  465,
+        "MD5":  "C0D683D996DCD2401E212B65C4612F16"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08WhiteoutFoundation.gd.uid",
+        "Size":  20,
+        "MD5":  "BE0488F7006401A7BF8B979F5AA849A9"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08WhiteoutLoadout.gd",
+        "Size":  8896,
+        "MD5":  "65A27C94A4B359FE06ED35E22F5FF788"
+    },
+    {
+        "RelativePath":  "scripts/stages/Stage08WhiteoutLoadout.gd.uid",
+        "Size":  20,
+        "MD5":  "D1FC16ABDBA78246210FFF441094B72F"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/_extract_reference_icons.gd",
+        "Size":  2392,
+        "MD5":  "D2E9AEA2527E311455652593251818CB"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/_extract_reference_icons.gd.uid",
+        "Size":  20,
+        "MD5":  "209268BCB5DE179D70C80F4224830B09"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08HUD.gd",
+        "Size":  9329,
+        "MD5":  "95FC9FA7998CDE2690994FABDCE07AB0"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08HUD.gd.uid",
+        "Size":  20,
+        "MD5":  "D7ED0C579D72837180BD6E6FC7CE487A"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08MissionFailed.gd",
+        "Size":  3939,
+        "MD5":  "9A61D91CD66FDE7F65475C98AAC1717B"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08MissionFailed.gd.uid",
+        "Size":  20,
+        "MD5":  "D98135BBF1364B801825780B406919FE"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08MissionSuccess.gd",
+        "Size":  6010,
+        "MD5":  "099556C1826D0046CCFB548C9CEB534E"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08MissionSuccess.gd.uid",
+        "Size":  20,
+        "MD5":  "7984FBDD6B70AE9DCE9042D6ADE4CBAA"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08PauseMenu.gd",
+        "Size":  5347,
+        "MD5":  "2832D6B091BFD31DE49D9C005EE6178E"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08PauseMenu.gd.uid",
+        "Size":  19,
+        "MD5":  "3B7466E4F5580AEF7A25CF825C2BBB7A"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08WhiteoutUITheme.gd",
+        "Size":  5042,
+        "MD5":  "1DA95A2CF92571961F22B5F6664C8555"
+    },
+    {
+        "RelativePath":  "scripts/stages/ui/Stage08WhiteoutUITheme.gd.uid",
+        "Size":  18,
+        "MD5":  "015F1CDFEA2330646E450523369B6071"
+    },
+    {
+        "RelativePath":  "shaders/stage08_alpine_hybrid.gdshader",
+        "Size":  2919,
+        "MD5":  "B5611F2A40F9C94BFA22544D6B0C0D8F"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_hybrid_capture.tscn",
+        "Size":  204,
+        "MD5":  "FE039A0C932C7E5BDB2D4E8630E1D24C"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_hybrid_qa.gd",
+        "Size":  7554,
+        "MD5":  "27FAF46CEA01D1BC3388060274DD54B7"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_hybrid_qa.gd.uid",
+        "Size":  20,
+        "MD5":  "C80060B42271D11C4248BDDCF74C2FAB"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_perf_diag.gd",
+        "Size":  7313,
+        "MD5":  "D1F9FD8CDD6E7BF0303B2EA7B1015467"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_perf_diag.gd.uid",
+        "Size":  20,
+        "MD5":  "2902EDDE88CBA27EAA65EC3D7A9463CE"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_perf_diag.tscn",
+        "Size":  199,
+        "MD5":  "7FFFF1BBD0B1F10F2CCC9000D4DF28F9"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_prototype_capture.tscn",
+        "Size":  203,
+        "MD5":  "51AC2A31CAA3DE3A4B0E1CB01CF52923"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_prototype_qa.gd",
+        "Size":  4803,
+        "MD5":  "794CD4C47C7101BF0DF25D27653D6BBD"
+    },
+    {
+        "RelativePath":  "tests/_stage08_alpine_prototype_qa.gd.uid",
+        "Size":  20,
+        "MD5":  "44DA50D6BC983699F76D65CBCCD88538"
+    },
+    {
+        "RelativePath":  "tests/_stage08_enemy_deployment_test.gd",
+        "Size":  9703,
+        "MD5":  "122AB90F08A1D21E608D8ADBEED5030C"
+    },
+    {
+        "RelativePath":  "tests/_stage08_enemy_deployment_test.gd.uid",
+        "Size":  20,
+        "MD5":  "505AE80A50B6574B3EB9866CD08CD685"
+    },
+    {
+        "RelativePath":  "tests/_stage08_enemy_gameplay_qa.gd",
+        "Size":  8507,
+        "MD5":  "BE6AC7A1A2ECC0DCDBD116825B2B6081"
+    },
+    {
+        "RelativePath":  "tests/_stage08_enemy_gameplay_qa.gd.uid",
+        "Size":  19,
+        "MD5":  "19F547FD287D61B73AACE50FC9D9D09A"
+    },
+    {
+        "RelativePath":  "tests/_stage08_environment_test.gd",
+        "Size":  10732,
+        "MD5":  "A124195956A03CCBEEE59B8FEFD670B6"
+    },
+    {
+        "RelativePath":  "tests/_stage08_environment_test.gd.uid",
+        "Size":  20,
+        "MD5":  "7A76DA250BC95A13FDAA0444E3A01FBF"
+    },
+    {
+        "RelativePath":  "tests/_stage08_event_capture.gd",
+        "Size":  3828,
+        "MD5":  "EFC5465847B64C86252EE43FF2F96E2E"
+    },
+    {
+        "RelativePath":  "tests/_stage08_event_capture.gd.uid",
+        "Size":  18,
+        "MD5":  "C5550C7ABF34363A5962A0F8C5CCDA0C"
+    },
+    {
+        "RelativePath":  "tests/_stage08_runtime_movement_qa.gd",
+        "Size":  10646,
+        "MD5":  "ED46C8F6B591004E351A83E930F9D83D"
+    },
+    {
+        "RelativePath":  "tests/_stage08_runtime_movement_qa.gd.uid",
+        "Size":  20,
+        "MD5":  "92CB01EA7451F256DBF7B1E36BFFACD8"
+    },
+    {
+        "RelativePath":  "tests/_stage08_visual_capture.gd",
+        "Size":  1935,
+        "MD5":  "CA7191BFD89A36BA733DAF446408548D"
+    },
+    {
+        "RelativePath":  "tests/_stage08_visual_capture.gd.uid",
+        "Size":  19,
+        "MD5":  "322311DC5BE653763BC2E475BB77954E"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_briefing_screen.gd",
+        "Size":  7841,
+        "MD5":  "38352F65FD619578D131C515BAF2FADF"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_briefing_screen.gd.uid",
+        "Size":  20,
+        "MD5":  "A1C3A4C0D0A73B80A3D6228477A4A399"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_controls_pause_verification.gd",
+        "Size":  7169,
+        "MD5":  "63FEE878EBDDF1E094BC88EFBF78E3A8"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_controls_pause_verification.gd.uid",
+        "Size":  20,
+        "MD5":  "15C906107EC9E7A3131BB0FFD30478E9"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_dedicated_hud.gd",
+        "Size":  8980,
+        "MD5":  "891596B2C74BA0A69BB1F035483D4BF4"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_dedicated_hud.gd.uid",
+        "Size":  20,
+        "MD5":  "06825E3356D9EDD5814B17B2EFCDDF47"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_e2e_flow.gd",
+        "Size":  5075,
+        "MD5":  "252937649495BCB02508B0DFB5634790"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_e2e_flow.gd.uid",
+        "Size":  20,
+        "MD5":  "AB51A675AA99D988202B36A3A27F33DC"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_enemy_counter_and_environment.gd",
+        "Size":  7502,
+        "MD5":  "DA2288363178A26E3ADA666D79863F83"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_enemy_counter_and_environment.gd.uid",
+        "Size":  20,
+        "MD5":  "3D2700E9675FE8A43F86B6A354E3829A"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_foundation_gui_capture.gd",
+        "Size":  816,
+        "MD5":  "78A5F5A8DDDA0D7576D6A8ED7AF5D42F"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_foundation_gui_capture.gd.uid",
+        "Size":  20,
+        "MD5":  "F6496CD707A8DD6E4F34F7400937166E"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_loadout_screen.gd",
+        "Size":  5041,
+        "MD5":  "B0A371BA34CF5B8DB5F73B09C257E6F9"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_loadout_screen.gd.uid",
+        "Size":  20,
+        "MD5":  "9D1FFC24BA5693C77A2AF596AF765FB5"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_player_movement.gd",
+        "Size":  9844,
+        "MD5":  "1DDA12ECE3D6A625339BEE0E6FC5C222"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_player_movement.gd.uid",
+        "Size":  20,
+        "MD5":  "866E23C10563761C219A134164ABD3DF"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_production_terrain_integration.gd",
+        "Size":  8156,
+        "MD5":  "EAF989ED9693AFBC39047D66C8B2FFB4"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_production_terrain_integration.gd.uid",
+        "Size":  20,
+        "MD5":  "0D4B99E4F50A403D945D479164FA833E"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_real_gameplay_scenarios.gd",
+        "Size":  13875,
+        "MD5":  "3BB590CEABD9C918FB1DA4545A55A463"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_real_gameplay_scenarios.gd.uid",
+        "Size":  20,
+        "MD5":  "942A12661F7BCE9555D4B2B3ECF34D95"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_snowy_alpine_prototype.gd",
+        "Size":  9025,
+        "MD5":  "DDB5CDA4CAA0712CB6F455443E140FB3"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_snowy_alpine_prototype.gd.uid",
+        "Size":  20,
+        "MD5":  "CC11DC114198BDF07C8F7B026A5F655F"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_spawn_patrol_compatibility.gd",
+        "Size":  9957,
+        "MD5":  "187A246603DC89643DEC2057AF0DF757"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_spawn_patrol_compatibility.gd.uid",
+        "Size":  20,
+        "MD5":  "E356BC8BDA13ECD6AD86B3B0EB8C1DEF"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_terrain_spawn_collision.gd",
+        "Size":  3795,
+        "MD5":  "449DD92C8DD4769E27CB9DF6FFD8EC6E"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_terrain_spawn_collision.gd.uid",
+        "Size":  20,
+        "MD5":  "AF10878EE8CD88C0F1DA65FDC2D1A91A"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_ui_integration.gd",
+        "Size":  9723,
+        "MD5":  "F1BC14CBDD4E08688B3F75F5BFD85ED0"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_ui_integration.gd.uid",
+        "Size":  20,
+        "MD5":  "AA3B4A7C573ED1FE0FF114DF3FD5FC34"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_whiteout_foundation_smoke.gd",
+        "Size":  6789,
+        "MD5":  "24F126179CD0F331D20034670083844A"
+    },
+    {
+        "RelativePath":  "tests/test_stage08_whiteout_foundation_smoke.gd.uid",
+        "Size":  20,
+        "MD5":  "130CC4FD7BFC964F59D38B4DBA32CF56"
+    }
+]

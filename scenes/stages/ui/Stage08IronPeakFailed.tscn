@@ -1,0 +1,181 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08failed001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08IronPeakFailed.gd" id="1_failed"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/screens/06_failed.png" id="2_bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.02, 0.02, 0.04, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92, 0.15, 0.15, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.5, 0.05, 0.05, 0.4)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Banner"]
+bg_color = Color(0.3, 0.05, 0.05, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.92, 0.15, 0.15, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 16
+content_margin_top = 10
+content_margin_right = 16
+content_margin_bottom = 10
+
+[node name="Stage08IronPeakFailed" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_failed")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.01, 0.01, 0.65)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 60
+
+[node name="Card" type="PanelContainer" parent="Margin"]
+custom_minimum_size = Vector2(520, 440)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Card/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Banner" type="PanelContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Banner")
+
+[node name="BannerVBox" type="VBoxContainer" parent="Margin/Card/Margin/VBox/Banner"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BannerTitle" type="Label" parent="Margin/Card/Margin/VBox/Banner/BannerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 22
+text = "✖ MISSION FAILED — OPERATIVE DOWN"
+horizontal_alignment = 1
+
+[node name="BannerSubtitle" type="Label" parent="Margin/Card/Margin/VBox/Banner/BannerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+text = "CASUALTY REPORT // OPERATION IRON PEAK"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+
+[node name="StatsGrid" type="GridContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="CauseLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "STATUS:"
+
+[node name="CauseValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 14
+text = "K.I.A. [OUTPOST OVERRUN]"
+
+[node name="HostilesLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "HOSTILES NEUTRALIZED:"
+
+[node name="HostilesValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "0 / 18"
+
+[node name="TimeLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "SURVIVAL TIME:"
+
+[node name="TimeValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "01:15"
+
+[node name="Spacer" type="Control" parent="Margin/Card/Margin/VBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="AbortButton" type="Button" parent="Margin/Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+text = "ABORT TO HQ"
+
+[node name="RetryButton" type="Button" parent="Margin/Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RETRY MISSION ►"

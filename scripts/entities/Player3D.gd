@@ -19,6 +19,7 @@ signal crouch_toggled(is_crouching: bool)
 @export var max_health: int = 100
 @export var current_health: int = 100
 @export var is_active: bool = true
+@export var can_shoot: bool = true
 @export var walk_speed: float = 5.0
 @export var run_speed: float = 8.0
 @export var jump_velocity: float = 4.8
@@ -28,6 +29,11 @@ signal crouch_toggled(is_crouching: bool)
 @export var crouch_transition_speed: float = 10.0
 @export var default_damage: int = 25
 @export var weapon_range: float = 100.0
+@export var max_slope_angle: float = 50.0
+@export var snap_length: float = 0.35
+@export var acceleration: float = 50.0
+@export var deceleration: float = 40.0
+@export var mobile_touch_look_sensitivity: float = 0.0028
 
 var gravity: float = 9.8
 var is_firing_held: bool = false
@@ -37,6 +43,7 @@ var is_crouching: bool = false
 var current_movement_state: int = GameConstants.MovementState.IDLE
 var _standing_height: float = 1.8
 var _standing_camera_y: float = 1.55
+var _mobile_input: Vector2 = Vector2.ZERO
 
 @onready var camera_holder: Node3D = $CameraHolder if has_node("CameraHolder") else self
 @onready var camera_mount: Node3D = camera_holder
@@ -49,6 +56,12 @@ func _ready() -> void:
 	add_to_group(GameConstants.GROUP_PLAYER)
 	current_health = max_health
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	floor_stop_on_slope = true
+	floor_constant_speed = true
+	floor_max_angle = deg_to_rad(max_slope_angle)
+	floor_snap_length = snap_length
+	floor_block_on_wall = true
+	safe_margin = 0.015
 	if collision_shape and collision_shape.shape is CapsuleShape3D:
 		_standing_height = (collision_shape.shape as CapsuleShape3D).height
 	if camera:
@@ -61,19 +74,20 @@ func _ready() -> void:
 		_emit_current_ammo()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if camera_holder:
-			camera_holder.rotate_y(-event.relative.x * 0.002)
-		if camera:
-			camera.rotate_x(-event.relative.y * 0.002)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89.0), deg_to_rad(89.0))
-
 	# Fallback for direct test injection and scenes without a consuming GUI.
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		_handle_fire_button(event.pressed)
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and not get_tree().paused:
+			_handle_fire_button(event.pressed)
 
 func _input(event: InputEvent) -> void:
-	# Rifle V2 receives gameplay input before HUD Controls can consume it.
+	# Do not intercept input when paused or when mouse is free in UI mode
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED or get_tree().paused:
+		return
+
+	# Weapon firing receives gameplay input during active captured combat
+	if not can_shoot:
+		return
+
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		_handle_fire_button(event.pressed)
 		get_viewport().set_input_as_handled()
@@ -104,18 +118,25 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 	elif Input.is_action_just_pressed("jump") and not is_crouching:
 		velocity.y = jump_velocity
+		floor_snap_length = 0.0
 		jumped.emit()
+	else:
+		floor_snap_length = snap_length
 
 	_update_crouch(delta)
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	var is_mobile_active: bool = OS.has_feature("mobile") or _mobile_input.length_squared() > 0.0001
+	if is_mobile_active:
+		input_dir = (input_dir + _mobile_input).limit_length(1.0)
 	var direction := (camera_holder.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	var is_sprinting := Input.is_action_pressed("sprint") and input_dir.y < -0.1 and not is_crouching
+	var is_sprinting := (Input.is_action_pressed("sprint") or (is_mobile_active and input_dir.y < -0.65)) and input_dir.y < -0.01 and not is_crouching
 	var target_speed := crouch_speed if is_crouching else (run_speed if is_sprinting else walk_speed)
+	var move_strength := clampf(input_dir.length(), 0.0, 1.0) if is_mobile_active else 1.0
 
 	if direction:
-		velocity.x = direction.x * target_speed
-		velocity.z = direction.z * target_speed
+		velocity.x = direction.x * target_speed * move_strength
+		velocity.z = direction.z * target_speed * move_strength
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed)
 		velocity.z = move_toward(velocity.z, 0, walk_speed)
@@ -170,6 +191,26 @@ func _handle_fire_button(pressed: bool) -> void:
 	else:
 		_semi_auto_shot_taken = true
 
+func set_mobile_movement(value: Vector2) -> void:
+	_mobile_input = value.limit_length(1.0)
+
+func apply_mobile_look(delta_pixels: Vector2) -> void:
+	if not camera:
+		return
+	rotate_y(-delta_pixels.x * mobile_touch_look_sensitivity)
+	var camera_pitch := camera.rotation.x - delta_pixels.y * mobile_touch_look_sensitivity
+	camera.rotation.x = clampf(camera_pitch, deg_to_rad(-85.0), deg_to_rad(85.0))
+
+func mobile_fire_pressed(pressed: bool) -> void:
+	_handle_fire_button(pressed)
+
+func mobile_reload() -> void:
+	_reload_active_weapon()
+
+func mobile_switch_weapon() -> void:
+	if weapon_manager:
+		weapon_manager.switch_next_weapon()
+
 func _reload_active_weapon() -> void:
 	var active_weapon := _get_active_weapon()
 	if active_weapon and active_weapon.reload():
@@ -179,7 +220,7 @@ func _reload_active_weapon() -> void:
 			sound_manager.play_reload()
 
 func _can_fire_input() -> bool:
-	if not is_active or current_health <= 0:
+	if not can_shoot or not is_active or current_health <= 0:
 		return false
 	var gm = get_node_or_null("/root/GameManager")
 	if gm and gm.current_state != GameConstants.GameState.PLAYING and gm.current_state != GameConstants.GameState.BOOT:
@@ -234,8 +275,10 @@ func _perform_hitscan(active_weapon: WeaponBase) -> Vector3:
 	var weapon_name: String = active_weapon.data.weapon_name if active_weapon.data else "Player"
 	var ray_origin := camera.global_position
 	var ray_end := ray_origin + (-camera.global_transform.basis.z * shot_range)
-	var query := PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
+	var query := PhysicsRayQueryParameters3D.create(ray_origin, ray_end, 3)
 	query.exclude = [self]
+	query.collide_with_bodies = true
+	query.collide_with_areas = true
 	var hit := get_world_3d().direct_space_state.intersect_ray(query)
 	if hit.is_empty():
 		return ray_end

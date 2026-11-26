@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08intro001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08IronPeakIntro.gd" id="1_intro"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/screens/01_intro.png" id="2_bg"]
+[ext_resource type="PackedScene" uid="uid://stage08settings001" path="res://scenes/stages/ui/Stage08IronPeakSettings.tscn" id="3_settings"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HeaderPill"]
+bg_color = Color(0.015, 0.035, 0.08, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.58, 0.98, 0.8)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 12
+content_margin_top = 6
+content_margin_right = 12
+content_margin_bottom = 6
+
+[node name="Stage08IronPeakIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_intro")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="TopBar" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="BrandingPill" type="PanelContainer" parent="Margin/TopBar"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_HeaderPill")
+
+[node name="BrandingLabel" type="Label" parent="Margin/TopBar/BrandingPill"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 14
+text = "COUNTER-WAR: MODERN COMBAT"
+
+[node name="Spacer" type="Control" parent="Margin/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SettingsButton" type="Button" parent="Margin/TopBar"]
+custom_minimum_size = Vector2(38, 36)
+layout_mode = 2
+text = "⚙"
+
+[node name="BackButton" type="Button" parent="Margin/TopBar"]
+custom_minimum_size = Vector2(38, 36)
+layout_mode = 2
+text = "<"
+
+[node name="CenterContent" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="StageLabel" type="Label" parent="Margin/CenterContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_size = 18
+text = "STAGE 08"
+
+[node name="TitleLabel" type="Label" parent="Margin/CenterContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 38
+text = "OPERATION IRON PEAK"
+
+[node name="DescLabel" type="Label" parent="Margin/CenterContent"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 0.98, 0.9)
+theme_override_font_size = 14
+text = "Secure the mountain outpost, eliminate enemy forces and establish control."
+autowrap_mode = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="BriefingButton" type="Button" parent="Margin/BottomBar"]
+custom_minimum_size = Vector2(190, 44)
+layout_mode = 2
+text = "📋  MISSION BRIEFING"
+
+[node name="Spacer" type="Control" parent="Margin/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StartButton" type="Button" parent="Margin/BottomBar"]
+custom_minimum_size = Vector2(190, 44)
+layout_mode = 2
+text = "START MISSION  ►"
+
+[node name="SettingsModal" parent="." instance=ExtResource("3_settings")]
+visible = false
+layout_mode = 1

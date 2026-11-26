@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/prototypes/Stage08_AlpineHybridPrototype.gd" id="1_stage"]
+[ext_resource type="Shader" path="res://shaders/stage08_alpine_hybrid.gdshader" id="2_terrain_shader"]
+
+[node name="Stage08_AlpineHybridPrototype" type="Node3D"]
+script = ExtResource("1_stage")
+terrain_shader = ExtResource("2_terrain_shader")

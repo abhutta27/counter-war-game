@@ -1,0 +1,397 @@
+[gd_scene load_steps=8 format=3 uid="uid://stage08hud001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08IronPeakHUD.gd" id="1_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_MinimapRing"]
+bg_color = Color(0.015, 0.035, 0.08, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.18, 0.58, 0.98, 0.9)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HeaderPanel"]
+bg_color = Color(0.015, 0.035, 0.08, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.58, 0.98, 0.8)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 16
+content_margin_top = 6
+content_margin_right = 16
+content_margin_bottom = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HUDCard"]
+bg_color = Color(0.015, 0.035, 0.08, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.58, 0.98, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 14
+content_margin_top = 8
+content_margin_right = 14
+content_margin_bottom = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HealthFill"]
+bg_color = Color(0.12, 0.82, 0.32, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HealthBg"]
+bg_color = Color(0.08, 0.16, 0.1, 0.8)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Prompt"]
+bg_color = Color(0.015, 0.035, 0.08, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.78, 0.05, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 18
+content_margin_top = 6
+content_margin_right = 18
+content_margin_bottom = 6
+
+[node name="Stage08IronPeakHUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="MinimapContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(160, 160)
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 184.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_MinimapRing")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MinimapContainer"]
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MinimapContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(156, 156)
+render_target_update_mode = 4
+
+[node name="MinimapCamera" type="Camera3D" parent="MinimapContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0)
+projection = 1
+size = 60.0
+
+[node name="PlayerMarker" type="Control" parent="MinimapContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarkerDot" type="ColorRect" parent="MinimapContainer/PlayerMarker"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.78, 0.05, 1)
+
+[node name="MarkerArrow" type="ColorRect" parent="MinimapContainer/PlayerMarker"]
+custom_minimum_size = Vector2(4, 10)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.58, 0.98, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 200.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderContainer" type="PanelContainer" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_HeaderPanel")
+
+[node name="VBox" type="VBoxContainer" parent="TopBar/HeaderContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="StageTitle" type="Label" parent="TopBar/HeaderContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_sizes/font_size = 14
+text = "STAGE 08 // OPERATION IRON PEAK"
+
+[node name="ObjectiveText" type="Label" parent="TopBar/HeaderContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "OBJECTIVE: SECURE HIGH-ALTITUDE RADAR OUTPOST [18 HOSTILES]"
+
+[node name="PauseButton" type="Button" parent="TopBar"]
+custom_minimum_size = Vector2(100, 44)
+layout_mode = 2
+text = "❚❚ PAUSE"
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dot" type="ColorRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="LineLeft" type="ColorRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -1.0
+offset_right = -6.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.58, 0.98, 0.75)
+
+[node name="LineRight" type="ColorRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 16.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.58, 0.98, 0.75)
+
+[node name="LineTop" type="ColorRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -16.0
+offset_right = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.58, 0.98, 0.75)
+
+[node name="LineBottom" type="ColorRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.58, 0.98, 0.75)
+
+[node name="BottomLeft" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -100.0
+offset_right = 260.0
+offset_bottom = -24.0
+grow_vertical = 0
+
+[node name="HealthContainer" type="PanelContainer" parent="BottomLeft"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_HUDCard")
+
+[node name="VBox" type="VBoxContainer" parent="BottomLeft/HealthContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBox" type="HBoxContainer" parent="BottomLeft/HealthContainer/VBox"]
+layout_mode = 2
+
+[node name="HealthTitle" type="Label" parent="BottomLeft/HealthContainer/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.18, 0.58, 0.98, 1)
+theme_override_font_sizes/font_size = 12
+text = "+ VITALS"
+
+[node name="HealthValue" type="Label" parent="BottomLeft/HealthContainer/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "100 / 100"
+
+[node name="HealthBar" type="ProgressBar" parent="BottomLeft/HealthContainer/VBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_HealthBg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_HealthFill")
+value = 100.0
+show_percentage = false
+
+[node name="BottomRight" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -100.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AmmoContainer" type="PanelContainer" parent="BottomRight"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_HUDCard")
+
+[node name="VBox" type="VBoxContainer" parent="BottomRight/AmmoContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="WeaponName" type="Label" parent="BottomRight/AmmoContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_sizes/font_size = 13
+text = "CW-08 ASSAULT RIFLE"
+
+[node name="HBox" type="HBoxContainer" parent="BottomRight/AmmoContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AmmoMag" type="Label" parent="BottomRight/AmmoContainer/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "30"
+
+[node name="AmmoReserve" type="Label" parent="BottomRight/AmmoContainer/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 14
+text = "/ 90"
+
+[node name="FireMode" type="Label" parent="BottomRight/AmmoContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.58, 0.98, 1)
+theme_override_font_sizes/font_size = 11
+text = "CALIBER: 5.56 NATO // AUTO"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PromptLabel" type="Label" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_Prompt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "[E] INTERACT WITH RADAR TERMINAL"
+
+[node name="BannerContainer" type="CenterContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 90.0
+offset_right = 250.0
+offset_bottom = 130.0
+grow_horizontal = 2
+
+[node name="BannerLabel" type="Label" parent="BannerContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_Prompt")
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_sizes/font_size = 13
+text = "OBJECTIVE UPDATED"

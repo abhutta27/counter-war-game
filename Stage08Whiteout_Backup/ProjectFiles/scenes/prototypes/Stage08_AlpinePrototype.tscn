@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://alpineproto001"]
+
+[ext_resource type="Script" path="res://scripts/prototypes/AlpineTerrainGenerator.gd" id="1_generator"]
+
+[sub_resource type="ProceduralSkyMaterial" id="Sky_Alpine"]
+sky_top_color = Color(0.12, 0.36, 0.72, 1)
+sky_horizon_color = Color(0.72, 0.83, 0.94, 1)
+ground_bottom_color = Color(0.45, 0.55, 0.65, 1)
+ground_horizon_color = Color(0.68, 0.78, 0.88, 1)
+sun_angle_max = 24.0
+
+[sub_resource type="Sky" id="Sky_Res"]
+sky_material = SubResource("Sky_Alpine")
+
+[sub_resource type="Environment" id="Env_Alpine"]
+background_mode = 2
+sky = SubResource("Sky_Res")
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.72, 0.86, 1)
+ambient_light_energy = 0.48
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.05
+tonemap_white = 1.25
+fog_enabled = true
+fog_light_color = Color(0.72, 0.82, 0.92, 1)
+fog_light_energy = 0.65
+fog_density = 0.0025
+fog_height = -4.0
+fog_height_density = 0.025
+fog_aerial_perspective = 0.7
+fog_sky_affect = 0.15
+
+[node name="Stage08_AlpinePrototype" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env_Alpine")
+
+[node name="SunLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-38, -52, 0)
+light_color = Color(1, 0.98, 0.92, 1)
+light_energy = 1.2
+shadow_enabled = true
+shadow_bias = 0.02
+directional_shadow_max_distance = 350.0
+
+[node name="AlpineTerrainGenerator" type="Node3D" parent="."]
+script = ExtResource("1_generator")
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="SpawnViewCamera" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.965926, 0.0449435, -0.254887, 0, 0.984808, 0.173648, 0.258819, -0.167731, 0.951251, 0, 1.8, 48)
+current = true
+fov = 74.0
+
+[node name="PanoramaOverviewCamera" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.819152, -0.101831, 0.56447, 0, 0.984109, 0.17757, -0.573576, -0.145457, 0.806135, 25, 16, 45)
+fov = 75.0
+
+[node name="ValleyDepthCamera" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.642788, 0.383022, -0.663414, 0, 0.866025, 0.5, 0.766044, -0.321394, 0.55667, -18, 6, 20)
+fov = 76.0

@@ -1,0 +1,416 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08briefing001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08WhiteoutBriefing.gd" id="1_briefing"]
+[ext_resource type="Texture2D" path="res://assets/branding/cw_mark_32.png" id="2_cw_mark"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/mountain_art.png" id="3_mountain_art"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_Card"]
+bg_color = Color(0.025, 0.058, 0.09, 0.94)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14, 0.35, 0.55, 0.85)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Stage08WhiteoutBriefing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_briefing")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.015, 0.035, 0.055, 1)
+
+[node name="OuterMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="Page" type="VBoxContainer" parent="OuterMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderBar" type="PanelContainer" parent="OuterMargin/Page"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+
+[node name="HeaderMargin" type="MarginContainer" parent="OuterMargin/Page/HeaderBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_right = 14
+
+[node name="HeaderHBox" type="HBoxContainer" parent="OuterMargin/Page/HeaderBar/HeaderMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Branding" type="HBoxContainer" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LogoIcon" type="TextureRect" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox/Branding"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_cw_mark")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoText" type="Label" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox/Branding"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "COUNTER-WAR"
+vertical_alignment = 1
+
+[node name="HeaderSpacerLeft" type="Control" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterTab" type="VBoxContainer" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="TabTitle" type="Label" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox/CenterTab"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "MISSION BRIEFING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActiveUnderline" type="ColorRect" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox/CenterTab"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.08, 0.58, 0.98, 1)
+
+[node name="HeaderSpacerRight" type="Control" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StageLabel" type="Label" parent="OuterMargin/Page/HeaderBar/HeaderMargin/HeaderHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.72, 0.82, 1)
+theme_override_font_sizes/font_size = 13
+text = "STAGE 08"
+vertical_alignment = 1
+
+[node name="MainCard" type="PanelContainer" parent="OuterMargin/Page"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBox_Card")
+
+[node name="CardMargin" type="MarginContainer" parent="OuterMargin/Page/MainCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 18
+
+[node name="ColumnsHBox" type="HBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="LeftColumn" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox"]
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StageEyebrow" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.68, 0.88, 1)
+theme_override_font_sizes/font_size = 13
+text = "STAGE 08"
+
+[node name="OperationTitle" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "OPERATION WHITEOUT"
+
+[node name="Description" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn"]
+custom_minimum_size = Vector2(470, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.68, 0.78, 0.86, 1)
+theme_override_font_sizes/font_size = 13
+text = "Infiltrate the mountain stronghold, eliminate enemy forces, secure the research facility, and extract the intel."
+autowrap_mode = 2
+
+[node name="ParamSpacer" type="Control" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="ParametersList" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ParamLocation" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ParamKey" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamLocation"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.66, 0.96, 1)
+theme_override_font_sizes/font_size = 11
+text = "📍 LOCATION"
+
+[node name="ParamVal" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamLocation"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Alpine Mountains"
+
+[node name="ParamWeather" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ParamKey" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamWeather"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.66, 0.96, 1)
+theme_override_font_sizes/font_size = 11
+text = "❄ WEATHER"
+
+[node name="ParamVal" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamWeather"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Snow / Low Visibility"
+
+[node name="ParamEnemy" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ParamKey" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamEnemy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.66, 0.96, 1)
+theme_override_font_sizes/font_size = 11
+text = "🛡 ENEMY"
+
+[node name="ParamVal" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamEnemy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Regular Forces + Snipers"
+
+[node name="ParamPrimary" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ParamKey" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamPrimary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.66, 0.96, 1)
+theme_override_font_sizes/font_size = 11
+text = "🎯 PRIMARY OBJECTIVE"
+
+[node name="ParamVal" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamPrimary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Secure the Research Facility"
+
+[node name="ParamSecondary" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ParamKey" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamSecondary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.66, 0.96, 1)
+theme_override_font_sizes/font_size = 11
+text = "📍 SECONDARY OBJECTIVE"
+
+[node name="ParamVal" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/LeftColumn/ParametersList/ParamSecondary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Collect Intel / Extract"
+
+[node name="RightColumn" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="MountainImageFrame" type="PanelContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn"]
+custom_minimum_size = Vector2(0, 185)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MountainImage" type="TextureRect" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn/MountainImageFrame"]
+layout_mode = 2
+texture = ExtResource("3_mountain_art")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="IntelPanel" type="PanelContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn"]
+layout_mode = 2
+
+[node name="IntelMargin" type="MarginContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn/IntelPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="IntelVBox" type="VBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn/IntelPanel/IntelMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="IntelTitle" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn/IntelPanel/IntelMargin/IntelVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "INTEL"
+
+[node name="IntelText" type="Label" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn/IntelPanel/IntelMargin/IntelVBox"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "Enemy forces have established a research facility in the mountain region. Intelligence suggests they are developing advanced weaponry.
+
+The area is heavily guarded, with snipers on the ridges and patrols in the valleys. Expect harsh weather and limited visibility."
+autowrap_mode = 2
+
+[node name="ActionRow" type="HBoxContainer" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn"]
+layout_mode = 2
+alignment = 2
+
+[node name="StartMissionButton" type="Button" parent="OuterMargin/Page/MainCard/CardMargin/ColumnsHBox/RightColumn/ActionRow"]
+custom_minimum_size = Vector2(210, 44)
+layout_mode = 2
+text = "START MISSION  >"
+
+[node name="Footer" type="HBoxContainer" parent="OuterMargin/Page"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BackButton" type="Button" parent="OuterMargin/Page/Footer"]
+custom_minimum_size = Vector2(104, 38)
+layout_mode = 2
+text = "< BACK"
+
+[node name="NavigationNote" type="Label" parent="OuterMargin/Page/Footer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.48, 0.62, 0.72, 1)
+theme_override_font_sizes/font_size = 12
+text = "TACTICAL DOSSIER VERIFIED  ·  READY FOR LOADOUT"
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="OuterMargin/Page/Footer"]
+visible = false
+custom_minimum_size = Vector2(144, 38)
+layout_mode = 2
+text = "START MISSION"
+
+[node name="Header" type="Control" parent="OuterMargin/Page"]
+visible = false
+layout_mode = 2
+
+[node name="TitleBlock" type="Control" parent="OuterMargin/Page/Header"]
+anchors_preset = 0
+
+[node name="Eyebrow" type="Label" parent="OuterMargin/Page/Header/TitleBlock"]
+layout_mode = 0
+text = "STAGE 08  /  MISSION BRIEFING"
+
+[node name="OperationTitle" type="Label" parent="OuterMargin/Page/Header/TitleBlock"]
+layout_mode = 0
+text = "OPERATION WHITEOUT"
+
+[node name="Subtitle" type="Label" parent="OuterMargin/Page/Header/TitleBlock"]
+layout_mode = 0
+text = "Tactical operational dossier for high-altitude radar outpost assault."
+
+[node name="HeaderStatus" type="PanelContainer" parent="OuterMargin/Page/Header"]
+layout_mode = 0
+
+[node name="StatusText" type="Label" parent="OuterMargin/Page/Header/HeaderStatus"]
+layout_mode = 2
+text = "MISSION DOSSIER\nAUTHORIZED"
+
+[node name="MainScroll" type="ScrollContainer" parent="OuterMargin/Page"]
+visible = false
+layout_mode = 2
+
+[node name="BriefingGrid" type="GridContainer" parent="OuterMargin/Page/MainScroll"]
+layout_mode = 2
+
+[node name="SummaryPanel" type="PanelContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid"]
+layout_mode = 2
+
+[node name="SummaryMargin" type="MarginContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel"]
+layout_mode = 2
+
+[node name="SummaryContent" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin"]
+layout_mode = 2
+
+[node name="SummaryText" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent"]
+layout_mode = 2
+text = "Infiltrate a fortified sub-zero alpine mountain valley and neutralize 12 hostile guards securing the summit radar installation."
+
+[node name="ObjectiveOne" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent"]
+layout_mode = 2
+
+[node name="ObjectiveOneTitle" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent/ObjectiveOne"]
+layout_mode = 2
+text = "OBJECTIVE 01  /  VALLEY & RIDGE CLEARANCE"
+
+[node name="ObjectiveOneText" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent/ObjectiveOne"]
+layout_mode = 2
+text = "Eliminate hostile sentries and patrols across the Lower Valley and Mid-Ridge terraces."
+
+[node name="ObjectiveTwo" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent"]
+layout_mode = 2
+
+[node name="ObjectiveTwoTitle" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent/ObjectiveTwo"]
+layout_mode = 2
+text = "OBJECTIVE 02  /  SUMMIT RADAR SEIZURE"
+
+[node name="ObjectiveTwoText" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/SummaryPanel/SummaryMargin/SummaryContent/ObjectiveTwo"]
+layout_mode = 2
+text = "Ascend the mountain switchbacks and neutralize all sentinels at the summit radar facility."
+
+[node name="IntelPanel" type="PanelContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid"]
+layout_mode = 2
+
+[node name="IntelMargin" type="MarginContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid/IntelPanel"]
+layout_mode = 2
+
+[node name="IntelContent" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/BriefingGrid/IntelPanel/IntelMargin"]
+layout_mode = 2
+
+[node name="AreaValue" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/IntelPanel/IntelMargin/IntelContent"]
+layout_mode = 2
+text = "Sector 08  ·  Alpine Valley & High Summit Radar Base"
+
+[node name="ThreatValue" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/IntelPanel/IntelMargin/IntelContent"]
+layout_mode = 2
+text = "HIGH  ·  12 ARMED GUARDS (ZONE DEFENSE)"
+
+[node name="ProfileValue" type="Label" parent="OuterMargin/Page/MainScroll/BriefingGrid/IntelPanel/IntelMargin/IntelContent"]
+layout_mode = 2
+text = "Three-tier elevation tactical assault with switchback passes and sub-zero atmospheric whiteout fog."

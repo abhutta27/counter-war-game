@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://stage08ironpeak001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08IronPeak.gd" id="1_controller"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://bvxlap41m82ja" path="res://scenes/entities/Enemy3D.tscn" id="3_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/stages/ui/Stage08IronPeakHUD.tscn" id="4_hud"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_Alpine"]
+sky_top_color = Color(0.18, 0.38, 0.72, 1)
+sky_horizon_color = Color(0.65, 0.76, 0.9, 1)
+ground_bottom_color = Color(0.15, 0.18, 0.22, 1)
+ground_horizon_color = Color(0.55, 0.65, 0.78, 1)
+sun_angle_max = 8.0
+
+[sub_resource type="Sky" id="Sky_Alpine"]
+sky_material = SubResource("ProceduralSkyMaterial_Alpine")
+
+[sub_resource type="Environment" id="Environment_Alpine"]
+background_mode = 2
+sky = SubResource("Sky_Alpine")
+ambient_light_source = 3
+ambient_light_color = Color(0.55, 0.68, 0.85, 1)
+ambient_light_energy = 1.15
+ambient_light_sky_contribution = 0.4
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.2
+fog_enabled = true
+fog_light_color = Color(0.65, 0.78, 0.92, 1)
+fog_light_energy = 0.35
+fog_density = 0.003
+fog_sky_affect = 0.25
+
+[node name="Stage08" type="Node3D"]
+script = ExtResource("1_controller")
+stage_id = 8
+stage_name = "OPERATION IRON PEAK"
+out_of_bounds_y = -15.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-55, -75)
+recovery_bounds_max = Vector2(55, 105)
+physical_boundaries_enabled = true
+physical_boundary_height = 36.0
+physical_boundary_center_y = 12.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_Alpine")
+
+[node name="SunLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 30, 0)
+light_color = Color(1, 0.96, 0.88, 1)
+light_energy = 1.25
+shadow_enabled = true
+directional_shadow_max_distance = 160.0
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy3D_1" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 75)
+
+[node name="Enemy3D_2" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 72)
+
+[node name="Enemy3D_3" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 66)
+
+[node name="Enemy3D_4" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 62)
+
+[node name="Enemy3D_5" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.5, 52)
+
+[node name="Enemy3D_6" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 48)
+
+[node name="Enemy3D_7" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.5, 42)
+
+[node name="Enemy3D_8" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, 38)
+
+[node name="Enemy3D_9" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5.5, 20)
+
+[node name="Enemy3D_10" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5.5, 20)
+
+[node name="Enemy3D_11" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 5.5, 12)
+
+[node name="Enemy3D_12" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.5, 6)
+
+[node name="Enemy3D_13" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 13.5, 12)
+
+[node name="Enemy3D_14" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9.5, -16)
+
+[node name="Enemy3D_15" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9.5, -20)
+
+[node name="Enemy3D_16" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 9.5, -30)
+
+[node name="Enemy3D_17" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 9.5, -34)
+
+[node name="Enemy3D_18" parent="Enemies" instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, -36)
+
+[node name="Player3D" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 85)
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]

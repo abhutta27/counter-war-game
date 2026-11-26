@@ -10,7 +10,8 @@ signal stage_restarted(stage_id: int)
 const OPERATION_REGISTRY: Dictionary = {
 	1: {"operation_id": 1, "title": "OPERATION I"},
 	2: {"operation_id": 2, "title": "OPERATION II"},
-	3: {"operation_id": 3, "title": "OPERATION III"}
+	3: {"operation_id": 3, "title": "OPERATION III"},
+	4: {"operation_id": 4, "title": "OPERATION IV"}
 }
 
 # This is the single authoritative catalog for every real mission.
@@ -56,10 +57,17 @@ const STAGE_REGISTRY: Dictionary = {
 		"mission_title": "OPERATION IRON HARBOR", "name": "OPERATION IRON HARBOR",
 		"desc": "Coastal Cargo Port Infiltration", "operation_id": 3,
 		"scene_path": "res://scenes/stages/Stage07.tscn", "fallback_path": "res://scenes/stages/Stage07.tscn"
+	},
+	8: {
+		"stage_id": 8, "id": 8,
+		"mission_title": "OPERATION IRON PEAK", "name": "OPERATION IRON PEAK",
+		"desc": "Alpine Outpost & High-Altitude Radar Assault", "operation_id": 4,
+		"scene_path": "res://scenes/stages/Stage08.tscn", "fallback_path": "res://scenes/stages/Stage08.tscn",
+		"briefing_path": "res://scenes/stages/Stage08IronPeakIntro.tscn"
 	}
 }
 
-const TOTAL_STAGES: int = 7
+const TOTAL_STAGES: int = 8
 
 var current_stage_id: int = 1
 
@@ -161,13 +169,20 @@ func _load_stage_internal(stage_id: int, bypass_progression: bool) -> bool:
 		return false
 
 	var info := get_stage_info(stage_id)
-	var path_to_load: String = str(info.get("scene_path", ""))
-	if not ResourceLoader.exists(path_to_load):
-		var fallback: String = str(info.get("fallback_path", ""))
-		if not ResourceLoader.exists(fallback):
-			push_error("[StageManager] No loadable scene for Stage %d." % stage_id)
-			return false
-		path_to_load = fallback
+	var briefing_scene: String = str(info.get("briefing_path", ""))
+	var path_to_load: String = ""
+	var is_briefing := false
+	if not bypass_progression and not briefing_scene.is_empty() and ResourceLoader.exists(briefing_scene):
+		path_to_load = briefing_scene
+		is_briefing = true
+	else:
+		path_to_load = str(info.get("scene_path", ""))
+		if not ResourceLoader.exists(path_to_load):
+			var fallback: String = str(info.get("fallback_path", ""))
+			if not ResourceLoader.exists(fallback):
+				push_error("[StageManager] No loadable scene for Stage %d." % stage_id)
+				return false
+			path_to_load = fallback
 
 	# Mutate campaign state only after all validation succeeds.
 	set_current_stage_id(stage_id)
@@ -175,9 +190,15 @@ func _load_stage_internal(stage_id: int, bypass_progression: bool) -> bool:
 	if sound_manager and sound_manager.has_method("stop_all"):
 		sound_manager.stop_all()
 	var game_manager = get_node_or_null("/root/GameManager")
-	if game_manager and game_manager.has_method("change_state"):
-		if game_manager.current_state != GameConstants.GameState.PLAYING:
-			game_manager.change_state(GameConstants.GameState.PLAYING)
+	if is_briefing:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		if game_manager and game_manager.has_method("change_state"):
+			if game_manager.current_state != GameConstants.GameState.MAIN_MENU:
+				game_manager.change_state(GameConstants.GameState.MAIN_MENU)
+	else:
+		if game_manager and game_manager.has_method("change_state"):
+			if game_manager.current_state != GameConstants.GameState.PLAYING:
+				game_manager.change_state(GameConstants.GameState.PLAYING)
 
 	print("[StageManager] Loading Stage %d -> %s" % [stage_id, path_to_load])
 	var err := get_tree().change_scene_to_file(path_to_load)

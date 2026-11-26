@@ -1,0 +1,474 @@
+[gd_scene load_steps=9 format=3 uid="uid://stage08hud001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08HUD.gd" id="1_hud"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/radar_minimap.png" id="2_radar"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/gear_frag.png" id="3_frag"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/gear_medkit.png" id="4_medkit"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Pill"]
+bg_color = Color(0.04, 0.12, 0.22, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.55, 0.85, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.03, 0.06, 0.1, 0.88)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.4, 0.65, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_HPFill"]
+bg_color = Color(0.9, 0.95, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_EnemyCounter"]
+bg_color = Color(0.04, 0.08, 0.13, 0.88)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88, 0.28, 0.22, 0.85)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+
+[node name="Stage08HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="ObjectiveCard" type="PanelContainer" parent="TopBar"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 290.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="TopBar/ObjectiveCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/ObjectiveCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DiamondIcon" type="Label" parent="TopBar/ObjectiveCard/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.78, 0.2, 1)
+theme_override_font_size = 18
+text = "◆"
+
+[node name="VBox" type="VBoxContainer" parent="TopBar/ObjectiveCard/Margin/HBox"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="ObjectiveTitle" type="Label" parent="TopBar/ObjectiveCard/Margin/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.95, 0.9)
+theme_override_font_size = 10
+text = "CURRENT OBJECTIVE"
+
+[node name="ObjectiveDesc" type="Label" parent="TopBar/ObjectiveCard/Margin/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.98, 1, 1)
+theme_override_font_size = 13
+text = "Secure the Research Facility"
+
+[node name="EnemyCounterCard" type="PanelContainer" parent="TopBar"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 76.0
+offset_right = 232.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_EnemyCounter")
+
+[node name="Margin" type="MarginContainer" parent="TopBar/EnemyCounterCard"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/EnemyCounterCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HostileIcon" type="Label" parent="TopBar/EnemyCounterCard/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.25, 1)
+theme_override_font_size = 12
+text = "☠"
+
+[node name="CounterLabel" type="Label" parent="TopBar/EnemyCounterCard/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.38, 0.32, 1)
+theme_override_font_size = 11
+text = "ENEMIES REMAINING: 12"
+
+[node name="CompassContainer" type="Control" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 60.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="TapeLabel" type="Label" parent="TopBar/CompassContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.85, 0.92, 0.98, 0.85)
+theme_override_font_size = 12
+text = "W   285   300   NW  |  310   345   N   15   S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HeadingLabel" type="Label" parent="TopBar/CompassContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_font_size = 11
+text = "310"
+horizontal_alignment = 1
+
+[node name="ReconDroneBadge" type="PanelContainer" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 22.0
+offset_right = -24.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Pill")
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/ReconDroneBadge"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="TopBar/ReconDroneBadge/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.88, 1, 1)
+theme_override_font_size = 11
+text = "RECON DRONE"
+
+[node name="Icon" type="Label" parent="TopBar/ReconDroneBadge/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_size = 12
+text = "◎"
+
+[node name="RightPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = 100.0
+offset_bottom = -160.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MissionProgressPanel" type="PanelContainer" parent="RightPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = 165.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="RightPanel/MissionProgressPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="VBox" type="VBoxContainer" parent="RightPanel/MissionProgressPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="RightPanel/MissionProgressPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 12
+text = "MISSION PROGRESS"
+
+[node name="ChecklistItems" type="VBoxContainer" parent="RightPanel/MissionProgressPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BottomLeft" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 360.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="RadarContainer" type="Control" parent="BottomLeft"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -120.0
+offset_right = 134.0
+offset_bottom = -15.0
+grow_vertical = 0
+
+[node name="RadarTexture" type="TextureRect" parent="BottomLeft/RadarContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_radar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HealthCard" type="PanelContainer" parent="BottomLeft"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_top = -54.0
+offset_right = 345.0
+offset_bottom = -18.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="HealthContainer" type="HBoxContainer" parent="BottomLeft/HealthCard"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="PlusBadge" type="PanelContainer" parent="BottomLeft/HealthCard/HealthContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="PlusLabel" type="Label" parent="BottomLeft/HealthCard/HealthContainer/PlusBadge"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 14
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthNumber" type="Label" parent="BottomLeft/HealthCard/HealthContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.98, 1, 1)
+theme_override_font_size = 16
+text = "100"
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="BottomLeft/HealthCard/HealthContainer"]
+custom_minimum_size = Vector2(100, 8)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_HPFill")
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+
+[node name="BottomRight" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -110.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="WeaponCard" type="PanelContainer" parent="BottomRight"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -68.0
+offset_right = -130.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="BottomRight/WeaponCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="BottomRight/WeaponCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="AmmoRow" type="HBoxContainer" parent="BottomRight/WeaponCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="CurrentAmmo" type="Label" parent="BottomRight/WeaponCard/Margin/VBox/AmmoRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_size = 20
+text = "30"
+horizontal_alignment = 1
+
+[node name="ReserveAmmo" type="Label" parent="BottomRight/WeaponCard/Margin/VBox/AmmoRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.75, 0.88, 1)
+theme_override_font_size = 12
+text = "| 180"
+vertical_alignment = 2
+
+[node name="WeaponName" type="Label" parent="BottomRight/WeaponCard/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.85, 0.95, 0.9)
+theme_override_font_size = 10
+text = "— M4A1 —"
+horizontal_alignment = 1
+
+[node name="GearRow" type="HBoxContainer" parent="BottomRight"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="GrenadeBadge" type="PanelContainer" parent="BottomRight/GearRow"]
+custom_minimum_size = Vector2(50, 68)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="HBox" type="HBoxContainer" parent="BottomRight/GearRow/GrenadeBadge"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="BottomRight/GearRow/GrenadeBadge/HBox"]
+custom_minimum_size = Vector2(22, 28)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_frag")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Count" type="Label" parent="BottomRight/GearRow/GrenadeBadge/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_size = 15
+text = "2"
+vertical_alignment = 1
+
+[node name="MedkitBadge" type="PanelContainer" parent="BottomRight/GearRow"]
+custom_minimum_size = Vector2(50, 68)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="HBox" type="HBoxContainer" parent="BottomRight/GearRow/MedkitBadge"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="BottomRight/GearRow/MedkitBadge/HBox"]
+custom_minimum_size = Vector2(22, 28)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_medkit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Count" type="Label" parent="BottomRight/GearRow/MedkitBadge/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_size = 15
+text = "3"
+vertical_alignment = 1

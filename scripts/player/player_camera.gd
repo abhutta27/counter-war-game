@@ -47,10 +47,6 @@ func is_captured() -> bool:
 		return is_mouse_captured
 	return Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion or event is InputEventKey or (event is InputEventMouseButton and not is_captured()):
-		_input(event)
-
 func _input(event: InputEvent) -> void:
 	# 1. Click window to re-capture mouse if not captured (ONLY allowed during active PLAYING state)
 	if event is InputEventMouseButton and event.pressed and not is_captured():
@@ -90,6 +86,11 @@ func _input(event: InputEvent) -> void:
 	# Esc is owned by TacticalHUD so one input atomically opens the pause menu,
 	# pauses simulation, and releases the mouse. Consuming it here previously
 	# produced a cursor-only pseudo-pause and starved the HUD input route.
+
+func _unhandled_input(_event: InputEvent) -> void:
+	# Legacy right-side free-look has been disabled in favor of TacticalHUD's dedicated
+	# left circular aim controller. The right side is reserved for weapon controls (FIRE, RELOAD, SWAP).
+	pass
 
 func _process(delta: float) -> void:
 	# Smoothly recover recoil pitch back to baseline

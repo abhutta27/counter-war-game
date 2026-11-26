@@ -1,0 +1,214 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08failed001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08MissionFailed.gd" id="1_failed"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/failed_emblem.png" id="2_emblem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.04, 0.02, 0.02, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.16, 0.16, 0.85)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ReasonCard"]
+bg_color = Color(0.08, 0.03, 0.04, 0.88)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.18, 0.18, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+
+[node name="Stage08MissionFailed" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_failed")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.01, 0.01, 0.8)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainCard" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(580, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="EmblemCenter" type="CenterContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+
+[node name="EmblemTexture" type="TextureRect" parent="CenterContainer/MainCard/Margin/VBox/EmblemCenter"]
+custom_minimum_size = Vector2(64, 48)
+layout_mode = 2
+texture = ExtResource("2_emblem")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleVBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/MainCard/Margin/VBox/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.28, 0.28, 1)
+theme_override_font_size = 24
+text = "MISSION FAILED"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MainCard/Margin/VBox/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_size = 12
+text = "YOU WERE ELIMINATED"
+horizontal_alignment = 1
+
+[node name="CardsHBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ReasonCard" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ReasonCard")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/ReasonCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/ReasonCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="Label" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/ReasonCard/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.45, 0.45, 0.9)
+theme_override_font_size = 11
+text = "REASON"
+
+[node name="HBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/ReasonCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SkullIcon" type="Label" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/ReasonCard/Margin/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
+theme_override_font_size = 16
+text = "☠"
+
+[node name="ReasonText" type="Label" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/ReasonCard/Margin/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_size = 13
+text = "Killed by sniper"
+
+[node name="CheckpointCard" type="PanelContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ReasonCard")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/CheckpointCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/CheckpointCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="Label" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/CheckpointCard/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.45, 0.45, 0.9)
+theme_override_font_size = 11
+text = "LAST CHECKPOINT"
+
+[node name="HBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/CheckpointCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PinIcon" type="Label" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/CheckpointCard/Margin/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.75, 0.95, 1)
+theme_override_font_size = 16
+text = "📍"
+
+[node name="DistText" type="Label" parent="CenterContainer/MainCard/Margin/VBox/CardsHBox/CheckpointCard/Margin/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_size = 13
+text = "37 m"
+
+[node name="ButtonHBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ButtonHBox"]
+custom_minimum_size = Vector2(160, 36)
+layout_mode = 2
+text = "⟳   RETRY MISSION"
+
+[node name="CheckpointButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ButtonHBox"]
+custom_minimum_size = Vector2(160, 36)
+layout_mode = 2
+text = "⇥   LOAD CHECKPOINT"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/ButtonHBox"]
+custom_minimum_size = Vector2(160, 36)
+layout_mode = 2
+text = "⇥   EXIT TO MAIN MENU"
+
+[node name="FooterHBox" type="HBoxContainer" parent="CenterContainer/MainCard/Margin/VBox"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/MainCard/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(90, 28)
+layout_mode = 2
+text = "< BACK"

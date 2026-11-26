@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://stage08intro_rebuild_001"]
+
+[ext_resource type="Script" path="res://scripts/stages/stage08_rebuild/Stage08IronPeakIntro.gd" id="1_intro"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/screens/01_intro.png" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/stages/ui/Stage08IronPeakSettings.tscn" id="3_settings"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_Normal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_StartHover"]
+bg_color = Color(1, 0.85, 0.1, 0.2)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9, 0.3, 0.95)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_StartPressed"]
+bg_color = Color(0.8, 0.55, 0, 0.35)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.8, 0.1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_IconHover"]
+bg_color = Color(0.18, 0.58, 0.98, 0.15)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25, 0.7, 1, 0.95)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Stage08IronPeakIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_intro")
+
+[node name="BaseBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.035, 0.08, 1)
+
+[node name="AspectContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.773885
+stretch_mode = 3
+
+[node name="Background" type="TextureRect" parent="AspectContainer"]
+layout_mode = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BriefingButton" type="Button" parent="AspectContainer/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.785
+anchor_right = 0.375
+anchor_bottom = 0.93
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_Normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_StartHover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_StartPressed")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_Normal")
+flat = true
+
+[node name="StartButton" type="Button" parent="AspectContainer/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.684
+anchor_top = 0.835
+anchor_right = 0.968
+anchor_bottom = 0.96
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_Normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_StartHover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_StartPressed")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_Normal")
+flat = true
+
+[node name="SettingsButton" type="Button" parent="AspectContainer/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.835
+anchor_top = 0.038
+anchor_right = 0.912
+anchor_bottom = 0.165
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_Normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_IconHover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_IconHover")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_Normal")
+flat = true
+
+[node name="BackButton" type="Button" parent="AspectContainer/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.915
+anchor_top = 0.038
+anchor_right = 0.99
+anchor_bottom = 0.165
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_Normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_IconHover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_IconHover")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_Normal")
+flat = true
+
+[node name="SettingsModal" parent="." instance=ExtResource("3_settings")]
+visible = false
+layout_mode = 1

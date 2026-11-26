@@ -1,0 +1,193 @@
+[gd_scene load_steps=5 format=3 uid="uid://stage08success001"]
+
+[ext_resource type="Script" path="res://scripts/stages/ui/Stage08IronPeakSuccess.gd" id="1_success"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/screens/05_success.png" id="2_bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.015, 0.035, 0.08, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.12, 0.82, 0.32, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.05, 0.4, 0.15, 0.4)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Banner"]
+bg_color = Color(0.05, 0.25, 0.1, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12, 0.82, 0.32, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 16
+content_margin_top = 10
+content_margin_right = 16
+content_margin_bottom = 10
+
+[node name="Stage08IronPeakSuccess" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_success")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.02, 0.05, 0.6)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 60
+
+[node name="Card" type="PanelContainer" parent="Margin"]
+custom_minimum_size = Vector2(520, 460)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Card/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Banner" type="PanelContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Banner")
+
+[node name="BannerVBox" type="VBoxContainer" parent="Margin/Card/Margin/VBox/Banner"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BannerTitle" type="Label" parent="Margin/Card/Margin/VBox/Banner/BannerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 22
+text = "★ MISSION ACCOMPLISHED — VICTORY"
+horizontal_alignment = 1
+
+[node name="BannerSubtitle" type="Label" parent="Margin/Card/Margin/VBox/Banner/BannerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.95, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "STAGE 08 // OPERATION IRON PEAK SECURED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+
+[node name="StatsGrid" type="GridContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="HostilesLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "HOSTILES ELIMINATED:"
+
+[node name="HostilesValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "18 / 18 (100%)"
+
+[node name="OutpostLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "OUTPOST RADAR INTEGRITY:"
+
+[node name="OutpostValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.82, 0.32, 1)
+theme_override_font_sizes/font_size = 14
+text = "SECURED // FULL CONTROL"
+
+[node name="TimeLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "MISSION DURATION:"
+
+[node name="TimeValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "03:45"
+
+[node name="RatingLabel" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "TACTICAL RATING:"
+
+[node name="RatingValue" type="Label" parent="Margin/Card/Margin/VBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_sizes/font_size = 14
+text = "S-RANK [OUTSTANDING]"
+
+[node name="Spacer" type="Control" parent="Margin/Card/Margin/VBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ReplayButton" type="Button" parent="Margin/Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+text = "REPLAY MISSION"
+
+[node name="ContinueButton" type="Button" parent="Margin/Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CONTINUE TO HQ ►"

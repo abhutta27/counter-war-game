@@ -1,0 +1,81 @@
+COUNTER-WAR: MODERN COMBAT
+STAGE 08 — OPERATION IRON PEAK
+DESIGN SPECIFICATION
+
+1. DESIGN REFERENCES
+Use the supplied UI_Reference.png and Weapon_Reference.png as the primary visual references.
+Match their design, colors, layout, visual style and overall appearance as closely as possible.
+Do not invent a different UI theme.
+
+2. COLOR SCHEME
+- Primary: Dark Navy Blue.
+- Secondary: Steel Blue.
+- Accent: Bright Golden Yellow.
+- Borders: Glowing Electric Blue.
+- Mission Success: Green.
+- Mission Failed: Red.
+- Text: White and light grey.
+Use consistent colors across every Stage 08 screen.
+
+3. UI DESIGN
+All Stage 08 screens must follow the supplied UI reference:
+- Stage 08 Introduction.
+- Mission Briefing.
+- Weapon Loadout.
+- Gameplay HUD.
+- Pause Menu.
+- Mission Success.
+- Mission Failed.
+- Settings.
+
+Use military-style panels, clean typography, glowing blue borders and yellow highlighted buttons.
+Keep all text readable and layouts professional.
+Maintain consistency between screens.
+
+4. NEW STAGE 08 WEAPON
+Create a new Stage 08 exclusive modern assault rifle based on Weapon_Reference.png.
+- Black and dark metallic finish.
+- Modern tactical design.
+- Holographic/red-dot sight.
+- Tactical rail and attachments.
+- Detailed 3D first-person weapon model.
+- Proper firing, recoil, reload and weapon animations.
+- Add its matching weapon preview to the Loadout screen.
+
+Do not replace or damage existing weapons.
+Do not change shared combat systems unnecessarily.
+
+5. ENVIRONMENT
+Create a realistic rocky alpine mountain battlefield.
+- Large rocky mountain formations.
+- Snow on selected mountain peaks.
+- Natural walkable slopes.
+- Connected mountain routes.
+- Tactical rocks and cover.
+- Open combat valley.
+- Realistic lighting and atmospheric depth.
+
+The environment must be genuinely playable, not just decorative scenery.
+
+6. GAMEPLAY
+- Smooth player movement and camera.
+- Reliable mountain climbing and collision.
+- Clear enemy visibility.
+- Good combat distances.
+- Proper weapon handling.
+- Functional pause menu and mouse cursor.
+
+7. PROJECT SAFETY
+- Do not modify Stage 01–07.
+- Preserve all shared systems and existing weapons.
+- Never modify Stage08Whiteout_Backup.
+- Follow existing project architecture.
+- Avoid unnecessary large assets and performance-heavy effects.
+
+8. QUALITY REQUIREMENT
+The final result must closely match the supplied visual references.
+Do not consider the work complete just because the scenes exist.
+Verify the screens and environment in the actual Godot game window.
+
+PROJECT GOAL:
+Deliver a professional, visually consistent and genuinely playable Stage 08 named OPERATION IRON PEAK.

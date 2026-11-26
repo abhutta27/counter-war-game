@@ -1,0 +1,542 @@
+[gd_scene load_steps=7 format=3 uid="uid://stage08loadout001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08WhiteoutLoadout.gd" id="1_loadout"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/soldier_preview.png" id="2_soldier_preview"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/m4a1_preview.png" id="3_m4a1_preview"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/p07_preview.png" id="4_p07_preview"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/gear_frag.png" id="5_gear_frag"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/gear_smoke.png" id="6_gear_smoke"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_whiteout/gear_medkit.png" id="7_gear_medkit"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_Card"]
+bg_color = Color(0.025, 0.058, 0.09, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.14, 0.35, 0.55, 0.85)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Stage08WhiteoutLoadout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loadout")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.015, 0.035, 0.055, 1)
+
+[node name="OuterMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="Page" type="VBoxContainer" parent="OuterMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopHeader" type="HBoxContainer" parent="OuterMargin/Page"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="TitleLabel" type="Label" parent="OuterMargin/Page/TopHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "LOADOUT"
+vertical_alignment = 1
+
+[node name="TabsRow" type="HBoxContainer" parent="OuterMargin/Page/TopHeader"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TabSoldier" type="Button" parent="OuterMargin/Page/TopHeader/TabsRow"]
+custom_minimum_size = Vector2(104, 34)
+layout_mode = 2
+text = "SOLDIER"
+
+[node name="TabPrimary" type="Button" parent="OuterMargin/Page/TopHeader/TabsRow"]
+custom_minimum_size = Vector2(104, 34)
+layout_mode = 2
+text = "PRIMARY"
+
+[node name="TabSecondary" type="Button" parent="OuterMargin/Page/TopHeader/TabsRow"]
+custom_minimum_size = Vector2(104, 34)
+layout_mode = 2
+text = "SECONDARY"
+
+[node name="TabGear" type="Button" parent="OuterMargin/Page/TopHeader/TabsRow"]
+custom_minimum_size = Vector2(104, 34)
+layout_mode = 2
+text = "GEAR"
+
+[node name="HeaderSpacer" type="Control" parent="OuterMargin/Page/TopHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainLayoutHBox" type="HBoxContainer" parent="OuterMargin/Page"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="LeftColumn" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SoldierFrame" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/LeftColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBox_Card")
+
+[node name="SoldierTexture" type="TextureRect" parent="OuterMargin/Page/MainLayoutHBox/LeftColumn/SoldierFrame"]
+layout_mode = 2
+texture = ExtResource("2_soldier_preview")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackButton" type="Button" parent="OuterMargin/Page/MainLayoutHBox/LeftColumn"]
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "< BACK"
+
+[node name="MiddleColumn" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="PrimaryWeaponPanel" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_Card")
+
+[node name="PrimaryMargin" type="MarginContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="PrimaryVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PrimaryLabel" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48, 0.72, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "PRIMARY WEAPON"
+
+[node name="PrimaryName" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+text = "M4A1"
+
+[node name="PrimaryCenter" type="CenterContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PrimaryImage" type="TextureRect" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox/PrimaryCenter"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+texture = ExtResource("3_m4a1_preview")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PrimaryBottomRow" type="HBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox"]
+layout_mode = 2
+
+[node name="PrimaryAmmo" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox/PrimaryBottomRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "30 / 180"
+
+[node name="Spacer" type="Control" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox/PrimaryBottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Chevron" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/PrimaryWeaponPanel/PrimaryMargin/PrimaryVBox/PrimaryBottomRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.38, 0.68, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+text = ">"
+
+[node name="SecondaryWeaponPanel" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_Card")
+
+[node name="SecondaryMargin" type="MarginContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="SecondaryVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SecondaryLabel" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin/SecondaryVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48, 0.72, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "SECONDARY WEAPON"
+
+[node name="SecondaryName" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin/SecondaryVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 17
+text = "P-07"
+
+[node name="SecondaryCenter" type="CenterContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin/SecondaryVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SecondaryImage" type="TextureRect" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin/SecondaryVBox/SecondaryCenter"]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+texture = ExtResource("4_p07_preview")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SecondaryBottomRow" type="HBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin/SecondaryVBox"]
+layout_mode = 2
+
+[node name="SecondaryAmmo" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/SecondaryWeaponPanel/SecondaryMargin/SecondaryVBox/SecondaryBottomRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "15 / 45"
+
+[node name="GearPanel" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBox_Card")
+
+[node name="GearMargin" type="MarginContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="GearVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="GearHeader" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48, 0.72, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "GEAR"
+
+[node name="GearCardsRow" type="HBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CardFrag" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CardVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardFrag"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardFrag/CardVBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_gear_frag")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardFrag/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "Frag Grenade"
+horizontal_alignment = 1
+
+[node name="Count" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardFrag/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "x2"
+horizontal_alignment = 1
+
+[node name="CardSmoke" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CardVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardSmoke"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardSmoke/CardVBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_gear_smoke")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardSmoke/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "Smoke Grenade"
+horizontal_alignment = 1
+
+[node name="Count" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardSmoke/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "x2"
+horizontal_alignment = 1
+
+[node name="CardMedkit" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CardVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardMedkit"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardMedkit/CardVBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_gear_medkit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardMedkit/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+text = "Med Kit"
+horizontal_alignment = 1
+
+[node name="Count" type="Label" parent="OuterMargin/Page/MainLayoutHBox/MiddleColumn/GearPanel/GearMargin/GearVBox/GearCardsRow/CardMedkit/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "x3"
+horizontal_alignment = 1
+
+[node name="RightColumn" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox"]
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SummaryPanelContainer" type="PanelContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBox_Card")
+
+[node name="SummaryMargin" type="MarginContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="SummaryVBox" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SummaryHeader" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "LOADOUT SUMMARY"
+
+[node name="SummaryItems" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ItemPrimary" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemPrimary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "M4A1 (Primary)"
+
+[node name="Detail" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemPrimary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "▾  30 / 180"
+
+[node name="ItemSecondary" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemSecondary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "P-07 (Secondary)"
+
+[node name="Detail" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemSecondary"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "▾  15 / 45"
+
+[node name="ItemFrag" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemFrag"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "💣 Grenades"
+
+[node name="Detail" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemFrag"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "  2 / 2"
+
+[node name="ItemSmoke" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemSmoke"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "💨 Smoke Grenades"
+
+[node name="Detail" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemSmoke"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "  2 / 2"
+
+[node name="ItemMedkit" type="VBoxContainer" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemMedkit"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "➕ Med Kits"
+
+[node name="Detail" type="Label" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox/SummaryItems/ItemMedkit"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "  3 / 3"
+
+[node name="Spacer" type="Control" parent="OuterMargin/Page/MainLayoutHBox/RightColumn/SummaryPanelContainer/SummaryMargin/SummaryVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConfirmButton" type="Button" parent="OuterMargin/Page/MainLayoutHBox/RightColumn"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "CONFIRM LOADOUT  >"
+
+[node name="Footer" type="HBoxContainer" parent="OuterMargin/Page"]
+visible = false
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="OuterMargin/Page/Footer"]
+layout_mode = 2
+text = "< BACK"
+
+[node name="NavigationNote" type="Label" parent="OuterMargin/Page/Footer"]
+layout_mode = 2
+text = "LOADOUT CONFIRMED  ·  READY FOR OPERATION"
+
+[node name="ContinueButton" type="Button" parent="OuterMargin/Page/Footer"]
+layout_mode = 2
+text = "START MISSION"
+
+[node name="Header" type="Control" parent="OuterMargin/Page"]
+visible = false
+layout_mode = 2
+
+[node name="HeaderStatus" type="Control" parent="OuterMargin/Page/Header"]
+anchors_preset = 0
+
+[node name="StatusText" type="Label" parent="OuterMargin/Page/Header/HeaderStatus"]
+layout_mode = 0
+text = "LOADOUT VIEW\nREAD ONLY"
+
+[node name="MainScroll" type="ScrollContainer" parent="OuterMargin/Page"]
+visible = false
+layout_mode = 2
+
+[node name="MainContent" type="Control" parent="OuterMargin/Page/MainScroll"]
+layout_mode = 2
+
+[node name="ProfileGrid" type="GridContainer" parent="OuterMargin/Page/MainScroll/MainContent"]
+layout_mode = 0
+
+[node name="WeaponsPanel" type="PanelContainer" parent="OuterMargin/Page/MainScroll/MainContent/ProfileGrid"]
+layout_mode = 2
+
+[node name="WeaponsMargin" type="MarginContainer" parent="OuterMargin/Page/MainScroll/MainContent/ProfileGrid/WeaponsPanel"]
+layout_mode = 2
+
+[node name="WeaponsContent" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/MainContent/ProfileGrid/WeaponsPanel/WeaponsMargin"]
+layout_mode = 2
+
+[node name="WeaponList" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/MainContent/ProfileGrid/WeaponsPanel/WeaponsMargin/WeaponsContent"]
+layout_mode = 2
+
+[node name="SummaryPanel" type="PanelContainer" parent="OuterMargin/Page/MainScroll/MainContent"]
+layout_mode = 0
+
+[node name="SummaryMargin" type="MarginContainer" parent="OuterMargin/Page/MainScroll/MainContent/SummaryPanel"]
+layout_mode = 2
+
+[node name="SummaryContent" type="VBoxContainer" parent="OuterMargin/Page/MainScroll/MainContent/SummaryPanel/SummaryMargin"]
+layout_mode = 2
+
+[node name="DefaultWeaponRow" type="HBoxContainer" parent="OuterMargin/Page/MainScroll/MainContent/SummaryPanel/SummaryMargin/SummaryContent"]
+layout_mode = 2
+
+[node name="DefaultWeaponValue" type="Label" parent="OuterMargin/Page/MainScroll/MainContent/SummaryPanel/SummaryMargin/SummaryContent/DefaultWeaponRow"]
+layout_mode = 2
+text = "Assault Rifle"
+
+[node name="CarriedWeaponsRow" type="HBoxContainer" parent="OuterMargin/Page/MainScroll/MainContent/SummaryPanel/SummaryMargin/SummaryContent"]
+layout_mode = 2
+
+[node name="CarriedWeaponsValue" type="Label" parent="OuterMargin/Page/MainScroll/MainContent/SummaryPanel/SummaryMargin/SummaryContent/CarriedWeaponsRow"]
+layout_mode = 2
+text = "Tactical Pistol"

@@ -1,0 +1,277 @@
+[gd_scene load_steps=8 format=3 uid="uid://stage08loadout001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08IronPeakLoadout.gd" id="1_loadout"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/screens/03_loadout.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/ui/stage08_iron_peak/weapons/cw08_assault_rifle_showcase.png" id="3_rifle"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+bg_color = Color(0.015, 0.035, 0.08, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.18, 0.58, 0.98, 0.85)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0.25, 0.6, 0.35)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Preview"]
+bg_color = Color(0.04, 0.08, 0.14, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12, 0.34, 0.58, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ProgressBg"]
+bg_color = Color(0.06, 0.12, 0.2, 0.8)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ProgressFill"]
+bg_color = Color(1, 0.78, 0.05, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Stage08IronPeakLoadout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loadout")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.02, 0.05, 0.55)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 36
+
+[node name="Card" type="PanelContainer" parent="Margin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 22
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Card/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Margin/Card/Margin/VBox/HeaderHBox"]
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 2
+text = "◄ BACK"
+
+[node name="Title" type="Label" parent="Margin/Card/Margin/VBox/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.78, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "WEAPON LOADOUT // OPERATION IRON PEAK"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/Card/Margin/VBox/HeaderHBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+
+[node name="ContentHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="ListVBox" type="VBoxContainer" parent="Margin/Card/Margin/VBox/ContentHBox"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ListHeader" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/ListVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.58, 0.98, 1)
+theme_override_font_sizes/font_size = 13
+text = "AVAILABLE ARMORY"
+
+[node name="WeaponBtn0" type="Button" parent="Margin/Card/Margin/VBox/ContentHBox/ListVBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "★ CW-08 ASSAULT RIFLE"
+alignment = 0
+
+[node name="WeaponBtn1" type="Button" parent="Margin/Card/Margin/VBox/ContentHBox/ListVBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "MK-14 DMR"
+alignment = 0
+
+[node name="WeaponBtn2" type="Button" parent="Margin/Card/Margin/VBox/ContentHBox/ListVBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "BREACHER-12"
+alignment = 0
+
+[node name="WeaponBtn3" type="Button" parent="Margin/Card/Margin/VBox/ContentHBox/ListVBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "VECTOR-9 SMG"
+alignment = 0
+
+[node name="DetailsVBox" type="VBoxContainer" parent="Margin/Card/Margin/VBox/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="WeaponCategory" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.58, 0.98, 1)
+theme_override_font_sizes/font_size = 12
+text = "ASSAULT RIFLE // PRIMARY EXCLUSIVE"
+
+[node name="WeaponTitle" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "CW-08 ASSAULT RIFLE"
+
+[node name="PreviewPanel" type="PanelContainer" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Preview")
+
+[node name="WeaponPreview" type="TextureRect" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/PreviewPanel"]
+layout_mode = 2
+texture = ExtResource("3_rifle")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WeaponDesc" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.88, 0.96, 0.9)
+theme_override_font_sizes/font_size = 12
+text = "High-precision gas-operated 5.56x45mm NATO assault rifle engineered for alpine and rugged operations. Outfitted with holographic optic, foregrip, and integrated tactical illuminator."
+autowrap_mode = 2
+
+[node name="StatsGrid" type="GridContainer" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="DamageLabel" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "DAMAGE"
+
+[node name="DamageBar" type="ProgressBar" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+custom_minimum_size = Vector2(180, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_ProgressBg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ProgressFill")
+value = 82.0
+show_percentage = false
+
+[node name="FireRateLabel" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "FIRE RATE"
+
+[node name="FireRateBar" type="ProgressBar" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+custom_minimum_size = Vector2(180, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_ProgressBg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ProgressFill")
+value = 78.0
+show_percentage = false
+
+[node name="RangeLabel" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "RANGE"
+
+[node name="RangeBar" type="ProgressBar" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+custom_minimum_size = Vector2(180, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_ProgressBg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ProgressFill")
+value = 75.0
+show_percentage = false
+
+[node name="MobilityLabel" type="Label" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "MOBILITY"
+
+[node name="MobilityBar" type="ProgressBar" parent="Margin/Card/Margin/VBox/ContentHBox/DetailsVBox/StatsGrid"]
+custom_minimum_size = Vector2(180, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_ProgressBg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ProgressFill")
+value = 80.0
+show_percentage = false
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/Card/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Notice" type="Label" parent="Margin/Card/Margin/VBox/FooterHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.65, 0.75, 0.85, 0.8)
+theme_override_font_sizes/font_size = 12
+text = "STATUS: LOADOUT OPTIMIZED FOR HIGH ALTITUDE ASSAULT"
+
+[node name="ConfirmButton" type="Button" parent="Margin/Card/Margin/VBox/FooterHBox"]
+custom_minimum_size = Vector2(240, 42)
+layout_mode = 2
+text = "CONFIRM & DEPLOY ►"

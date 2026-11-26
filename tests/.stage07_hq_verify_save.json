@@ -1,0 +1,20 @@
+{
+	"active_profile_id": "operative_374893_2709157389",
+	"profiles": {
+		"operative_374893_2709157389": {
+			"best_scores": {
+				"1": 1900
+			},
+			"career_score": 1900,
+			"completed_stages": [
+				1
+			],
+			"highest_score": 1900,
+			"highest_unlocked_stage": 2,
+			"last_played_stage": 1,
+			"player_name": "GhostOperative",
+			"profile_id": "operative_374893_2709157389"
+		}
+	},
+	"save_version": 2
+}

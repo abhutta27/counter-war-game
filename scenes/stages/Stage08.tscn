@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://stage08ironpeak001"]
+
+[ext_resource type="Script" path="res://scripts/stages/Stage08IronPeak.gd" id="1_controller"]
+[ext_resource type="PackedScene" uid="uid://dm0y3k7q3a8va" path="res://scenes/entities/Player3D.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/TacticalHUD.tscn" id="3_hud"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial_IronPeak"]
+sky_top_color = Color(0.14, 0.30, 0.52, 1)
+sky_horizon_color = Color(0.66, 0.75, 0.84, 1)
+ground_bottom_color = Color(0.12, 0.13, 0.14, 1)
+ground_horizon_color = Color(0.36, 0.39, 0.42, 1)
+sun_angle_max = 16.0
+
+[sub_resource type="Sky" id="Sky_IronPeak"]
+sky_material = SubResource("SkyMaterial_IronPeak")
+
+[sub_resource type="Environment" id="Environment_IronPeak"]
+background_mode = 2
+sky = SubResource("Sky_IronPeak")
+ambient_light_source = 3
+ambient_light_color = Color(0.58, 0.65, 0.74, 1)
+ambient_light_energy = 0.95
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.2
+fog_enabled = true
+fog_light_color = Color(0.52, 0.60, 0.68, 1)
+fog_light_energy = 0.35
+fog_density = 0.0014
+
+[sub_resource type="StandardMaterial3D" id="GroundMaterial_IronPeak"]
+albedo_color = Color(0.26, 0.28, 0.24, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="GroundMesh_IronPeak"]
+material = SubResource("GroundMaterial_IronPeak")
+size = Vector3(240, 1, 240)
+
+[sub_resource type="BoxShape3D" id="GroundShape_IronPeak"]
+size = Vector3(240, 1, 240)
+
+[node name="Stage08" type="Node3D"]
+script = ExtResource("1_controller")
+stage_id = 8
+stage_name = "OPERATION IRON PEAK"
+out_of_bounds_y = -10.0
+recovery_bounds_enabled = true
+recovery_bounds_min = Vector2(-65.0, -90.0)
+recovery_bounds_max = Vector2(65.0, 105.0)
+physical_boundaries_enabled = true
+physical_boundary_height = 30.0
+physical_boundary_center_y = 10.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_IronPeak")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -32, 0)
+light_color = Color(0.96, 0.94, 0.88, 1)
+light_energy = 1.25
+shadow_enabled = true
+directional_shadow_max_distance = 160.0
+
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.5, 0)
+collision_layer = 1
+collision_mask = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("GroundMesh_IronPeak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("GroundShape_IronPeak")
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+position = Vector3(0, 0.2, 92)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Player3D" parent="." instance=ExtResource("2_player")]
+position = Vector3(0, 0.2, 92)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
